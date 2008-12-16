@@ -1,0 +1,18 @@
+<p>
+  <b>Id:</b>
+  <%=h @hunt.id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @hunt.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @hunt.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_hunt_path(@hunt) %> |
+<%= link_to 'Back', hunts_path %>
