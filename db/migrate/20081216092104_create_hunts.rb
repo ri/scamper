@@ -1,7 +1,6 @@
 class CreateHunts < ActiveRecord::Migration
   def self.up
     create_table :hunts do |t|
-      t.string :id
       t.string :name
       t.text :description
 

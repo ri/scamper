@@ -1,0 +1,13 @@
+<p>
+  <b> description:</b>
+  <%=h @product. description %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%=h @product.answer %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
