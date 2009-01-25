@@ -2,7 +2,7 @@
        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Users: <%= controller.action_name %></title>
+<title>Scamper: <%= controller.action_name %></title>
 <%= stylesheet_link_tag 'style' %>
 </head>
 </head>
@@ -14,10 +14,10 @@
 <div id="header">
 <img src="images/header.png">
 </div>
-<div id="message"><%= flash[:notice] %></div>
+<div id="message"><%= flash[:notice] %><%= flash[:error] %>
+</div>
 <div id="content">
-
-	<%= yield  %>
+<%= yield %>
 
 	
 </div>

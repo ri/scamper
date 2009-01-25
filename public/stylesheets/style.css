@@ -1,0 +1,40 @@
+#header{
+height: auto;
+width: auto;
+background-color: #000000;
+
+}
+
+#player p{
+	margin-top: -20px;
+	text-align: right;
+	color: #ffffff;
+}
+
+#container{
+	width: 841px;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#content{
+	height: 100%;
+	width: auto;
+	background-color:  	#99FFFF;
+	
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	list-style-type: none;
+}
+
+#content table{
+	border: 1;
+}
+
+#temp{
+	margin-left: auto;
+	margin-right: auto;
+	
+}
