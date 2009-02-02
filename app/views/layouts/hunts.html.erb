@@ -5,11 +5,11 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Hunts: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'style' %>
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
+<p style="color: green"><%= flash[:notice] %><%= flash[:error] %></p>
 
 <%= yield  %>
 

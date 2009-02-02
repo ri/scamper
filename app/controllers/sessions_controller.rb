@@ -1,8 +1,5 @@
 # This controller handles the login/logout function of the site.  
 class SessionsController < ApplicationController
-  # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
-
   # render new.rhtml
   def new
   end
@@ -18,6 +15,8 @@ class SessionsController < ApplicationController
       flash[:notice] = "Logged in successfully"
     else
       render :action => 'new'
+      flash[:notice] = "Login Unsuccessful, please try again."
+      
     end
   end
 

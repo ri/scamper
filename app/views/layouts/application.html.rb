@@ -5,8 +5,6 @@
 <title>Scamper: <%= controller.action_name %></title>
 <%= stylesheet_link_tag 'style' %>
 </head>
-</head>
-
 <body>
 
 <div id="container">
@@ -14,9 +12,10 @@
 <div id="header">
 <img src="images/header.png">
 </div>
-<div id="message"><%= flash[:notice] %><%= flash[:error] %>
+<div id="message"><p><%= flash[:notice] %><%= flash[:error] %></p>
 </div>
 <div id="content">
+
 <%= yield %>
 
 	
