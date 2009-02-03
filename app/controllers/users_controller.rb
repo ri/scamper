@@ -35,6 +35,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Signup complete!"
     end
     redirect_back_or_default('/')
+    flash[:notice] = "already active"
   end
 
   def suspend

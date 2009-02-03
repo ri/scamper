@@ -8,10 +8,33 @@
   <%= stylesheet_link_tag 'style' %>
 </head>
 <body>
+	
+	<div id="container">
 
+	<div id="header">
+	<img src="images/header1.png" />
+
+	<div id="player">
+		<p>HI! <% if logged_in? then 
+					puts current_user.name
+					else puts "there"
+					end %>! <a href="edit.html">(edit your profile)</a><a href="logout.html">LOG OUT</a> </p>
+
+
+	</div>
+	</div>
+<div id="content">
 <p style="color: green"><%= flash[:notice] %><%= flash[:error] %></p>
+<table>
+	<tr><td><h1>Title |</h1></td><td><h1><a href="createQA.html">Q and A</a> |</h1></td><td><h1><a href="createQR.html">QR Codes</a> |</h1></td><td><h1><a href="createplayers.html">Players</a></h1></td>
 
+		</tr>
+		</table>
 <%= yield  %>
+</div>
+
+
+</div>
 
 </body>
 </html>
