@@ -15,10 +15,12 @@
 	<img src="images/header1.png" />
 
 	<div id="player">
-		<p>HI! <% if logged_in? then 
-					puts current_user.name
-					else puts "there"
-					end %>! <a href="edit.html">(edit your profile)</a><a href="logout.html">LOG OUT</a> </p>
+		<p><% if user_logged_in? %>
+                <span>You are logged in as: </span>
+           <%= current_user.login %>
+           <% else %>
+           <span>Welcome Guest</span>
+           <% end %>!<a href="edit.html">(edit your profile)</a><a href="logout">LOG OUT</a> </p>
 
 
 	</div>

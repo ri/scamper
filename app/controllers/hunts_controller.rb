@@ -3,7 +3,7 @@ class HuntsController < ApplicationController
   # GET /hunts.xml
   def index
     @hunts = Hunt.find(:all)
-
+    @user = self.current_user.login
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @hunts }
