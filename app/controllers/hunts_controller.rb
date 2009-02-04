@@ -1,4 +1,5 @@
 class HuntsController < ApplicationController
+  before_filter :login_required
   # GET /hunts
   # GET /hunts.xml
   def index
