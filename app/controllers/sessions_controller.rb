@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       #   cookies[:auth_token] = { :value => self.current_user.remember_token , :expires => self.current_user.remember_token_expires_at }
       # end
       flash[:notice] = "Logged in successfully"
-      redirect_back_or_default('/')
+      redirect_to('/hunts')
     else
       render :action => 'new'
       flash[:notice] = "Login Unsuccessful, please try again."
