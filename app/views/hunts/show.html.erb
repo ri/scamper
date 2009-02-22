@@ -8,6 +8,21 @@
   <%=h @hunt.description %>
 </p>
 
+<p>
+  <b>Location:</b>
+  <%=h @hunt.location %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%=h @hunt.subject %>
+</p>
+
+<p>
+  <b>School name:</b>
+  <%=h @hunt.schoolname %>
+</p>
+
 
 <%= link_to 'Edit', edit_hunt_path(@hunt) %> |
 <%= link_to 'Back', hunts_path %>
