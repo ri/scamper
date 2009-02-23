@@ -1,28 +1,33 @@
-<h1>Editing question</h1>
+<html>
+ <head>
+  <title>Edit Question</title>
+ </head>
+ <body>
+ <h1>Edit Question</h1>
 
-<% form_for(@question) do |f| %>
-  <%= f.error_messages %>
+ <form action="../update/<%= @question.id %>" method="POST"">
+  <input id="question_id" name="question[id]" size="30" 
+         type="hidden" value="<%= @question.id %>" />
+  <p><b>Question</b><br>
+  <input id="question_question" name="question[question]" size="30" 
+         type="text" value="<%= @question.question %>" />
+  </p>
+  <p><b>answer</b><br>
+  <input id="question_answer" name="question[answer]" 
+         size="30" type="text" 
+         value="<%= @question.answer %>" />
+  </p>
 
-  <p>
-    <%= f.label :index %><br />
-    <%= f.text_field :index %>
-  </p>
-  <p>
-    <%= f.label :hunt %><br />
-    <%= f.text_field :hunt %>
-  </p>
-  <p>
-    <%= f.label :answer %><br />
-    <%= f.text_field :answer %>
-  </p>
-  <p>
-    <%= f.label :question %><br />
-    <%= f.text_area :question %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
 
-<%= link_to 'Show', @question %> |
-<%= link_to 'Back', questions_path %>
+  <input type="submit" value="Update" />
+ </form>
+
+ <a href="/question/show/<%= @question.id %>">
+   Show
+ </a> | 
+  <a href="/question/show">
+  Back 
+ </a>
+
+ </body>
+</html>

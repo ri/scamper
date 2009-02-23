@@ -11,6 +11,11 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def edit
+    @question = Question.find(@params["id"])
+    @hunts = Hunt.find_all
+  end
+  
   # GET /questions/1
   # GET /questions/1.xml
   def show
@@ -24,8 +29,9 @@ class QuestionsController < ApplicationController
 
   # GET /questions/new
   # GET /questions/new.xml
-  def new
+    def new
     @question = Question.new
+    @hunts = Hunt.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb

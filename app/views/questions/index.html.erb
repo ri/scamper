@@ -2,18 +2,19 @@
 
 <table>
   <tr>
-    <th>Index</th>
-    <th>Hunt</th>
     <th>Answer</th>
     <th>Question</th>
+    <th>Hunt_id</th>
+	<th></th>
+	<th></th>
+	<th></th>
   </tr>
 
 <% for question in @questions %>
   <tr>
-    <td><%=h question.index %></td>
-    <td><%=h question.hunt %></td>
     <td><%=h question.answer %></td>
     <td><%=h question.question %></td>
+	<td><%=h question.hunt_id %></td>
     <td><%= link_to 'Show', question %></td>
     <td><%= link_to 'Edit', edit_question_path(question) %></td>
     <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td>
