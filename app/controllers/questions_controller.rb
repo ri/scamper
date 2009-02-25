@@ -4,7 +4,8 @@ class QuestionsController < ApplicationController
   # GET /questions.xml
   def index
     @questions = Question.find(:all)
-
+    @new_question = Question.new
+    @hunts = Hunt.find(:all)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @questions }

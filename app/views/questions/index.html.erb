@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Answer</th>
+    <th>Index</th>
     <th>Question</th>
     <th>Hunt_id</th>
 	<th></th>
@@ -12,9 +12,9 @@
 
 <% for question in @questions %>
   <tr>
-    <td><%=h question.answer %></td>
+    <td><%=h question.index %></td>
     <td><%=h question.question %></td>
-	<td><%=h question.hunt_id %></td>
+	<td><%=h question.hunt %></td>
     <td><%= link_to 'Show', question %></td>
     <td><%= link_to 'Edit', edit_question_path(question) %></td>
     <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -24,4 +24,31 @@
 
 <br />
 
-<%= link_to 'New question', new_question_path %>
+<h1>Add a Question</h1>
+<% form_for(@new_question) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :question %><br />
+    <%= f.text_field :question %>
+  </p>
+  <p>
+    <%= f.label :answer %><br />
+    <%= f.text_field :answer %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+ <p>
+ 
+<!-- <b>Hunts:</b><br/>
+ 	<select name="question[hunt]">
+ 		<% @hunts.each do |hunt| %>
+ 		<option value="<%= hunt.id %>"> 
+ 		<%= hunt.name %>
+ 		</option>
+ 		<% end %>
+ 	</select> -->
+ </p>
+
+<% end %>
