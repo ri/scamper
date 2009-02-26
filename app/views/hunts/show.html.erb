@@ -11,3 +11,19 @@
 
 <%= link_to 'Edit', edit_hunt_path(@hunt) %> |
 <%= link_to 'Back', hunts_path %>
+<p>
+	
+	
+	<% @questions.each do |question| %>
+		 <b>Answer:</b>
+		  <%=h question.answer %>
+	</p>
+
+	<p>
+	  <b>Question:</b>
+	  <%=h question.question %>
+	</p>
+
+
+
+	<% end %>

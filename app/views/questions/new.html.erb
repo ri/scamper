@@ -12,11 +12,8 @@
     <%= f.label :question %><br />
     <%= f.text_area :question %>
   </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
  <p>
- 
+
 <b>Hunts:</b><br/>
  	<select name="question[hunt_id]">
  		<% @hunts.each do |hunt| %>
@@ -26,6 +23,10 @@
  		<% end %>
  	</select>
  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+
 
 <% end %>
 
