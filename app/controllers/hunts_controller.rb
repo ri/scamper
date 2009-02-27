@@ -14,7 +14,7 @@ class HuntsController < ApplicationController
   # GET /hunts/1.xml
   def show
     @hunt = Hunt.find(params[:id])
-    @questions = Question.find(:all)
+    @question = @hunt.questions(params[:hunt_id])
 
     respond_to do |format|
       format.html # show.html.erb
