@@ -10,7 +10,7 @@
   <tr>
     <td><%=h hunt.name %></td>
     <td><%=h hunt.description %></td>
-    <td><%= link_to 'Show', hunt %></td>
+    <td><%= link_to 'Show', hunt_questions_path(hunt) %></td>
     <td><%= link_to 'Edit', edit_hunt_path(hunt) %></td>
     <td><%= link_to 'Destroy', hunt, :confirm => 'Are you sure?', :method => :delete %></td>
 

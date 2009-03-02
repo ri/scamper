@@ -3,10 +3,8 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.xml
   def index
-    @questions = Question.find(:all)
-    @new_question = Question.new
+    @question = Question.find(:all)
     @hunt = Hunt.find(params[:hunt_id])
-    @hunts = Hunt.find(:all)
     
     respond_to do |format|
       format.html # index.html.erb
@@ -35,7 +33,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new.xml
     def new
     @question = Question.new
-    @hunt = Hunt.find(:all)
+    @hunt = Hunt.find(params[:hunt_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -93,7 +91,7 @@ class QuestionsController < ApplicationController
     @question.destroy
 
     respond_to do |format|
-      format.html { redirect_to(questions_url) }
+      format.html { redirect_to(hunt_questions_url) }
       format.xml  { head :ok }
     end
   end
