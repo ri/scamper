@@ -5,7 +5,9 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.find(:all)
     @new_question = Question.new
+    @hunt = Hunt.find(params[:hunt_id])
     @hunts = Hunt.find(:all)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @questions }
@@ -13,14 +15,15 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @question = Question.find(@params["id"])
-    @hunts = Hunt.find_all
+    @question = Question.find(params[:id])
+    @hunt = Hunt.find(:all)
   end
   
   # GET /questions/1
   # GET /questions/1.xml
   def show
     @question = Question.find(params[:id])
+    @hunt = Hunt.find(params[:hunt_id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -32,7 +35,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new.xml
     def new
     @question = Question.new
-    @hunts = Hunt.find(:all)
+    @hunt = Hunt.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,17 +46,21 @@ class QuestionsController < ApplicationController
   # GET /questions/1/edit
   def edit
     @question = Question.find(params[:id])
+    @hunt = Hunt.find(params[:hunt_id])
   end
 
   # POST /questions
   # POST /questions.xml
   def create
-    @question = Question.new(params[:question])
-
+    #@question = Question.new(params[:question])
+    @question = Hunt.find(params[:hunt_id]).questions.new(params[:question])
+    @hunt = Hunt.find(params[:hunt_id])
+    
+    
     respond_to do |format|
       if @question.save
         flash[:notice] = 'Question was successfully created.'
-        format.html { redirect_to(@question) }
+        format.html { redirect_to(hunt_questions_path(@hunt)) }
         format.xml  { render :xml => @question, :status => :created, :location => @question }
       else
         format.html { render :action => "new" }

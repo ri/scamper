@@ -1,6 +1,6 @@
 <h1>New question</h1>
 
-<% form_for(@question) do |f| %>
+<% form_for(@question, :url => hunt_questions_path(@hunt)) do |f| %>
   <%= f.error_messages %>
 
 
@@ -14,15 +14,7 @@
   </p>
  <p>
 
-<b>Hunts:</b><br/>
- 	<select name="question[hunt_id]">
- 		<% @hunts.each do |hunt| %>
- 		<option value="<%= hunt.id %>"> 
- 		<%= hunt.name %>
- 		</option>
- 		<% end %>
- 	</select>
- </p>
+
   <p>
     <%= f.submit "Create" %>
   </p>
@@ -30,4 +22,4 @@
 
 <% end %>
 
-<%= link_to 'Back', questions_path %>
+<%= link_to 'Back', hunt_questions_path(@hunt) %>

@@ -1,4 +1,4 @@
-<h1>Listing questions</h1>
+<h1>Listing questions </h1>
 
 <table border=1px>
   <tr>
@@ -19,40 +19,16 @@
 	<td><%=h question.answer %></td>
 	<td><%=h question.hunt_id %></td>
 	
-    <td><%= link_to 'Show', question %></td>
-    <td><%= link_to 'Edit', edit_question_path(question) %></td>
-    <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', hunt_question_path(@hunt, question) %></td>
+    <td><%= link_to 'Edit', edit_hunt_question_path(@hunt, question) %></td>
+    <td><%= link_to 'Destroy', hunt_question_path(@hunt, question), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
 
-<h1>Add a Question</h1>
-<% form_for(@new_question) do |f| %>
-  <%= f.error_messages %>
 
-  <p>
-    <%= f.label :question %><br />
-    <%= f.text_area :question %>
-  </p>
-  <p>
-    <%= f.label :answer %><br />
-    <%= f.text_field :answer %>
-  </p>
- <p>
+<%= link_to "new question", new_hunt_question_path(@hunt)%>
 
-<b>Hunts:</b><br/>
- 	<select name="question[hunt_id]">
- 		<% @hunts.each do |hunt| %>
- 		<option value="<%= hunt.id %>"> 
- 		<%= hunt.name %>
- 		</option>
- 		<% end %>
- 	</select>
- </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
 
-<% end %>
+
