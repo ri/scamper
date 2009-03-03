@@ -2,7 +2,7 @@ class CreateQuestions < ActiveRecord::Migration
   def self.up
     create_table :questions do |t|
       t.integer :index
-      t.integer :hunt
+      t.integer :hunt_id
       t.integer :answer
       t.text :question
 

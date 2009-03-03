@@ -3,8 +3,8 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.xml
   def index
-    @question = Question.find(:all)
     @hunt = Hunt.find(params[:hunt_id])
+    @question = @hunt.questions.find(:all, params[:hunt_id])
     
     respond_to do |format|
       format.html # index.html.erb
