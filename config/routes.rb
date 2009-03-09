@@ -6,6 +6,8 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new'
   
   map.resources :hunts, :has_many =>[:questions]
+  map.resources :hunts, :has_many =>[:players]
+
 
   map.resources :users
   map.resource :session
