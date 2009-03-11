@@ -7,6 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :hunts, :has_many =>[:questions]
   map.resources :hunts, :has_many =>[:players]
+  map.resources :players, :has_many =>[:users]
 
 
   map.resources :users

@@ -2,6 +2,7 @@ class HuntsController < ApplicationController
   before_filter :login_required
   # GET /hunts
   # GET /hunts.xml
+  
   def index
     @hunts = Hunt.find(:all)
     respond_to do |format|

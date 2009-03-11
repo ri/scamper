@@ -1,0 +1,24 @@
+<h1>Add a user as a player for <%= @hunt.name%> </h1>
+
+<table>
+  <tr>
+	<th>User ID</th>
+    <th>Description</th>
+  </tr>
+
+<% for user in @user %>
+  <tr>
+	<td><%=h user.id %></td>
+    <td><%=h user.login %></td>
+ 	<td><%= button_to "Add to Hunt", :action => :add_player_to_hunt, :id => user %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'New user', new_user_path %>
+
+
+<br />
+
+

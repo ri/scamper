@@ -1,0 +1,33 @@
+<h1>Listing users/players for <%= @hunt.name%> </h1>
+
+<table border=1px>
+  <tr>
+    <th>Player ID</th>
+    <th> Hunt ID</th>
+	<th> User ID</th>
+	<th></th>
+	<th></th>
+	<th></th>
+  </tr>
+
+<% for player in @player %>
+  <tr>
+	<td><%=h player.id %></td>
+    <td><%=h player.hunt_id %></td>
+    <td><%=h player.user_id %></td>
+    
+	
+    <td><%= link_to 'Show', hunt_player_path(@hunt, player) %></td>
+    <td><%= link_to 'Edit', edit_hunt_player_path(@hunt, player) %></td>
+    <td><%= link_to 'Destroy', hunt_player_path(@hunt, player), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+<%= link_to "new player", new_hunt_player_path(@hunt)%>
+
+
+
+

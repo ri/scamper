@@ -2,15 +2,19 @@
 
 <table>
   <tr>
+	<th>Hunt Id</th>    
     <th>Name</th>
     <th>Description</th>
   </tr>
 
 <% for hunt in @hunts %>
   <tr>
+	<td><%=h hunt.id %> </td>
     <td><%=h hunt.name %></td>
     <td><%=h hunt.description %></td>
-    <td><%= link_to 'Show', hunt_questions_path(hunt) %></td>
+    <td><%= link_to 'Show Questions', hunt_questions_path(hunt) %></td>
+    <td><%= link_to 'Show Players', hunt_players_path(hunt) %></td>
+
     <td><%= link_to 'Edit', edit_hunt_path(hunt) %></td>
     <td><%= link_to 'Destroy', hunt, :confirm => 'Are you sure?', :method => :delete %></td>
 

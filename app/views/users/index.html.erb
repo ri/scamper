@@ -2,12 +2,14 @@
 
 <table>
   <tr>
+	<th>User ID</th>
     <th>Name</th>
     <th>Description</th>
   </tr>
 
 <% for user in @users %>
   <tr>
+	<td><%=h user.id %></td>
     <td><%=h user.name %></td>
     <td><%=h user.login %></td>
 
