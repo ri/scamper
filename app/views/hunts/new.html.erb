@@ -1,12 +1,23 @@
-<h2>New Hunt</h2>
+<h2>Set Up the Quiz</h2>
+<p>Create questions, answers and hints(optional) for the game. A location point must be set for each question on the map. QR codes <a href"">[what's this?]</a> can also be created for questions.</p>
+
 <% form_for(@hunt) do |f| %>
   <%= f.error_messages %>
 <table>
 	<tr>
-		<td>Hunt title*</td><td> <%= f.text_field :name %></td>
+		<td>The name of this hunt:</td><td> <%= f.text_field :name %></td>
 	</tr>
 	<tr>
-		<td>Description</td><td><%= f.text_area :description %></td>
+		<td>Description of hunt:</td><td><%= f.text_area :description %></td>
+	</tr>
+	<tr>
+		<td>Location(s):</td><td><%= f.text_area :location %></td>
+	</tr>
+	<tr>
+		<td>Subject/Topics:</td><td><%= f.text_area :topic %></td>
+	</tr>
+	<tr>
+		<td>School/Organization:</td><td><%= f.text_area :school %></td>
 	</tr>
 
 

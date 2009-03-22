@@ -4,6 +4,25 @@ width: auto;
 background-color: #000000;
 
 }
+#questions{
+width: 100px;
+position: absolute;
+height: 200px;
+margin-left: 100px;
+}
+
+#summary{
+width: 300px;
+position: absolute;
+height: 500px;
+margin-left: 5px;
+}
+
+#menu li{
+display: inline;
+list-style-type: none;
+padding-right: 20px;
+}
 
 #player p{
 	margin-top: -20px;
@@ -13,16 +32,18 @@ background-color: #000000;
 
 #container{
 	width: 841px;
-	height: 100%;
+	min-height: 800px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 #content{
 	height: 100%;
-	width: auto;
+	min-height: 600px;
+	max-width: 800px;
+	min-width: 800px;
 	background-color:  	#99FFFF;
-	
+	position:absolute;
 	padding: 20px;
 	text-align: center;
 	text-decoration: none;

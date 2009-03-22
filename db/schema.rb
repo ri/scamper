@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(:version => 20090308111506) do
     t.text     "location"
     t.datetime "start"
     t.datetime "end"
-    t.string   "subject"
-    t.string   "schoolname"
   end
 
   create_table "players", :force => true do |t|
@@ -31,11 +29,12 @@ ActiveRecord::Schema.define(:version => 20090308111506) do
   end
 
   create_table "questions", :force => true do |t|
+    t.integer  "index"
+    t.integer  "hunt_id"
+    t.integer  "answer"
     t.text     "question"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "hunt_id"
-    t.string   "answer"
   end
 
   create_table "sessions", :force => true do |t|
