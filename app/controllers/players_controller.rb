@@ -3,9 +3,13 @@ class PlayersController < ApplicationController
   # GET /questions
   # GET /questions.xml
   
-  def add_player_to_hunt
-      player = User.find(params[:id])
+  def join
+    
+    #TODO add player to hunt
+    #player = User.find(params[:id])
+      redirect_to hunt_player_path()
   end
+  
   def index
     @hunt = Hunt.find(params[:hunt_id])
     @player = @hunt.players.find(:all, params[:hunt_id])
@@ -16,7 +20,8 @@ class PlayersController < ApplicationController
       format.xml  { render :xml => @players }
     end
   end
-    def new
+  
+  def new
     @player = Player.new
     @hunt = Hunt.find(params[:hunt_id])
     @user = User.find(:all)
@@ -27,6 +32,7 @@ class PlayersController < ApplicationController
       
     end
   end
+  
   def create
     #@question = Question.new(params[:question])
     @player = Hunt.find(params[:hunt_id]).players.new(params[:player])
