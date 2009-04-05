@@ -26,7 +26,8 @@ class UsersController < ApplicationController
     end
   end
   def show 
-      @user = User.find(params[:id]) 
+      @user = User.find(params[:id])
+      @hunts = @user.hunts
       respond_to do |format| 
       format.html # show.html.erb 
       format.xml { render :xml => @user } 
@@ -34,7 +35,13 @@ class UsersController < ApplicationController
   end
   
   def index 
-      @users = User.find(:all) 
+     if params[:hunt_id]
+       @hunt = Hunt.find(params[:hunt_id])
+       @users = @hunt.users
+     else
+       @users = User.find(:all)
+     end
+     
       respond_to do |format| 
       format.html # index.html.erb 
       format.xml { render :xml => @users } 

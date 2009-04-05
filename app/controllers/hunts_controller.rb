@@ -1,10 +1,21 @@
 class HuntsController < ApplicationController
+  layout "hunts"
+  
   before_filter :login_required
   # GET /hunts
   # GET /hunts.xml
+  def add_players
+    @hunts.users.create(:user_id => params[:user_id])
+  end
   
   def index
-    @hunts = Hunt.find(:all)
+    if params[:user_id]
+      @user = User.find(params[:user_id])
+      @hunts = @user.hunts
+    else
+      @hunts = Hunt.find(:all)
+    end 
+      
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @hunts }
@@ -14,6 +25,7 @@ class HuntsController < ApplicationController
   # GET /hunts/1
   # GET /hunts/1.xml
   def show
+    @users = User.find(:all)
     @hunt = Hunt.find(params[:id])
     @question = @hunt.questions(params[:hunt_id])
 
@@ -85,3 +97,5 @@ class HuntsController < ApplicationController
     end
   end
 end
+
+

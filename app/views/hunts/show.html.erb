@@ -13,7 +13,7 @@
 <%= link_to 'Back', hunts_path %>
 <p>
 	
-	
+	QUESTIONS<br />
 	<% @question.each do |question| %>
 		 <b>Answer:</b>
 		  <%=h question.answer %>
@@ -23,7 +23,22 @@
 	  <b>Question:</b>
 	  <%=h question.question %>
 	</p>
-
-
-
 	<% end %>
+	<p>
+		
+		USERS<br />
+		
+		<% @users.each do |user| %>
+			 <b>Name</b>
+			  <%= user.login%>
+		</p>
+
+		<p>
+		  <b>ID</b>
+		  <%= user.id %>
+		</p>
+		
+		<p>
+		 <%= submit "add_user" %>
+		</p>
+		<% end %>
