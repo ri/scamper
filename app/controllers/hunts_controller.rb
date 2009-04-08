@@ -2,10 +2,15 @@ class HuntsController < ApplicationController
   layout "hunts"
   
   before_filter :login_required
-  # GET /hunts
-  # GET /hunts.xml
-  def add_players
-    @hunts.users.create(:user_id => params[:user_id])
+  
+  def add_player
+    @hunt = Hunt.find(params[:id])
+    
+    (params[:user_ids] || []).each do |user_id|
+      @hunt.players.create(:user_id => user_id)
+    end
+    flash[:notice] = "Success!"
+    redirect_to :action => "index"
   end
   
   def index

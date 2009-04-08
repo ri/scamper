@@ -28,17 +28,20 @@
 		
 		USERS<br />
 		
-		<% @users.each do |user| %>
-			 <b>Name</b>
-			  <%= user.login%>
-		</p>
+		<% form_tag(add_player_hunt_path, :method => :put) do %>
+			<% @users.each do |user| %>
+				 <b>Name</b>
+				  <%= user.login%>
+			</p>
 
-		<p>
-		  <b>ID</b>
-		  <%= user.id %>
-		</p>
+			<p>
+			  <b>ID</b>
+			  <%= user.id %>
+			</p>
 		
-		<p>
-		 <%= submit "add_user" %>
-		</p>
+			<p>
+			<%= check_box_tag :user_ids, user.id %>
+			</p>
+			<% end %>
+			<%= submit_tag 'add users'%>
 		<% end %>

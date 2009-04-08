@@ -12,6 +12,7 @@
 	<td><%=h hunt.id %> </td>
     <td><%=h hunt.name %></td>
     <td><%=h hunt.description %></td>
+		<td><%= link_to 'Show Hunt', hunt_path(hunt) %></td>
     <td><%= link_to 'Show Questions', hunt_questions_path(hunt) %></td>
     <td><%= link_to 'Show Players', hunt_users_path(hunt) %></td>
 
