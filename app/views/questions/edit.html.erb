@@ -1,11 +1,25 @@
 <html>
  <head>
+	 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA-pq4VxzqyCDcngyj-qffCxTgs3_ECyR-XC2YXZ8zP-pb8wDoRRQLMYL2qCZ8U68OrZmJb3J5TvJjLg&sensor=true_or_false"
+           type="text/javascript"></script>
+   <script type="text/javascript">
+
+   function initialize() {
+     if (GBrowserIsCompatible()) {
+       var map = new GMap2(document.getElementById("map_canvas"));
+       map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+       map.setUIToDefault();
+     }
+   }
+
+   </script>
+
   <title>Edit Question</title>
  </head>
- <body>
+ <body onload="initialize()" onunload="GUnload()">
  <h1>Edit Question</h1>
 
- <form action="../update/<%= @question.id %>" method="POST"">
+ <form action="../update/<%= @question.id %>" method="POST">
   <input id="question_id" name="question[id]" size="30" 
          type="hidden" value="<%= @question.id %>" />
   <p><b>Question</b><br>
@@ -18,8 +32,10 @@
          value="<%= @question.answer %>" />
   </p>
 
+    <div id="map_canvas" style="width: 500px; height: 300px"></div>
 
-  <input type="submit" value="Update" />
+
+  <input type="submit" value="Select this location" />
  </form>
 
  <a href="/question/show/<%= @question.id %>">
