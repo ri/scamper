@@ -8,7 +8,8 @@
 <body>
 
 <div id="container">
-
+<div id="border1">
+<div id="border2">
 <div id="header">
 <img src="images/header.png">
 </div>
@@ -18,8 +19,8 @@
 <div id="content">
 
 <%= yield %>
-
-	
+</div>
+</div>
 </div>
 
 

@@ -1,20 +1,38 @@
+body{
+padding: 0px;
+margin: 0px;
+font-family: arial;
+}
+
 #header{
 height: auto;
 width: auto;
 background-color: #000000;
 
 }
+
+#form{
+padding: 20px;
+}
+
 #questions{
 width: 100px;
 position: absolute;
 height: 200px;
-margin-left: 100px;
+margin-left: 50px;
+padding: 20px;}
+
+#map{
+padding: 20px;
+margin-left: 350px;
+position:absolute;
+margin-top: -300px;
 }
 
 #summary{
 width: 300px;
-position: absolute;
-height: 500px;
+position: relative;
+height: auto;
 margin-left: 5px;
 }
 
@@ -25,29 +43,54 @@ padding-right: 20px;
 }
 
 #player p{
-	margin-top: 20px;
+	margin-top: -20px;
 	text-align: right;
 	color: #ffffff;
 }
 
 #container{
-	width: 841px;
-	min-height: 800px;
+	width: 800px;
+	height:auto;
 	margin-left: auto;
 	margin-right: auto;
+	position:relative;
+}
+
+#border1{
+background-color: #4682B4;
+width:800px;
+height: ;
+padding: 40px;
+position: relative;
+}
+
+#border2{
+background-color: #87CEEB;
+padding:20px;
+width: 750px;
+height: ;
+position: relative;
+}
+
+#forma{
+position: relative;
+margin-left: 200px;
+padding:20px;
+
 }
 
 #content{
-	height: 100%;
-	min-height: 600px;
-	max-width: 800px;
-	min-width: 800px;
-	background-color:  	#99FFFF;
-	position:absolute;
+	height: auto;
+	min-height: 350px;
+	max-width: 700px;
+	min-width: 700px;
+	background-color:  	#FFFFFF;
+	position:relative;
 	padding: 20px;
-	text-align: center;
+	text-align: left;
 	text-decoration: none;
 	list-style-type: none;
+	
 }
 
 #content table{

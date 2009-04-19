@@ -1,20 +1,39 @@
 <h1>Sign up as a new user</h1>
+<p>Please select which role you wish to take up within Scamper:</p>
+<a href="registerplayer.html">Begin as a Scamper PLAYER</a> 
+<a href="registercreator.html">Begin as a Scamper CREATOR</a>
+<div id="form">
+	<p>A Scamper-PLAYER can participate in scavenger hunts and compete against others for the top prize. They are able to access and answer quizzes on PDAs, lap-top computers, mobile phones or work stations that have wireless capabilities and internet connection.</p>
+	
 <% @user.password = @user.password_confirmation = nil %>
-
 <%= error_messages_for :user %>
 <% form_for :user, :url => users_path do |f| -%>
-<p><%= label_tag 'login' %><br/>
-<%= f.text_field :login %></p>
+First name: 
+<input type="text" name="firstname">
+<br />
+Last name: 
+<input type="text" name="lastname">
+<br />
+Username: 
+<%= f.text_field :login %>
+<br />
+Email:
+<input type="text" name="email">
+Password: 
+<%= f.password_field :password %>
+<br />
+Confirm Password: 
+<%= f.password_field :password_confirmation %>
+<br />
+School/organisation: 
+<input type="text" name="school/organisation">
 
-<p><%= label_tag 'email' %><br/>
-<%= f.text_field :email %></p>
+<h3> * = denotes mandatory fields
+<br />
+<input type="checkbox" name="termsconditions" value="termsconditions"> I agree to the <a href"termsconditions.html>terms and conditions.</a>
+	<br /> 
+	<p><a href"">Start over?</a> <br /> <p><%= submit_tag 'Sign up' %></p>
 
-<p><%= label_tag 'password' %><br/>
-<%= f.password_field :password %></p>
-
-<p><%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
-<%= f.password_field :password_confirmation %></p>
-
-<p><%= submit_tag 'Sign up' %></p>
-
-<% end -%>
+	<% end -%></p>
+	
+	</form>
