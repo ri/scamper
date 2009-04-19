@@ -9,17 +9,35 @@
 	function initialize() {
 	  if (GBrowserIsCompatible()) {
 
-	    // Create and Center a Map
-	    var map = new GMap2(document.getElementById("map_canvas"));
-	    map.setCenter(new GLatLng(37.4419, -122.1419), 13);
-	    map.addControl(new GLargeMapControl());
-	    map.addControl(new GMapTypeControl());
+	   var mapOptions = {
+		    googleBarOptions : {
+		      style : "new",
+		    }
+		  }
+		  map = new GMap2(document.getElementById("map_canvas"), mapOptions);
+			var center = new GLatLng(37.4419, -122.1419);
+			map.setCenter(center, 13);
+		  map.setUIToDefault();
+		  map.enableGoogleBar();
+		
+			var marker = new GMarker(center, {draggable: true});
 
-	    // bind a search control to the map, suppress result list
-	    map.addControl(new google.maps.LocalSearch(), new GControlPosition(G_ANCHOR_BOTTOM_RIGHT, new GSize(10,20)));
-	  }
+			GEvent.addListener(marker, "dragstart", function() {
+			  map.closeInfoWindow();
+			  });
+
+			GEvent.addListener(marker, "dragend", function() {
+			  marker.openInfoWindowHtml("Just bouncing along...");
+			  });
+
+			map.addOverlay(marker);
+						
+			GEvent.addListener(map, "dragend", function() {
+			  center = map.getCenter();
+				marker.setLatLng(center) 
+			});
+		  }
 	}
-	GSearch.setOnLoadCallback(initialize);
    </script>
  </head>
  <body onload="initialize()" onunload="GUnload()">
