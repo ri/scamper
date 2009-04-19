@@ -1,24 +1,30 @@
 <html>
  <head>
-		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true_or_false
-	    &amp;key=AABQIAAAA-pq4VxzqyCDcngyj-qffCxTgs3_ECyR-XC2YXZ8zP-pb8wDoRRQLMYL2qCZ8U68OrZmJb3J5TvJjLg"
-	    type="text/javascript"></script>
+	<title>Edit Question</title>
+  
+			<script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;sensor=false&amp;key=ABQIAAAA-pq4VxzqyCDcngyj-qffCxQG4PaVB7S9n58-rdHaI0_BpGsanhTaslKAV90Ups2fARy1Kbqpqy7tvQ"
+		            type="text/javascript"></script>
    <script type="text/javascript">
 
-   function initialize() {
-     if (GBrowserIsCompatible()) {
-       var map = new GMap2(document.getElementById("map_canvas"));
-       map.setCenter(new GLatLng(37.4419, -122.1419), 13);
-       map.setUIToDefault();
-     }
-   }
+	function initialize() {
+	  if (GBrowserIsCompatible()) {
 
+	    // Create and Center a Map
+	    var map = new GMap2(document.getElementById("map_canvas"));
+	    map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+	    map.addControl(new GLargeMapControl());
+	    map.addControl(new GMapTypeControl());
+
+	    // bind a search control to the map, suppress result list
+	    map.addControl(new google.maps.LocalSearch(), new GControlPosition(G_ANCHOR_BOTTOM_RIGHT, new GSize(10,20)));
+	  }
+	}
+	GSearch.setOnLoadCallback(initialize);
    </script>
-
-  <title>Edit Question</title>
  </head>
  <body onload="initialize()" onunload="GUnload()">
  <h1>Edit Question</h1>
+ <div id="map_canvas" style="width: 500px; height: 300px"></div>
 
  <form action="../update/<%= @question.id %>" method="POST">
   <input id="question_id" name="question[id]" size="30" 
@@ -33,7 +39,6 @@
          value="<%= @question.answer %>" />
   </p>
 
-    <div id="map_canvas" style="width: 500px; height: 300px"></div>
 
 
   <input type="submit" value="Select this location" />
