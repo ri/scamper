@@ -1,0 +1,21 @@
+<h1>Listing hints</h1>
+
+<table>
+  <tr>
+	<th>Hunt Id</th>    
+    <th>Hint</th>
+  </tr>
+
+<% for hint in @hint %>
+  <tr>
+	<td><%=h hint.id %> </td>
+    <td><%=h hint.hint %></td>
+    <td><%= link_to 'Destroy', question_hint_path(@question, hint), :confirm => 'Are you sure?', :method => :delete %></td>
+
+  </tr>
+<% end %>
+
+<p><%= link_to 'New hint', new_question_hint_path %>
+</p>
+
+</table>

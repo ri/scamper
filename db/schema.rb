@@ -9,7 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090308111506) do
+ActiveRecord::Schema.define(:version => 20090425022732) do
+
+  create_table "hints", :force => true do |t|
+    t.integer "question_id"
+    t.string  "hint"
+  end
 
   create_table "hunts", :force => true do |t|
     t.string   "name"
@@ -19,6 +24,8 @@ ActiveRecord::Schema.define(:version => 20090308111506) do
     t.text     "location"
     t.datetime "start"
     t.datetime "end"
+    t.string   "subject"
+    t.string   "schoolname"
   end
 
   create_table "players", :force => true do |t|
@@ -29,12 +36,11 @@ ActiveRecord::Schema.define(:version => 20090308111506) do
   end
 
   create_table "questions", :force => true do |t|
-    t.integer  "index"
-    t.integer  "hunt_id"
-    t.integer  "answer"
     t.text     "question"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "hunt_id"
+    t.string   "answer"
   end
 
   create_table "sessions", :force => true do |t|
