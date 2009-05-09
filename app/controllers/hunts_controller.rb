@@ -10,13 +10,13 @@ class HuntsController < ApplicationController
       @hunt.players.create(:user_id => user_id)
     end
     flash[:notice] = "Success!"
-    redirect_to :action => "index"
+    redirect_to :action => "show"
   end
   
   def index
     if params[:user_id]
       @user = User.find(params[:user_id])
-      @hunts = @user.hunts
+      @hunts = @hunt.users(params[:hunts])
     else
       @hunts = Hunt.find(:all)
     end 
@@ -54,6 +54,11 @@ class HuntsController < ApplicationController
   # GET /hunts/1/edit
   def edit
     @hunt = Hunt.find(params[:id])
+    
+      @user = User.find(params[:user_id])
+      @hunts = @user.hunts
+ 
+    
   end
 
   # POST /hunts

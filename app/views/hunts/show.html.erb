@@ -14,17 +14,14 @@
 <p>
 	
 	QUESTIONS<br />
+	<table>
 	<% @question.each do |question| %>
-		 <b>Answer:</b>
-		  <%=h question.answer %>
-	</p>
-
-	<p>
-	  <b>Question:</b>
-	  <%=h question.question %>
-	</p>
+		 <tr><td>Answer: </tr></td>
+		  <tr><td><%=h question.answer %></tr></td>
+	  <tr><td>Question:</tr></td>
+	  <tr><td><%=h question.question %></tr></td>
 	<% end %>
-	<p>
+	</table>
 		
 		USERS<br />
 		
