@@ -34,7 +34,6 @@ class QuestionsController < ApplicationController
     def new
     @question = Question.new
     @hunt = Hunt.find(params[:hunt_id])
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @question }

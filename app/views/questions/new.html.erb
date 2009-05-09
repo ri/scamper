@@ -1,13 +1,23 @@
 <h1> New question</h1>
 
-<% form_for(@question, :url => hunt_questions_path(@hunt)) do |f| %>
-  <%= f.error_messages %>
+<% form_for(@question, :url => hunt_questions_path(@hunt)) do |question_form| %>
+  <%= question_form.error_messages %>
   <p>
-    <%= f.label :question %><br />
-    <%= f.text_area :question %>
+    <%= question_form.label :question %><br />
+    <%= question_form.text_area :question %>
   </p>
- <p>
 
+	<p>
+		<%= question_form.fields_for :answers do |answer_form| %>
+			<% answer_form.select(:option, %w{ a b c d }) %>
+			<% answer_form.check_box(:correct)%>
+			
+			<% unless answer_form.object.new_record? %>
+				<% answer_form.checkbox ' _delete' %>
+				<% answer_form.label '_delete', 'Remove' %>
+			<% end %>
+		<% end %>
+	</p>
 
   <p>
     <%= f.submit "Create" %>
