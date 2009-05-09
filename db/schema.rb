@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090425022732) do
+ActiveRecord::Schema.define(:version => 20090509022152) do
+
+  create_table "answers", :force => true do |t|
+    t.integer  "question_id"
+    t.string   "option"
+    t.boolean  "correct"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "hints", :force => true do |t|
     t.integer "question_id"
@@ -24,8 +32,7 @@ ActiveRecord::Schema.define(:version => 20090425022732) do
     t.text     "location"
     t.datetime "start"
     t.datetime "end"
-    t.string   "subject"
-    t.string   "schoolname"
+    t.string   "created_by"
   end
 
   create_table "players", :force => true do |t|
@@ -36,11 +43,12 @@ ActiveRecord::Schema.define(:version => 20090425022732) do
   end
 
   create_table "questions", :force => true do |t|
+    t.integer  "index"
+    t.integer  "hunt_id"
+    t.integer  "answer"
     t.text     "question"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "hunt_id"
-    t.string   "answer"
   end
 
   create_table "sessions", :force => true do |t|
@@ -55,7 +63,6 @@ ActiveRecord::Schema.define(:version => 20090425022732) do
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40
-    t.string   "name",                      :limit => 100, :default => ""
     t.string   "email",                     :limit => 100
     t.string   "crypted_password",          :limit => 40
     t.string   "salt",                      :limit => 40
@@ -63,6 +70,10 @@ ActiveRecord::Schema.define(:version => 20090425022732) do
     t.datetime "updated_at"
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "organisation"
+    t.boolean  "creator"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

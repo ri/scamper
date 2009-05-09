@@ -65,6 +65,7 @@ class HuntsController < ApplicationController
   # POST /hunts.xml
   def create
     @hunt = Hunt.new(params[:hunt])
+    @hunt.created_by = current_user.login
 
     respond_to do |format|
       if @hunt.save
