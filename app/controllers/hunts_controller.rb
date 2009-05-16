@@ -3,6 +3,10 @@ class HuntsController < ApplicationController
   
   before_filter :login_required
   
+  def admin?
+    current_user.creator?
+    end
+  
   def add_player
     @hunt = Hunt.find(params[:id])
     
@@ -14,12 +18,13 @@ class HuntsController < ApplicationController
   end
   
   def index
-    if params[:user_id]
-      @user = User.find(params[:user_id])
-      @hunts = @hunt.users(params[:hunts])
-    else
-      @hunts = Hunt.find(:all)
-    end 
+  
+    @user = current_user
+    
+    #@player = Player.find :all, :conditions => { :user_id => current_user.id }
+    
+    @playerhunts = @user.hunts
+    @hunts =  Hunt.find :all, :conditions => { :created_by => current_user.login}
       
     respond_to do |format|
       format.html # index.html.erb
@@ -55,9 +60,12 @@ class HuntsController < ApplicationController
   def edit
     @hunt = Hunt.find(params[:id])
     
+    if params[:user_id]
       @user = User.find(params[:user_id])
-      @hunts = @user.hunts
- 
+      @hunts = @hunt.users(params[:user_id])
+    else
+      @hunts = Hunt.find(:all)
+    end
     
   end
 

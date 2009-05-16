@@ -3,15 +3,19 @@
 <table>
   <tr>
 	<th>User ID</th>
-    <th>Name</th>
-    <th>Description</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Login</th>
+ 	<th>Creator</th>
   </tr>
 
 <% for user in @users %>
   <tr>
 	<td><%=h user.id %></td>
-    <td><%=h user.name %></td>
+    <td><%=h user.first_name %></td>
+    <td><%=h user.last_name %></td>
     <td><%=h user.login %></td>
+	<td> <%=h user.creator%><td>
 
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Show Hunts', user_hunts_path(user.id) %></td>
