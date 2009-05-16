@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @hunt = Hunt.find(params[:hunt_id])
-    @questions = hunt.questions
+    @questions = @hunt.questions
 
     respond_to do |format|
       format.html # show.html.erb

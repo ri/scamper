@@ -4,8 +4,8 @@
   <tr>
     <th>Question ID</th>
     <th>Question</th>
-
     <th>Answer</th>
+	<th>location</th>
     <th>Hunt_id</th>
 	<th></th>
 	<th></th>
@@ -17,6 +17,7 @@
 	<td><%=h question.id %></td>
     <td><%=h question.question %></td>
 	<td><%=h question.answer %></td>
+	<td><%=h question.location %></td>
 	<td><%=h question.hunt_id %></td>
 	
     <td><%= link_to 'Show', hunt_question_path(@hunt, question) %></td>

@@ -1,9 +1,13 @@
  <h1>Edit Question</h1>
-<% form_for(@question, :url => hunt_question_path(@hunt, @question)) do |f| %>
+<% form_for(@question, :url => hunt_question_path(@hunt, @question),
+			:html => {:onsubmit => "saveCoords()"}) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :question %><br />
     <%= f.text_field :question %>
+	<%= f.hidden_field :x %>
+	<%= f.hidden_field :y %>
+	<%= f.hidden_field :location %>
   </p>
 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true
       &amp;key=ABQIAAAAKjtJ2SRbXEm623VFL3-AARQG4PaVB7S9n58-rdHaI0_BpGsanhSK_Lq58Tr3ftDW9OwDNFnsr1wkzA"
@@ -76,7 +80,7 @@
 	            activeMapZoom : GSmapSearchControl.ACTIVE_MAP_ZOOM
 	            }
 
-	      new GSmapSearchControl(
+	      mapsearch = new GSmapSearchControl(
 	            document.getElementById("mapsearch"),
 	            "Brisbane, Australia",
 	            options
@@ -101,9 +105,9 @@
 			   		loc += aloc[i] + " ";
 			   }
 
-	      document.getElementById("x").value = ll.x;
-	      document.getElementById("y").value = ll.y;
-		  document.getElementById("loc").value = loc;
+	      document.getElementById("question_x").value = ll.x;
+	      document.getElementById("question_y").value = ll.y;
+		  document.getElementById("question_location").value = loc;
 	      return true;
 		  }
 		  else

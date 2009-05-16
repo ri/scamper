@@ -22,6 +22,22 @@
 		  <tr><td><%=h question.question %></tr></td>
 		<% end %>
 	</table>
+	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true
+	      &amp;key=ABQIAAAAKjtJ2SRbXEm623VFL3-AARQG4PaVB7S9n58-rdHaI0_BpGsanhSK_Lq58Tr3ftDW9OwDNFnsr1wkzA"
+	      type="text/javascript">
+	  </script>
+	    <script type="text/javascript">
+	    function initialize() {
+	      if (GBrowserIsCompatible()) {
+	        var map = new GMap2(document.getElementById("map_canvas"));
+	        map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+	        map.setUIToDefault();
+	      }
+	    }
+
+		</script>
+	    <div id="map_canvas" style="width: 500px; height: 300px"></div>
+	
 		
 		USERS<br />
 		
