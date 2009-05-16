@@ -32,7 +32,7 @@ class HuntsController < ApplicationController
   def show
     @users = User.find(:all)
     @hunt = Hunt.find(params[:id])
-    @question = @hunt.questions(params[:hunt_id])
+    @questions = @hunt.questions(params[:hunt_id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -54,9 +54,8 @@ class HuntsController < ApplicationController
   # GET /hunts/1/edit
   def edit
     @hunt = Hunt.find(params[:id])
-    
-      @user = User.find(params[:user_id])
-      @hunts = @user.hunts
+    @user = User.find(params[:user_id])
+    @hunts = @user.hunts
  
     
   end

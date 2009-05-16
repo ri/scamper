@@ -22,6 +22,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @hunt = Hunt.find(params[:hunt_id])
+    @questions = hunt.questions
 
     respond_to do |format|
       format.html # show.html.erb
@@ -70,11 +71,12 @@ class QuestionsController < ApplicationController
   # PUT /questions/1.xml
   def update
     @question = Question.find(params[:id])
+    @hunt = Hunt.find(params[:hunt_id])
 
     respond_to do |format|
       if @question.update_attributes(params[:question])
         flash[:notice] = 'Question was successfully updated.'
-        format.html { redirect_to(@question) }
+        format.html { redirect_to(hunt_questions_path(@hunt)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

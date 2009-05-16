@@ -7,20 +7,10 @@
     <%= question_form.text_area :question %>
   </p>
 
-	<p>
-		<%= question_form.fields_for :answers do |answer_form| %>
-			<% answer_form.select(:option, %w{ a b c d }) %>
-			<% answer_form.check_box(:correct)%>
-			
-			<% unless answer_form.object.new_record? %>
-				<% answer_form.checkbox ' _delete' %>
-				<% answer_form.label '_delete', 'Remove' %>
-			<% end %>
-		<% end %>
-	</p>
+
 
   <p>
-    <%= f.submit "Create" %>
+    <%= question_form.submit "Create" %>
   </p>
 
 

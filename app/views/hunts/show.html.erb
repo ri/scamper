@@ -9,18 +9,18 @@
 </p>
 
 
-<%= link_to 'Edit', edit_hunt_path(@hunt) %> |
+<%= link_to 'Edit', edit_user_hunt_path(@hunt) %> |
 <%= link_to 'Back', hunts_path %>
 <p>
 	
 	QUESTIONS<br />
 	<table>
-	<% @question.each do |question| %>
-		 <tr><td>Answer: </tr></td>
-		  <tr><td><%=h question.answer %></tr></td>
-	  <tr><td>Question:</tr></td>
-	  <tr><td><%=h question.question %></tr></td>
-	<% end %>
+		<% @questions.each do |question| %>
+			 <tr><td>Answer: </tr></td>
+			  <tr><td><%=h question.answer %></tr></td>
+		  <tr><td>Question:</tr></td>
+		  <tr><td><%=h question.question %></tr></td>
+		<% end %>
 	</table>
 		
 		USERS<br />

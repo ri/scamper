@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20090509022152) do
     t.text     "location"
     t.datetime "start"
     t.datetime "end"
+    t.string   "subject"
+    t.string   "schoolname"
     t.string   "created_by"
   end
 
@@ -43,12 +45,11 @@ ActiveRecord::Schema.define(:version => 20090509022152) do
   end
 
   create_table "questions", :force => true do |t|
-    t.integer  "index"
     t.integer  "hunt_id"
-    t.integer  "answer"
     t.text     "question"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "answer"
   end
 
   create_table "sessions", :force => true do |t|
