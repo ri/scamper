@@ -6,24 +6,16 @@
 <%= stylesheet_link_tag 'style' %>
 </head>
 <body>
-
+<div id="header"></div>
 <div id="container">
-<div id="border1">
-<div id="border2">
-<div id="header">
-<img src="images/header.png">
-</div>
-
+<div id="dashboard" class="column"> <img src="/images/logo.png"></div>
+<div id="center" class="column">
+<div id="content">
 <div id="message"><p><%= flash[:notice] %><%= flash[:error] %></p>
 </div>
-<div id="content">
-
 <%= yield %>
 </div>
 </div>
-</div>
-
-
 </div>
 
 </body>

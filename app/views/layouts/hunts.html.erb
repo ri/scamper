@@ -3,17 +3,14 @@
 	<title>Scamper: <%= controller.action_name %></title>
 	<%= stylesheet_link_tag 'style' %>
 </head>
-</head>
 
 <body>
 
 <div id="container">
-<div id="border1">
-<div id="border2">
-<div id="header">
-		<img src="images/header1.png" />
-</div>
-	<div id="player">
+<div id="dashboard" class="column">
+		<img src="/images/logo.png" />
+		
+		<div id="player">
 		<p><% if logged_in? %>
            Hi <%= current_user.login %>!
            <% end %>
@@ -21,16 +18,14 @@
            <% if logged_in? %>
               <a href="logout">LOG OUT</a>
               <% end %> </p>
-
-
 	</div>
-	</div>
+</div>
+<div id="center" class="column">
 <div id="content">
+
 <p style="color: green"><%= flash[:notice] %><%= flash[:error] %></p>
 
 <%= yield  %>
-</div>
-</div>
 </div>
 </div>
 </div>
