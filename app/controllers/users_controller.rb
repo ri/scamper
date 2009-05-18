@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    layout "hunts"
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
   

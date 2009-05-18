@@ -1,39 +1,47 @@
-<h1>Sign up as a new user</h1>
-<p>Please select which role you wish to take up within Scamper:</p>
-<a href="registerplayer.html">Begin as a Scamper PLAYER</a> 
-<a href="registercreator.html">Begin as a Scamper CREATOR</a>
-<div id="form">
-	<p>A Scamper-PLAYER can participate in scavenger hunts and compete against others for the top prize. They are able to access and answer quizzes on PDAs, lap-top computers, mobile phones or work stations that have wireless capabilities and internet connection.</p>
-	
+<h1>Start by signing up with us!</h1>
+<p>You may choose from two different types of accounts: Player or Creator account. You are allowed to have more than one 
+Scamper account, but you must make sure your username and password is unique. You must agree to our rules of play (<a href="termsconditions.html">Terms and Conditions</a>) in order to set up your account with us. Donít worry, your privacy is important to us and we promise,
+we will not reveal your details to any other party.</p>
+
+<div id="form">	
+	<a href="registerplayer.html"><img src="/images/buttons/getplayeraccount.png" /></a> 
+	<a href="registercreator.html"><img src="/images/buttons/getcreatoraccount.png" /></a>
 <% @user.password = @user.password_confirmation = nil %>
 <%= error_messages_for :user %>
 <% form_for :user, :url => users_path do |f| -%>
 First name: 
 <%= f.text_field :first_name %>
-<br />
+<br /><br />
 Last name: 
 <%= f.text_field :last_name %>
-<br />
+<br /><br />
 Username: 
 <%= f.text_field :login %>
-<br />
+<br /><br />
 Email:
 <%= f.text_field :email %>
+<br /><br />
 Password: 
 <%= f.password_field :password %>
-<br />
+<br /><br />
 Confirm Password: 
 <%= f.password_field :password_confirmation %>
-<br />
+<br /><br />
 School/organisation: 
 <%= f.text_field :organisation %>
+<br /><br />
 Creator account:
 <%= f.check_box :creator %>
-<h3> * = denotes mandatory fields
-<br />
-<input type="checkbox" name="termsconditions" value="termsconditions"> I agree to the <a href"termsconditions.html>terms and conditions.</a>
+
+<h3> * = denotes mandatory fields </h3>
+<br /> <br />
+<input type="checkbox" name="termsconditions" value="termsconditions"> I agree to the <a href"termsconditions.html">terms and conditions.</a>
+
 	<br /> 
-	<p><a href"">Start over?</a> <br /> <p><%= submit_tag 'Sign up' %></p>
+	<p><INPUT TYPE="image" id="createnew" onclick="this.src='/images/buttons/clearform_norm.png';" onmouseover="this.src='/images/buttons/clearform_hover.png';"
+   onmouseout="this.src='/images/buttons/clearform_norm.png';" SRC="/images/buttons/clearform_norm.png" HEIGHT="55" WIDTH="170" BORDER="0" ALT="Submit Form">
+<INPUT TYPE="image" id="reset" onclick="this.src='/images/buttons/signmeup_norm.png';" onmouseover="this.src='/images/buttons/signmeup_hover.png';"
+   onmouseout="this.src='/images/buttons/signmeup_norm.png';" SRC="/images/buttons/signmeup_norm.png" HEIGHT="55" WIDTH="170" BORDER="0" ALT="Submit Form"></p>
 
 	<% end -%></p>
 	

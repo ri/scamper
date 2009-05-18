@@ -23,6 +23,11 @@ h3 {
 	font-size: 12pt;
 }
 
+table.hunts { 
+   clear: right; 
+   display: block; 
+width: 90%;
+   }
 	
 th {
 	font: bold, 14pt;
@@ -41,6 +46,7 @@ td {
 	background: #d8e6e7;
 	padding: 15px 15px 15px 15px;
 	color: #000000;
+	width: 90%;
 }
 
 
@@ -60,7 +66,6 @@ text-align: left;
   
 }
 #center {
-  width: 100%;
 	-moz-border-radius-bottomleft: 8px;
 	-moz-border-radius-bottomright: 8px;
 	-moz-border-radius-topleft: 8px;
@@ -71,6 +76,17 @@ text-align: left;
 	padding: 40px;
 	width: 705px;
 }
+
+#center.header {
+	
+	text-align: right;
+	
+}
+
+#center.topbutton {
+	float: right
+}
+
 #dashboard {
     width: 100%;
 	-moz-border-radius-bottomleft: 14px;
@@ -83,9 +99,16 @@ text-align: left;
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
+	text-align: right;
 }
 
 
+#dashboard img {
+	float: left;
+}
+#dasshboard{
+padding-left: 45px;
+}
 
 #form{
 padding: 20px;

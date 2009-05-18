@@ -1,6 +1,14 @@
+<div id="dasshboard">
+<INPUT TYPE="image" id="overview" SRC="/images/buttons/overview.png" ALT="Submit Form">
+<INPUT TYPE="image" id="inviteplayers" SRC="/images/buttons/inviteplayers.png" Alt="Submit Form">
+<INPUT TYPE="image" id="huntprofile"  SRC="/images/buttons/huntprofile.png"  ALT="Submit Form">
+<INPUT TYPE="image" id="quizsetup"   SRC="/images/buttons/quizsetup.png"  ALT="Submit Form">
+</div>
+
 <h2>Set Up the Quiz</h2>
 <p>Create questions, answers and hints(optional) for the game. A location point must be set for each question on the map. QR codes <a href"">[what's this?]</a> can also be created for questions.</p>
 
+<div id="form">
 <% form_for(@hunt) do |f| %>
   <%= f.error_messages %>
 <table>
@@ -28,5 +36,12 @@
 <%= f.submit "Create" %>
 
 <% end %>
-<h4><a href="reset.html">reset</a></h4>
-<h4><a href="activate.html">activate</a></h4>
+
+
+<a href="saveprogress.html"><INPUT TYPE="image" id="save" onclick="this.src='/images/buttons/saveprogress_norm.png';" onmouseover="this.src='/images/buttons/saveprogress_hover.png';"
+onmouseout="this.src='/images/buttons/saveprogress_norm.png';" SRC="/images/buttons/saveprogress_norm.png"  ALT="Save Progress"></a>
+<a href="reset.html"><INPUT TYPE="image" id="reset" onclick="this.src='/images/buttons/clearform_norm.png';" onmouseover="this.src='/images/buttons/clearform_hover.png';"
+onmouseout="this.src='/images/buttons/clearform_norm.png';" SRC="/images/buttons/clearform_norm.png"  ALT="Reset Form"></a>
+<a href="launch.html"><INPUT TYPE="image" id="launchhunt" onclick="this.src='/images/buttons/launchhunt_norm.png';" onmouseover="this.src='/images/buttons/launchhunt_hover.png';"
+onmouseout="this.src='/images/buttons/launchhunt_norm.png';" SRC="/images/buttons/launchhunt_norm.png"  ALT="Launch Hunt"></a>
+ </P>
