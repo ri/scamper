@@ -9,6 +9,5 @@ class AddMissingHuntFields < ActiveRecord::Migration
   def self.down
     remove_column :hunts, :subject
     remove_column :hunts, :schoolname
-    remove_column :hunts, :created_by
   end
 end
