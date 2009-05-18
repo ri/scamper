@@ -1,5 +1,5 @@
 class PlayersController < ApplicationController
-  layout "hunts"
+  layout "players"
   # GET /questions
   # GET /questions.xml
   
