@@ -1,5 +1,11 @@
 class QuestionsController < ApplicationController
   layout "hunts"
+  
+  def gen_xml
+    @xml = Builder::XmlMarkup.new
+    @questions = @hunt.questions.find(:all, params[:hunt_id])
+  end
+  
   # GET /questions
   # GET /questions.xml
   def index

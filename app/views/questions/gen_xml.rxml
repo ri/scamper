@@ -1,0 +1,9 @@
+@xml.instruct! :xml, :version=>"1.0"
+@xml.markers{
+  for question in @questions
+    @xml.lat(question.x)
+    @xml.lng(question.y)
+    @xml.location(question.location)
+    @xml.question(question.question)
+  end  
+}
