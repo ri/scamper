@@ -6,16 +6,30 @@ class HuntsController < ApplicationController
   def admin?
     current_user.creator?
     end
-    
+
 
   def add_player
-    @hunt = Hunt.find(params[:id])
     
+    @hunt = Hunt.find(params[:id])
+  
     (params[:user_ids] || []).each do |user_id|
       @hunt.players.create(:user_id => user_id)
     end
     flash[:notice] = "Success!"
     redirect_to :action => "show"
+  end
+
+  def play
+    
+      @users = User.find(:all)
+      @hunt = Hunt.find(params[:id])
+      @questions = @hunt.questions(params[:hunt_id])
+
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml  { render :xml => @hunt }
+
+    end
   end
   
   def index

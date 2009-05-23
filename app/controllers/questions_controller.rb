@@ -21,6 +21,8 @@ class QuestionsController < ApplicationController
     @hunt = Hunt.find(:all)
   end
   
+
+  
   # GET /questions/1
   # GET /questions/1.xml
   def show
