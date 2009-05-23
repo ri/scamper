@@ -1,20 +1,18 @@
 class QuestionsController < ApplicationController
   layout "hunts"
   
-  def gen_xml
-    @xml = Builder::XmlMarkup.new
-    @questions = @hunt.questions.find(:all, params[:hunt_id])
-  end
+  before_filter :login_required
   
   # GET /questions
   # GET /questions.xml
   def index
     @hunt = Hunt.find(params[:hunt_id])
-    @question = @hunt.questions.find(:all, params[:hunt_id])
+    @questions = @hunt.questions
     
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.xml  { render :xml => @questions }
+      format.kml
     end
   end
 
