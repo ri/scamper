@@ -3,7 +3,7 @@
 require 'cgi'
 
 module ApplicationHelper
-  def qrcode(message, width=200, height=200, image_id="qr_code")
+  def qrcode(message, width=200, height=200, image_id="qrcode")
     escaped_message = CGI.escape(message)
     image_tag("http://chart.apis.google.com/chart?cht=qr&chl=#{escaped_message}&chs=#{width}x#{height}", :alt => message, :id => image_id)
   end
