@@ -31,6 +31,9 @@ end%>
     <td><%= link_to 'Edit', edit_hunt_path(hunt) %></td>
     <td><%= link_to 'Destroy', hunt, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
+
+<%= link_to 'New hunt', new_hunt_path %>
+
 <% end %>
 
 <% else %>
@@ -59,5 +62,4 @@ end%>
 
 <br />
 
-<%= link_to 'New hunt', new_hunt_path %>
 

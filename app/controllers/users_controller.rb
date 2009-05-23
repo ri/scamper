@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     logout_keeping_session!
 
     @user = User.new(params[:user])
-    @user.creator = !!params[:user][:creator]
+    @user.creator = (params[:user][:creator] == "1")
   
     success = @user && @user.save
     if success && @user.errors.empty?
