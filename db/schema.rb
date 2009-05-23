@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090523093453) do
+ActiveRecord::Schema.define(:version => 20090523141139) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -54,6 +54,12 @@ ActiveRecord::Schema.define(:version => 20090523093453) do
     t.decimal  "x"
     t.decimal  "y"
     t.string   "location"
+  end
+
+  create_table "responses", :force => true do |t|
+    t.integer "question_id"
+    t.integer "user_id"
+    t.integer "answer_id"
   end
 
   create_table "sessions", :force => true do |t|
