@@ -1,5 +1,7 @@
 <h1>Hunt Details</h1>
 
+<%= qrcode("test") %>
+
 <p>
   <b>Name:</b>
   <%=h @hunt.name %>
@@ -14,29 +16,28 @@
 <%= link_to 'Edit', edit_user_hunt_path(@hunt) %> |
 <%= link_to 'Back', hunts_path %>
 <p>
-	
 	QUESTIONS<br />
 	<table>
 		<% @questions.each do |question| %>
 		
-		  <tr><td><b>Question:</b></tr></td>
-		  <tr><td><%=h question.question %></tr></td>
-			 <tr><td><b>Answer: </b></tr></td>
-			  <tr><td><%=h question.answer %></tr></td>
+		  <tr><td><b>Question:</b></td></tr>
+		  <tr><td><%=h question.question %></td></tr>
+			 <tr><td><b>Answer: </b></td></tr>
+			  <tr><td><%=h question.answer %></td></tr>
 		<% end %>
 	</table>
 	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true
-	      &amp;key=ABQIAAAAKjtJ2SRbXEm623VFL3-AARQG4PaVB7S9n58-rdHaI0_BpGsanhSK_Lq58Tr3ftDW9OwDNFnsr1wkzA"
+	      &amp;key=ABQIAAAA-pq4VxzqyCDcngyj-qffCxTgs3_ECyR-XC2YXZ8zP-pb8wDoRRQLMYL2qCZ8U68OrZmJb3J5TvJjLg"
 	      type="text/javascript">
 	  </script>
 	    <script type="text/javascript">
 	    function initialize() {
 	      if (GBrowserIsCompatible()) {
-			 geoXml = new GGeoXml("<%= hunt_questions_path(@hunt, @questions, :format => :kml) %>");
-	        var map = new GMap2(document.getElementById("map_canvas"));
-	        map.setCenter(new GLatLng(-27.46758, 153.027892), 13);
-	        map.setUIToDefault();
-			map.addOverlay(geoXml);	
+          geoXml = new GGeoXml("http://scamper.heroku.com<%= hunt_questions_path(@hunt, :format => 'kml') + Time.now.to_i %>");
+          var map = new GMap2(document.getElementById("map_canvas"));
+          map.setCenter(new GLatLng(-27.46758, 153.027892), 13);
+          map.setUIToDefault();
+          map.addOverlay(geoXml);	
 	      }
 	    }
 

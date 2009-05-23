@@ -1,7 +1,10 @@
 class QuestionsController < ApplicationController
   layout "hunts"
   
-  before_filter :login_required
+  # This is needed so that google can access the KML file
+  # without a username and password
+  before_filter :login_required_except_kml, :only   => :index
+  before_filter :login_required,            :except => :index
   
   # GET /questions
   # GET /questions.xml
@@ -107,5 +110,12 @@ end
       format.html { redirect_to(hunt_questions_url) }
       format.xml  { head :ok }
     end
-  end
+  end 
+  
+  protected
+  
+    # If request is for a KML file then, don't require the request to be authenticated
+    def login_required_except_kml
+      login_required unless params['format'].to_s == 'kml'
+    end
 end
