@@ -1,22 +1,34 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Scamper: <%= controller.action_name %></title>
-<%= stylesheet_link_tag 'style' %>
+	<title>Scamper: <%= controller.action_name %></title>
+	<%= stylesheet_link_tag 'style' %>
 </head>
-<body>
-<div id="header"></div>
+
+<body onload="initialize()" onunload="GUnload()">
+
 <div id="container">
-<div id="dashboard" class="column"> <img src="/images/logo.png"></div>
+	<div id="dashboard" class="column">
+			<div id="player">
+			<div class="userwelcome"><% if logged_in? %>
+	           Hi <%= current_user.login %>!
+	           <% end %> <a href="edit.html"> (edit your profile)</a></div>
+	           <div class="help">Help!</div>
+			<div class="signout">
+				<% if logged_in? %>
+	              <a href="logout">Sign Out</a>
+	              <% end %> </div>
+
+
+		</div>
+</div>
 <div id="center" class="column">
 <div id="content">
-<div id="message"><p><%= flash[:notice] %><%= flash[:error] %></p>
-</div>
-<%= yield %>
-</div>
-</div>
-</div>
 
+<p style="color: green"><%= flash[:notice] %><%= flash[:error] %></p>
+
+<%= yield  %>
+</div>
+</div>
+</div>
 </body>
 </html>

@@ -9,29 +9,41 @@ we will not reveal your details to any other party.</p>
 <% @user.password = @user.password_confirmation = nil %>
 <%= error_messages_for :user %>
 <% form_for :user, :url => users_path do |f| -%>
-First name: 
-<%= f.text_field :first_name %>
-<br /><br />
-Last name: 
-<%= f.text_field :last_name %>
-<br /><br />
-Username: 
-<%= f.text_field :login %>
-<br /><br />
-Email:
-<%= f.text_field :email %>
-<br /><br />
-Password: 
-<%= f.password_field :password %>
-<br /><br />
-Confirm Password: 
-<%= f.password_field :password_confirmation %>
-<br /><br />
-School/organisation: 
-<%= f.text_field :organisation %>
-<br /><br />
-Creator account:
-<%= f.check_box :creator %>
+<table class="signup">
+	<tr>
+		<td>First name: </td>
+		<td><%= f.text_field :first_name %></td>
+	</tr>
+<tr>
+	<td>Last name: </td>
+	<td><%= f.text_field :last_name %></td>
+</tr>
+<tr>
+	<td>Username: </td>
+	<td><%= f.text_field :login %></td>
+</tr>
+<tr>
+	<td>Email:</td>
+	<td><%= f.text_field :email %></td>
+</tr>
+<tr>
+	<td>Password: </td>
+	<td><%= f.password_field :password %></td>
+</tr>
+<tr>
+	<td>Confirm Password: </td>
+	<td><%= f.password_field :password_confirmation %></td>
+</tr>
+<tr>
+	<td>School/organisation: </td>
+	<td><%= f.text_field :organisation %></td>
+</tr>
+<tr>
+	<td>Creator account:</td>
+	<td><%= f.check_box :creator %></td>
+</tr>
+
+</table>
 
 <h3> * = denotes mandatory fields </h3>
 <br /> <br />

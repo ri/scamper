@@ -37,7 +37,7 @@ th {
 	border-top: 1px solid #C1DAD7;
 	text-align: center;
 	padding: 15px 15px 15px 15px;
-	background: #a3cc56 url(images/bg_header.jpg) no-repeat;
+	background: #a3cc56 url(/images/bg_header.jpg) no-repeat;
 }
 td {
 	border-right: 1px solid #C1DAD7;
@@ -91,21 +91,51 @@ text-align: left;
     width: 100%;
 	-moz-border-radius-bottomleft: 14px;
 	-moz-border-radius-bottomright: 14px;
-	background: #000000 none repeat scroll 0 0;
+	background: url('/images/dashboard.png') no-repeat;
+	background-color: #d8d7d7;
 	border: 2px solid #FFFFFF;
 	margin-top: -10px;
 	width: 785px;
+	height: 58px;
 	color: #FFFFFF;
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: right;
+	font-family: Helvetica;
+	font-size: 12pt;
 }
 
+#dashboard a {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+.userwelcome {
+float: left;
+margin-left: -80px;
+padding-top: 22px;
+width: 515px;
+}
+
+.help {
+	float: left;
+	padding-top: 22px;
+	margin-left: 60px;
+	width: 126px;
+}
+
+.signout {
+	float: right;
+	padding-top: 22px;
+	margin-right: 15px;
+	width: 145px;
+}
 
 #dashboard img {
 	float: left;
 }
+
 #dasshboard{
 padding-left: 45px;
 }
