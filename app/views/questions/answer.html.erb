@@ -1,0 +1,16 @@
+<% form_for(@question) do |f| %>
+  <%= f.error_messages %>
+<p>
+  <b>Question:</b>
+  <%=h @question.question %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%= f.text_area :answer %>
+</p>
+
+<%= f.submit "AnswerCreate" %>
+
+<%end %>
+

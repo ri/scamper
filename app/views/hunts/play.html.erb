@@ -1,56 +1,23 @@
-<h1><img src="/images/buttons/clipboard.png" />My Dashboard<INPUT TYPE="image" id="createnew" align="right" onclick="this.src='/images/buttons/createnewhuntonclick.png';" onmouseover="this.src='/images/buttons/createnewhuntmouse.png';"
-   onmouseout="this.src='/images/buttons/createnewhuntstandby.png';" SRC="/images/buttons/createnewhuntstandby.png" HEIGHT="55" WIDTH="170" BORDER="0" ALT="Submit Form">
-</h1>
-<% def admin?
- current_user.creator?
-end%>
+<h1>Participating: Hunt Details</h1>
 
-<table>
-  <tr>
-	<th>Hunt Id</th>    
-    <th>Name</th>
-    <th>Description</th>
-  </tr>
+<p>
+  <b>Name:</b>
+  <%=h @hunt.name %>
+</p>
 
-<% for hunt in @hunts %>
-  <tr>
-	<td><%=h hunt.id %> </td>
-    <td><%=h hunt.name %></td>
-    <td><%=h hunt.description %></td>
-    <td><%=h hunt.created_by %></td>
+<p>
+  <b>Description:</b>
+  <%=h @hunt.description %>
+</p>
 
-	<td><%= link_to 'View Hunt Summary', hunt_path(hunt) %></td>
-    <td><%= link_to 'View/Add Questions', hunt_questions_path(hunt) %></td>
-    <td><%= link_to 'Show Players', hunt_users_path(hunt) %></td>
-
-    <td><%= link_to 'Edit', edit_hunt_path(hunt) %></td>
-    <td><%= link_to 'Destroy', hunt, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-
-
-<% for hunt in @playerhunts %>
-  <tr>
-	<td><%=h hunt.id %> </td>
-    <td><%=h hunt.name %></td>
-    <td><%=h hunt.description %></td>
-    <td><%=h hunt.created_by %></td>
-
-	<td><%= link_to 'Show Hunt', hunt_path(hunt) %></td>
-    <td><%= link_to 'Show Questions', hunt_questions_path(hunt) %></td>
-    <td><%= link_to 'Show Players', hunt_users_path(hunt) %></td>
-
-    <td><%= link_to 'Edit', edit_hunt_path(hunt) %></td>
-    <td><%= link_to 'Destroy', hunt, :confirm => 'Are you sure?', :method => :delete %></td>
-	<td><%= link_to 'Play Hunt', play_hunt_path(hunt) %></td>
-
-
-
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New hunt', new_hunt_path %>
-
+<p>
+	
+	QUESTION<br />
+	<table>
+		<% @questions.each do |question| %>
+		 <td><td>Question:</td>
+		  <td><%=h question.question %></td>
+		    <td><%= link_to 'Show', answer_question_path(question) %></td>
+		</tr>
+		<% end %>
+	</table>

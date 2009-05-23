@@ -18,10 +18,11 @@
 	QUESTIONS<br />
 	<table>
 		<% @questions.each do |question| %>
-			 <tr><td>Answer: </tr></td>
-			  <tr><td><%=h question.answer %></tr></td>
-		  <tr><td>Question:</tr></td>
+		
+		  <tr><td><b>Question:</b></tr></td>
 		  <tr><td><%=h question.question %></tr></td>
+			 <tr><td><b>Answer: </b></tr></td>
+			  <tr><td><%=h question.answer %></tr></td>
 		<% end %>
 	</table>
 	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true
@@ -42,25 +43,26 @@
 		</script>
 	    <div id="map_canvas" style="width: 500px; height: 300px"></div>
 	
+	</br>
+</br>
+		Add User to Hunt (use checkboxes to add the users to this hunt)
 		
-		USERS<br />
-		
+		<table>
 		<% form_tag(add_player_hunt_path, :method => :put) do %>
 			<% @users.each do |user| %>
-				 <b>Name</b>
-				  <%= user.login%>
-			</p>
-
-			<p>
-			  <b>ID</b>
-			  <%= user.id %>
-			</p>
-		
-			<p>
-			<%= check_box_tag :user_ids, user.id %>
-			</p>
+			<tr>
+			<th><b>Name</b></th>
+			<th><b>user ID</b></th>
+			<th><b>Add user <b></th>
+			</tr>
+			<tr>
+			<td><%= user.login%></td>
+			<td>  <%= user.id %></td>
+			<td><%= check_box_tag :user_ids, user.id %> </td>
+			</tr>
 			<% end %>
-			<%= submit_tag 'add users'%>
+			<tr><td></td><td></td><td><%= submit_tag 'add users'%></td></tr>
+			</table>
 		<% end %>
 		
 		<INPUT TYPE="image" SRC="/images/buttons/seeresults.png" HEIGHT="45" WIDTH="170" BORDER="0" ALT="Submit Form"><br /><br />
