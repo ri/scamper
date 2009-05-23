@@ -7,16 +7,7 @@ class HuntsController < ApplicationController
     current_user.creator?
     end
     
-  def play
-  
-    @hunt = Hunt.find(params[:id])
-    @questions = @hunt.questions(params[:hunt_id])
-  
-  
-    
-  end
-  
-  
+
   def add_player
     @hunt = Hunt.find(params[:id])
     

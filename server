@@ -1,0 +1,1142 @@
+Script started on Mon May 18 16:20:41 2009
+bash-3.2$ script/server
+=> Booting Mongrel
+=> Rails 2.3.2 application starting on http://0.0.0.0:3000
+ç=> Call with -d to detach
+=> Ctrl-C to shutdown server
+^CExiting
+bash-3.2$ script/server
+=> Booting Mongrel
+=> Rails 2.3.2 application starting on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing SiteController#index (for 127.0.0.1 at 2009-05-18 16:20:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"site", "view"=>"index"}
+Rendering site/index
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#index (for 127.0.0.1 at 2009-05-18 16:20:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"hunts"}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 44ms (DB: 0) | 302 Found [http://localhost/hunts]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-05-18 16:20:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 11ms (View: 8, DB: 1) | 200 OK [http://localhost/session/new]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-05-18 16:21:13) [POST]
+  Parameters: {"commit"=>"Log in", "action"=>"create", "authenticity_token"=>"Vx1rji4PDl2b9IAAYQva0uw6/DWJmYCgqglh+Ia7XWY=", "controller"=>"sessions", "login"=>"ryan.pascoe", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ryan.pascoe') LIMIT 1[0m
+Redirected to http://localhost:3000/hunts
+Completed in 39ms (DB: 1) | 302 Found [http://localhost/session]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#index (for 127.0.0.1 at 2009-05-18 16:21:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"hunts"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+  [4;36;1mHunt Load (0.5ms)[0m   [0;1mSELECT * FROM "hunts" WHERE ("hunts"."created_by" = 'ryan.pascoe') [0m
+Rendering template within layouts/hunts
+Rendering hunts/index
+  [4;35;1mHunt Load (0.4ms)[0m   [0mSELECT "hunts".* FROM "hunts" INNER JOIN "players" ON "hunts".id = "players".hunt_id WHERE (("players".user_id = 5)) [0m
+Completed in 63ms (View: 18, DB: 2) | 200 OK [http://localhost/hunts]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:21:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:21:13) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#index (for 127.0.0.1 at 2009-05-18 16:21:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"hunts"}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/hunts]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-05-18 16:21:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/session/new]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-05-18 16:24:53) [POST]
+  Parameters: {"commit"=>"Log in", "action"=>"create", "authenticity_token"=>"Vx1rji4PDl2b9IAAYQva0uw6/DWJmYCgqglh+Ia7XWY=", "controller"=>"sessions", "login"=>"ryan.pascoe", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ryan.pascoe') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/session]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing SiteController#index (for 127.0.0.1 at 2009-05-18 16:24:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"site", "view"=>"index"}
+Rendering site/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#index (for 127.0.0.1 at 2009-05-18 16:25:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"hunts"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+  [4;36;1mHunt Load (0.5ms)[0m   [0;1mSELECT * FROM "hunts" WHERE ("hunts"."created_by" = 'ryan.pascoe') [0m
+Rendering template within layouts/hunts
+Rendering hunts/index
+  [4;35;1mHunt Load (0.4ms)[0m   [0mSELECT "hunts".* FROM "hunts" INNER JOIN "players" ON "hunts".id = "players".hunt_id WHERE (("players".user_id = 5)) [0m
+Completed in 27ms (View: 7, DB: 2) | 200 OK [http://localhost/hunts]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:25:16) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:25:16) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#new (for 127.0.0.1 at 2009-05-18 16:25:34) [GET]
+  Parameters: {"action"=>"new", "controller"=>"hunts"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Rendering template within layouts/hunts
+Rendering hunts/new
+Completed in 37ms (View: 21, DB: 1) | 200 OK [http://localhost/hunts/new]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:25:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#index (for 127.0.0.1 at 2009-05-18 16:25:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"hunts"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+  [4;36;1mHunt Load (0.4ms)[0m   [0;1mSELECT * FROM "hunts" WHERE ("hunts"."created_by" = 'ryan.pascoe') [0m
+Rendering template within layouts/hunts
+Rendering hunts/index
+  [4;35;1mHunt Load (0.3ms)[0m   [0mSELECT "hunts".* FROM "hunts" INNER JOIN "players" ON "hunts".id = "players".hunt_id WHERE (("players".user_id = 5)) [0m
+Completed in 27ms (View: 6, DB: 2) | 200 OK [http://localhost/hunts]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:25:57) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:25:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#show (for 127.0.0.1 at 2009-05-18 16:26:00) [GET]
+  Parameters: {"action"=>"show", "id"=>"8", "controller"=>"hunts"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mHunt Load (0.3ms)[0m   [0;1mSELECT * FROM "hunts" WHERE ("hunts"."id" = 8) [0m
+Rendering template within layouts/hunts
+Rendering hunts/show
+  [4;35;1mQuestion Load (0.5ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions".hunt_id = 8) [0m
+Completed in 35ms (View: 13, DB: 3) | 200 OK [http://localhost/hunts/8]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:26:00) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#index (for 127.0.0.1 at 2009-05-18 16:26:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"hunts"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+  [4;35;1mHunt Load (0.4ms)[0m   [0mSELECT * FROM "hunts" WHERE ("hunts"."created_by" = 'ryan.pascoe') [0m
+Rendering template within layouts/hunts
+Rendering hunts/index
+  [4;36;1mHunt Load (0.3ms)[0m   [0;1mSELECT "hunts".* FROM "hunts" INNER JOIN "players" ON "hunts".id = "players".hunt_id WHERE (("players".user_id = 5)) [0m
+Completed in 89ms (View: 6, DB: 2) | 200 OK [http://localhost/hunts]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:26:30) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:26:30) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-05-18 16:26:42) [GET]
+  Parameters: {"hunt_id"=>"8", "action"=>"index", "controller"=>"questions"}
+  [4;35;1mHunt Load (0.3ms)[0m   [0mSELECT * FROM "hunts" WHERE ("hunts"."id" = 8) [0m
+  [4;36;1mQuestion Load (0.5ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions".hunt_id = 8) [0m
+Rendering template within layouts/hunts
+Rendering questions/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Completed in 32ms (View: 20, DB: 1) | 200 OK [http://localhost/hunts/8/questions]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:26:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:26:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HintsController#index (for 127.0.0.1 at 2009-05-18 16:26:47) [GET]
+  Parameters: {"question_id"=>"36", "action"=>"index", "controller"=>"hints"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 36) [0m
+  [4;35;1mHint Load (0.2ms)[0m   [0mSELECT * FROM "hints" WHERE ("hints".question_id = 36) [0m
+Rendering template within layouts/hunts
+Rendering hints/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Completed in 51ms (View: 39, DB: 1) | 200 OK [http://localhost/questions/36/hints]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:26:47) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:26:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HintsController#new (for 127.0.0.1 at 2009-05-18 16:26:49) [GET]
+  Parameters: {"question_id"=>"36", "action"=>"new", "controller"=>"hints"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 36) [0m
+Rendering template within layouts/hunts
+Rendering hints/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Completed in 28ms (View: 16, DB: 1) | 200 OK [http://localhost/questions/36/hints/new]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:26:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HintsController#index (for 127.0.0.1 at 2009-05-18 16:26:53) [GET]
+  Parameters: {"question_id"=>"36", "action"=>"index", "controller"=>"hints"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 36) [0m
+  [4;36;1mHint Load (0.3ms)[0m   [0;1mSELECT * FROM "hints" WHERE ("hints".question_id = 36) [0m
+Rendering template within layouts/hunts
+Rendering hints/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Completed in 26ms (View: 15, DB: 1) | 200 OK [http://localhost/questions/36/hints]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:26:53) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:26:53) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-05-18 16:27:04) [GET]
+  Parameters: {"hunt_id"=>"8", "action"=>"index", "controller"=>"questions"}
+  [4;36;1mHunt Load (0.3ms)[0m   [0;1mSELECT * FROM "hunts" WHERE ("hunts"."id" = 8) [0m
+  [4;35;1mQuestion Load (0.5ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions".hunt_id = 8) [0m
+Rendering template within layouts/hunts
+Rendering questions/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Completed in 30ms (View: 16, DB: 2) | 200 OK [http://localhost/hunts/8/questions]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#index (for 127.0.0.1 at 2009-05-18 16:27:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"hunts"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+  [4;36;1mHunt Load (0.5ms)[0m   [0;1mSELECT * FROM "hunts" WHERE ("hunts"."created_by" = 'ryan.pascoe') [0m
+Rendering template within layouts/hunts
+Rendering hunts/index
+  [4;35;1mHunt Load (0.3ms)[0m   [0mSELECT "hunts".* FROM "hunts" INNER JOIN "players" ON "hunts".id = "players".hunt_id WHERE (("players".user_id = 5)) [0m
+Completed in 93ms (View: 6, DB: 2) | 200 OK [http://localhost/hunts]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:06) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-05-18 16:27:09) [GET]
+  Parameters: {"hunt_id"=>"8", "action"=>"index", "controller"=>"questions"}
+  [4;36;1mHunt Load (0.3ms)[0m   [0;1mSELECT * FROM "hunts" WHERE ("hunts"."id" = 8) [0m
+  [4;35;1mQuestion Load (0.5ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions".hunt_id = 8) [0m
+Rendering template within layouts/hunts
+Rendering questions/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Completed in 29ms (View: 15, DB: 1) | 200 OK [http://localhost/hunts/8/questions]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2009-05-18 16:27:11) [GET]
+  Parameters: {"hunt_id"=>"8", "action"=>"new", "controller"=>"questions"}
+  [4;35;1mHunt Load (0.3ms)[0m   [0mSELECT * FROM "hunts" WHERE ("hunts"."id" = 8) [0m
+Rendering template within layouts/hunts
+Rendering questions/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Completed in 50ms (View: 36, DB: 1) | 200 OK [http://localhost/hunts/8/questions/new]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:11) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-05-18 16:27:17) [GET]
+  Parameters: {"hunt_id"=>"8", "action"=>"index", "controller"=>"questions"}
+  [4;35;1mHunt Load (0.3ms)[0m   [0mSELECT * FROM "hunts" WHERE ("hunts"."id" = 8) [0m
+  [4;36;1mQuestion Load (0.6ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions".hunt_id = 8) [0m
+Rendering template within layouts/hunts
+Rendering questions/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Completed in 30ms (View: 17, DB: 2) | 200 OK [http://localhost/hunts/8/questions]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:17) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-05-18 16:27:20) [GET]
+  Parameters: {"hunt_id"=>"8", "action"=>"show", "id"=>"36", "controller"=>"questions"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 36) [0m
+  [4;35;1mHunt Load (0.3ms)[0m   [0mSELECT * FROM "hunts" WHERE ("hunts"."id" = 8) [0m
+Rendering template within layouts/hunts
+Rendering questions/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Completed in 30ms (View: 15, DB: 1) | 200 OK [http://localhost/hunts/8/questions/36]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:20) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-05-18 16:27:23) [GET]
+  Parameters: {"hunt_id"=>"8", "action"=>"index", "controller"=>"questions"}
+  [4;35;1mHunt Load (0.5ms)[0m   [0mSELECT * FROM "hunts" WHERE ("hunts"."id" = 8) [0m
+  [4;36;1mQuestion Load (0.5ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions".hunt_id = 8) [0m
+Rendering template within layouts/hunts
+Rendering questions/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Completed in 88ms (View: 75, DB: 2) | 200 OK [http://localhost/hunts/8/questions]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:23) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:23) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing QuestionsController#edit (for 127.0.0.1 at 2009-05-18 16:27:27) [GET]
+  Parameters: {"hunt_id"=>"8", "action"=>"edit", "id"=>"36", "controller"=>"questions"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 36) [0m
+  [4;35;1mHunt Load (0.4ms)[0m   [0mSELECT * FROM "hunts" WHERE ("hunts"."id" = 8) [0m
+Rendering template within layouts/hunts
+Rendering questions/edit
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Completed in 37ms (View: 23, DB: 2) | 200 OK [http://localhost/hunts/8/questions/36/edit]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:27) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-05-18 16:27:29) [GET]
+  Parameters: {"hunt_id"=>"8", "action"=>"index", "controller"=>"questions"}
+  [4;35;1mHunt Load (0.3ms)[0m   [0mSELECT * FROM "hunts" WHERE ("hunts"."id" = 8) [0m
+  [4;36;1mQuestion Load (0.5ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions".hunt_id = 8) [0m
+Rendering template within layouts/hunts
+Rendering questions/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Completed in 31ms (View: 18, DB: 1) | 200 OK [http://localhost/hunts/8/questions]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:29) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:29) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing QuestionsController#edit (for 127.0.0.1 at 2009-05-18 16:27:30) [GET]
+  Parameters: {"hunt_id"=>"8", "action"=>"edit", "id"=>"36", "controller"=>"questions"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 36) [0m
+  [4;35;1mHunt Load (0.3ms)[0m   [0mSELECT * FROM "hunts" WHERE ("hunts"."id" = 8) [0m
+Rendering template within layouts/hunts
+Rendering questions/edit
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Completed in 28ms (View: 15, DB: 1) | 200 OK [http://localhost/hunts/8/questions/36/edit]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:30) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-05-18 16:27:44) [GET]
+  Parameters: {"hunt_id"=>"8", "action"=>"index", "controller"=>"questions"}
+  [4;35;1mHunt Load (0.3ms)[0m   [0mSELECT * FROM "hunts" WHERE ("hunts"."id" = 8) [0m
+  [4;36;1mQuestion Load (0.8ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions".hunt_id = 8) [0m
+Rendering template within layouts/hunts
+Rendering questions/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Completed in 30ms (View: 16, DB: 2) | 200 OK [http://localhost/hunts/8/questions]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:44) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#index (for 127.0.0.1 at 2009-05-18 16:27:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"hunts"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+  [4;35;1mHunt Load (0.5ms)[0m   [0mSELECT * FROM "hunts" WHERE ("hunts"."created_by" = 'ryan.pascoe') [0m
+Rendering template within layouts/hunts
+Rendering hunts/index
+  [4;36;1mHunt Load (0.3ms)[0m   [0;1mSELECT "hunts".* FROM "hunts" INNER JOIN "players" ON "hunts".id = "players".hunt_id WHERE (("players".user_id = 5)) [0m
+Completed in 93ms (View: 6, DB: 2) | 200 OK [http://localhost/hunts]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:27:45) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-05-18 16:27:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering users/index
+Completed in 26ms (View: 14, DB: 2) | 200 OK [http://localhost/users]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-05-18 16:28:37) [POST]
+  Parameters: {"commit"=>"Log in", "action"=>"create", "authenticity_token"=>"Vx1rji4PDl2b9IAAYQva0uw6/DWJmYCgqglh+Ia7XWY=", "controller"=>"sessions", "login"=>"ryan.pascoe", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ryan.pascoe') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/session]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing SiteController#index (for 127.0.0.1 at 2009-05-18 16:28:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"site", "view"=>"index"}
+Rendering site/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-05-18 16:28:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering users/index
+Completed in 21ms (View: 10, DB: 2) | 200 OK [http://localhost/users]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#index (for 127.0.0.1 at 2009-05-18 16:28:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"hunts"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+  [4;35;1mHunt Load (0.4ms)[0m   [0mSELECT * FROM "hunts" WHERE ("hunts"."created_by" = 'ryan.pascoe') [0m
+Rendering template within layouts/hunts
+Rendering hunts/index
+  [4;36;1mHunt Load (0.5ms)[0m   [0;1mSELECT "hunts".* FROM "hunts" INNER JOIN "players" ON "hunts".id = "players".hunt_id WHERE (("players".user_id = 5)) [0m
+Completed in 29ms (View: 8, DB: 2) | 200 OK [http://localhost/hunts]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:28:46) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:28:46) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#new (for 127.0.0.1 at 2009-05-18 16:32:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"hunts"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Rendering template within layouts/hunts
+Rendering hunts/new
+Completed in 47ms (View: 27, DB: 1) | 200 OK [http://localhost/hunts/new]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:32:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/overview.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:32:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/huntprofile.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:32:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/inviteplayers.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:32:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/clearform_norm.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:32:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/saveprogress_norm.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:32:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/quizsetup.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:32:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/launchhunt_norm.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#new (for 127.0.0.1 at 2009-05-18 16:33:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"hunts"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Rendering template within layouts/hunts
+Rendering hunts/new
+Completed in 20ms (View: 6, DB: 1) | 200 OK [http://localhost/hunts/new]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:22) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/overview.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:22) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/inviteplayers.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:22) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/huntprofile.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:22) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/launchhunt_norm.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:23) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/quizsetup.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+^CExiting
+bash-3.2$ 
+bash-3.2$ script/server
+=> Booting Mongrel
+=> Rails 2.3.2 application starting on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#new (for 127.0.0.1 at 2009-05-18 16:33:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"hunts"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Rendering template within layouts/hunts
+Rendering hunts/new
+Completed in 55ms (View: 17, DB: 1) | 200 OK [http://localhost/hunts/new]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:33) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/huntprofile.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/inviteplayers.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/overview.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/clearform_norm.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/saveprogress_norm.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/launchhunt_norm.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/quizsetup.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#index (for 127.0.0.1 at 2009-05-18 16:33:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"hunts"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+  [4;36;1mHunt Load (0.6ms)[0m   [0;1mSELECT * FROM "hunts" WHERE ("hunts"."created_by" = 'ryan.pascoe') [0m
+Rendering template within layouts/hunts
+Rendering hunts/index
+  [4;35;1mHunt Load (0.4ms)[0m   [0mSELECT "hunts".* FROM "hunts" INNER JOIN "players" ON "hunts".id = "players".hunt_id WHERE (("players".user_id = 5)) [0m
+Completed in 34ms (View: 12, DB: 2) | 200 OK [http://localhost/hunts]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:35) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/clipboard.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:35) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/createnewhuntstandby.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#index (for 127.0.0.1 at 2009-05-18 16:33:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"hunts"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+  [4;35;1mHunt Load (0.7ms)[0m   [0mSELECT * FROM "hunts" WHERE ("hunts"."created_by" = 'ryan.pascoe') [0m
+Rendering template within layouts/hunts
+Rendering hunts/index
+  [4;36;1mHunt Load (0.4ms)[0m   [0;1mSELECT "hunts".* FROM "hunts" INNER JOIN "players" ON "hunts".id = "players".hunt_id WHERE (("players".user_id = 5)) [0m
+Completed in 30ms (View: 9, DB: 2) | 200 OK [http://localhost/hunts]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:39) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/clipboard.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:39) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/createnewhuntstandby.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:39) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#index (for 127.0.0.1 at 2009-05-18 16:33:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"hunts"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+  [4;36;1mHunt Load (0.7ms)[0m   [0;1mSELECT * FROM "hunts" WHERE ("hunts"."created_by" = 'ryan.pascoe') [0m
+Rendering template within layouts/hunts
+Rendering hunts/index
+  [4;35;1mHunt Load (0.3ms)[0m   [0mSELECT "hunts".* FROM "hunts" INNER JOIN "players" ON "hunts".id = "players".hunt_id WHERE (("players".user_id = 5)) [0m
+Completed in 92ms (View: 8, DB: 2) | 200 OK [http://localhost/hunts]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/clipboard.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/buttons/createnewhuntstandby.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-18 16:33:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:7)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/muff_diddy/Sites/scamper/app/controllers/application_controller.rb:12)
+
+
+Processing HuntsController#index (for 127.0.0.1 at 2009-05-18 16:33:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"hunts"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+  [4;35;1mHunt Load (0.4ms)[0m   [0mSELECT * FROM "hunts" WHERE ("hunts"."created_by" = 'ryan.pascoe') [0m
+Rendering template within layouts/hunts
+Rendering hunts/index
+  [4;36;1mHu

@@ -12,7 +12,7 @@
 	<th></th>
   </tr>
 
-<% for question in @question %>
+<% for question in @questions %>
   <tr>
 	<td><%=h question.id %></td>
     <td><%=h question.question %></td>
@@ -24,6 +24,7 @@
     <td><%= link_to 'Edit', edit_hunt_question_path(@hunt, question) %></td>
     <td><%= link_to 'Destroy', hunt_question_path(@hunt, question), :confirm => 'Are you sure?', :method => :delete %></td>
 	<td><%= link_to 'Create/View Hint', question_hints_path( question)%> </td>
+
   </tr>
 <% end %>
 </table>
