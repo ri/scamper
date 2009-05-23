@@ -50,6 +50,7 @@ end
     def new
     @question = Question.new
     @hunt = Hunt.find(params[:hunt_id])
+    4.times {@question.answers.build}
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @question }
@@ -65,10 +66,10 @@ end
   # POST /questions
   # POST /questions.xml
   def create
-    #@question = Question.new(params[:question])
-    @question = Hunt.find(params[:hunt_id]).questions.new(params[:question])
     @hunt = Hunt.find(params[:hunt_id])
-    
+    @question = @hunt.questions.new(params[:question])
+
+    @question.correct_answer = @question.answers[params[:correct_answer].to_i]
     
     respond_to do |format|
       if @question.save
@@ -87,6 +88,7 @@ end
   def update
     @question = Question.find(params[:id])
     @hunt = Hunt.find(params[:hunt_id])
+    @question.correct_answer = @question.answers[params[:correct_answer].to_i]
 
     respond_to do |format|
       if @question.update_attributes(params[:question])

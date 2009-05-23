@@ -1,6 +1,8 @@
 class Question < ActiveRecord::Base
-  belongs_to :hunt, :foreign_key => "hunt_id"
+  belongs_to :hunt
+  belongs_to :correct_answer, :class_name => "Answer"
+  
   has_many :hints
-  has_many :answers, :class_name => 'Question'
+  has_many :answers
   accepts_nested_attributes_for :answers, :allow_destroy => true
 end

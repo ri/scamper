@@ -9,14 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090523071219) do
+ActiveRecord::Schema.define(:version => 20090523093453) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
     t.string   "option"
-    t.boolean  "correct"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "text"
   end
 
   create_table "hints", :force => true do |t|
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(:version => 20090523071219) do
     t.text     "question"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "answer"
+    t.integer  "correct_answer_id", :limit => 255
     t.decimal  "x"
     t.decimal  "y"
     t.string   "location"

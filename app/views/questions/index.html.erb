@@ -16,12 +16,11 @@
 
 <% for question in @questions %>
   <tr>
-	<td><%=h question.id %></td>
+  	<td><%=h question.id %></td>
     <td><%=h question.question %></td>
-	<td><%=h question.answer %></td>
-	<td><%=h question.location %></td>
-	<td><%=h question.hunt_id %></td>
-	
+  	<td><%=h question.correct_answer %></td>
+  	<td><%=h question.location %></td>
+  	<td><%=h question.hunt_id %></td>
     <td><%= link_to 'Show', hunt_question_path(@hunt, question) %></td>
     <td><%= link_to 'Edit', edit_hunt_question_path(@hunt, question) %></td>
     <td><%= link_to 'Destroy', hunt_question_path(@hunt, question), :confirm => 'Are you sure?', :method => :delete %></td>

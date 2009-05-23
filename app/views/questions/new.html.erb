@@ -8,7 +8,27 @@
 	<%= question_form.hidden_field :x %>
 	<%= question_form.hidden_field :y %>
 	<%= question_form.hidden_field :location %>
-  </p>
+  </p>	
+	<p>
+	
+	<ul>
+	  <% i = 0 %>
+	  <% question_form.fields_for :answers do |answer_form| %>
+	    <li>
+     		<%= radio_button_tag(:correct_answer, i)%>
+	      <%= answer_form.text_field :text %>
+
+     		<% unless answer_form.object.new_record? %>
+   			  <%= answer_form.checkbox ' _delete' %>
+  			  <%= answer_form.label '_delete', 'Remove' %>
+  		  <% end %>
+	    </li>
+	    
+   		<% i += 1 %>
+	  <% end %>
+	</ul>
+
+	</p>
 
 	<p>
 		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true
