@@ -14,7 +14,6 @@
 <%= link_to 'Edit', edit_user_hunt_path(@hunt) %> |
 <%= link_to 'Back', hunts_path %>
 <p>
-	<%= hunt_questions_url(@hunt) %>.kml
 	QUESTIONS<br />
 	<table>
 		<% @questions.each do |question| %>
@@ -32,11 +31,11 @@
 	    <script type="text/javascript">
 	    function initialize() {
 	      if (GBrowserIsCompatible()) {
-			    geoXml = new GGeoXml("http://scamper.heroku.com<%= hunt_questions_path(@hunt, :format => 'kml') %>");
-	        var map = new GMap2(document.getElementById("map_canvas"));
-	        map.setCenter(new GLatLng(-27.46758, 153.027892), 13);
-	        map.setUIToDefault();
-			map.addOverlay(geoXml);	
+          geoXml = new GGeoXml("http://scamper.heroku.com<%= hunt_questions_path(@hunt, :format => 'kml') %>");
+          var map = new GMap2(document.getElementById("map_canvas"));
+          map.setCenter(new GLatLng(-27.46758, 153.027892), 13);
+          map.setUIToDefault();
+          map.addOverlay(geoXml);	
 	      }
 	    }
 
