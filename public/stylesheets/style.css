@@ -6,11 +6,11 @@ text-align: center;
 font-size: 12pt;
 }
 
-table.center {
+/*table.center {
 	margin-left: auto;
 	margin-right: auto;
 	}
-	
+*/	
 h1 {
 	font-size: 16pt;
 }
@@ -27,16 +27,22 @@ table.hunts {
    clear: right; 
    display: block; 
 /*width: 90%;*/
+
    }
-	
+
+table{
+width: 710px;
+}
+
 th {
-	font: bold, 14pt;
+	font: bold, 12pt;
+	font-size: 10pt;
 	color: #000000;
 	border-right: 1px solid #C1DAD7;
 	border-bottom: 1px solid #C1DAD7;
 	border-top: 1px solid #C1DAD7;
 	text-align: center;
-	padding: 15px 15px 15px 15px;
+	padding: 15px 5px 15px 5px;
 	background: #a3cc56 url(/images/bg_header.jpg) no-repeat;
 }
 td {
@@ -44,9 +50,33 @@ td {
 	border-left: 1px solid #C1DAD7;
 	border-bottom: 1px solid #C1DAD7;
 	background: #d8e6e7;
-	padding: 15px 15px 15px 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	color: #000000;
-	/*width: 90%;*/
+font-size: 10pt;
+}
+
+td.huntactions {
+	font-size: 8pt;
+	text-align: center;
+}
+
+td.huntname {
+	max-width: 100px;
+	overflow: scroll;
+}
+td.huntquestions {
+	max-width: 100px;
+}	
+td.description {
+		width: 40px;
+		overflow:hidden;
+	}
+td.huntcreator {
+	width: 30px;
+}
+td.huntid {
+	width: 30px;
 }
 
 
@@ -72,9 +102,12 @@ text-align: left;
 	-moz-border-radius-topright: 8px;
 	background: #FFFFFF none repeat scroll 0 0;
 	border: 1px solid silver;
-	margin: 30px auto;
+	margin-left: auto;
+	margin-right: auto;
+	/*margin-top: 115px;*/
+	margin-top: 30px;
 	padding: 40px;
-	width: 705px;
+	max-width: 705px;
 }
 
 #center.header {
@@ -200,3 +233,307 @@ roundedcornerstest
   padding: 0;
 }
 ***/
+/*Buttons*/
+
+#saveprogress{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/saveprogress_norm.png");
+position:relative;
+}
+
+#saveprogress span{
+display:none;
+}
+
+
+#saveprogress:hover
+{
+background:url("/images/saveprogress_hover.png");
+}
+
+#playeraccount{
+display:inline-block;
+width:303px;
+height: 82px;
+background: url("/images/getplayeraccount.png");
+position:relative;
+}
+
+#playeraccount span{
+display:none;
+}
+
+#playeraccount:hover
+{
+}
+
+#creator{
+display:inline-block;
+width:303px;
+height: 82px;
+background: url("/images/getcreatoraccount.png");
+position:relative;
+}
+
+#creator span{
+display:none;
+}
+
+#creator:hover
+{
+}
+
+#clearanswer{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/clearanswer_norm.png");
+position:relative;
+}
+
+#clearanswer span{
+display:none;
+}
+
+#clearanswer:hover
+{
+background:url("/images/clearanswer_hover.png");
+}
+
+#createnew{
+display:inline-block;
+width:182px;
+height: 55px;
+background: url("/images/createnewhuntstandby.png");
+position:relative;
+}
+
+#createnew span{
+display:none;
+}
+
+#createnew:hover
+{
+background:url("/images/createnewhuntmouse.png");
+}
+
+#lockin{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/lockinanswer_norm.png");
+position:relative;
+}
+
+#lockin span{
+display:none;
+}
+
+#lockin:hover
+{
+background:url("/images/lockinanswer_hover.png");
+}
+
+#signmeup{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/signmeup_norm.png");
+position:relative;
+}
+
+#signmeup span{
+display:none;
+}
+
+#signmeup:hover
+{
+background:url("/images/signmeup_hover.png");
+}
+
+#viewlist{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/viewlist_norm.png");
+position:relative;
+}
+
+#viewlist span{
+display:none;
+}
+
+#viewlist:hover
+{
+background: url("/images/viewlist_hov.png");
+}
+
+#seeresults{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/viewresults_hover.png");
+position:relative;
+}
+
+#seeresults span{
+display:none;
+}
+
+#seeresults:hover
+{
+background: url("/images/viewresults_h.png");
+}
+
+#printqr{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/printqr_s.png");
+position:relative;
+}
+
+#printqr span{
+display:none;
+}
+
+#printqr:hover
+{
+background: url("/images/printQR.png");
+}
+
+#makeqr{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/makeqrcode_norm.png");
+position:relative;
+}
+
+#newquestion{
+display:block;
+width:50px;
+height:50px;
+background: url("/images/plus.png");
+position:relative;
+}
+
+
+#newquestion span{
+display:none;
+}
+
+#makeqr span{
+display:none;
+}
+
+#makeqr:hover
+{
+background:url("/images/makeqecode_hover.png");
+}
+
+#clear{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/clearform_norm.png");
+position:relative;
+}
+
+#clear span{
+display:none;
+}
+
+#clear:hover
+{
+background:url("/images/clearform_hover.png");
+}
+
+#launch{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/launchhunt_norm.png");
+position:relative;
+}
+
+#launch span{
+display:none;
+}
+
+#launch:hover
+{
+background:url("/images/launchhunt_hover.png");
+}
+
+#overview{
+display: inline-block;
+width:150px;
+height: 77px;
+background: url("/images/overview.png");
+position:relative;
+}
+
+
+
+#overview span{
+display:none;
+}
+
+#overview:hover
+{
+background:url("/images/overview_hover.png");
+}
+
+#huntprofile{
+display: inline-block;
+width:150px;
+height: 77px;
+background: url("/images/huntprofile.png");
+position:relative;
+}
+
+#huntprofile span{
+display:none;
+}
+
+#huntprofile:hover
+{
+background:url("/images/huntprofile_hov.png");
+}
+
+#inviteplayers{
+display: inline-block;
+width:150px;
+height: 77px;
+background: url("/images/inviteplayers.png");
+position:relative;
+}
+
+#inviteplayers span{
+display:none;
+}
+
+#inviteplayers:hover
+{
+background:url("/images/inviteplayers_hover.png");
+}
+
+#quizsetup{
+display: inline-block;
+width:150px;
+height: 77px;
+background: url("/images/quizsetup.png");
+position:relative;
+}
+
+#quizsetup span{
+display:none;
+}
+
+#quizsetup:hover
+{
+background:url("/images/quizsetup_hover.png");
+}
