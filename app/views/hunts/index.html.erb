@@ -19,8 +19,8 @@ end%>
     <td><%=h hunt.description %></td>
     <td><%=h hunt.created_by %></td>
 
-	<td><%= link_to 'Show Hunt', hunt_path(hunt) %></td>
-    <td><%= link_to 'Show Questions', hunt_questions_path(hunt) %></td>
+	<td><%= link_to 'View Hunt Summary', hunt_path(hunt) %></td>
+    <td><%= link_to 'View/Add Questions', hunt_questions_path(hunt) %></td>
     <td><%= link_to 'Show Players', hunt_users_path(hunt) %></td>
 
     <td><%= link_to 'Edit', edit_hunt_path(hunt) %></td>

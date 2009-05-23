@@ -3,6 +3,8 @@ class HintsController < ApplicationController
   
   def index
     @question = Question.find(params[:question_id])
+    @hunt = @question.hunt
+    
     @hint = @question.hints.find(:all, params[:question_id])
     
     respond_to do |format|
@@ -35,6 +37,7 @@ class HintsController < ApplicationController
   end
   
   def create
+          
     @hint = Question.find(params[:question_id]).hints.new(params[:hint])
     @question = Question.find(params[:question_id])
     
