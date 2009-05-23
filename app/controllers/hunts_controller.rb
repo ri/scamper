@@ -20,17 +20,23 @@ class HuntsController < ApplicationController
   end
 
   def play
-    
       @users = User.find(:all)
       @hunt = Hunt.find(params[:id])
       @questions = @hunt.questions(params[:hunt_id])
-
-      respond_to do |format|
-        format.html # show.html.erb
-        format.xml  { render :xml => @hunt }
-
-    end
+      
+      
+      render :layout => 'play'
   end
+  
+  def answer
+       @users = User.find(:all)
+        @hunt = Hunt.find(params[:id])
+        @questions = @hunt.questions(params[:hunt_id])
+
+
+        render :layout => 'play'
+      end
+    
   
   def index
   

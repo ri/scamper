@@ -15,8 +15,9 @@
 	QUESTION<br />
 	<table>
 		<% @questions.each do |question| %>
-		  <tr><td>Question:</tr></td>
-		  <tr><td><%=h question.question %></tr></td>
-		    <td><%= link_to 'Show', hunt_question_path(@hunt, question) %></td>
+		 <td><td>Question:</td>
+		  <td><%=h question.question %></td>
+		    <td><%= link_to 'Show', answer_question_path(question) %></td>
+		</tr>
 		<% end %>
 	</table>

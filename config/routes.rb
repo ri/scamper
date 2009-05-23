@@ -9,7 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :has_many =>[:hunts]
   map.resources :hunts, :has_many =>[:questions], :member => {:gen_xml => :get}
   map.resources :questions, :has_many =>[:hints]
-  map.resources :questions, :has_many =>[:answers], :member => {:new_answer => :put,  }
+  map.resources :questions, :has_many =>[:answers], :member => {:new_answer => :put,  :answer => :get}
   
   map.resource :session
   
