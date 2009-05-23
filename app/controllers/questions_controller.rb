@@ -31,6 +31,10 @@ end
 def answersubmit
   
 end
+
+def printview
+
+end
   
   # GET /questions/1
   # GET /questions/1.xml
