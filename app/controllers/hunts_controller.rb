@@ -55,7 +55,7 @@ end
   # GET /hunts/1
   # GET /hunts/1.xml
   def show
-    @users = User.find(:all)
+    @users = User.find :all, :conditions => { :creator => false}
     @hunt = Hunt.find(params[:id])
     @questions = @hunt.questions(params[:hunt_id])
 

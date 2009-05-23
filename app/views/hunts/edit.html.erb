@@ -1,10 +1,5 @@
 <h1>Editing hunt</h1>
-<% for hunt in @hunts %>
 
-<td><%= link_to 'Show Hunt', hunt_path(hunt) %></td>
-<td><%= link_to 'Show Questions', hunt_questions_path(hunt) %></td>
-<td><%= link_to 'Show Players', hunt_users_path(hunt) %></td>
-<% end %>
 
 <% form_for(@hunts) do |f| %>
   <%= f.error_messages %>

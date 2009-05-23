@@ -11,6 +11,11 @@ class HintsController < ApplicationController
     end
   end
   
+  def printview
+    
+  end
+  
+  
     def new
     @hint = Hint.new
     @question = Question.find(params[:question_id])

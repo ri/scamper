@@ -14,6 +14,13 @@ end%>
 	<th>Hunt Id</th>    
     <th>Name</th>
     <th>Description</th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	
   </tr>
 
 
@@ -32,9 +39,10 @@ end%>
     <td><%= link_to 'Destroy', hunt, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 
-<%= link_to 'New hunt', new_hunt_path %>
 
 <% end %>
+<%= link_to 'New hunt', new_hunt_path %>
+
 
 <% else %>
 </table>
@@ -45,6 +53,9 @@ end%>
 	<th>Hunt Id</th>    
     <th>Name</th>
     <th>Description</th>
+	<th></th>
+	<th></th>
+
   </tr>
 <% for hunt in @playerhunts %>
   <tr>
