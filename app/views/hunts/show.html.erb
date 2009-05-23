@@ -32,7 +32,7 @@
 	    <script type="text/javascript">
 	    function initialize() {
 	      if (GBrowserIsCompatible()) {
-			 geoXml = new GGeoXml("<%= hunt_questions_path(@hunt, @questions, :format => :kml) %>");
+			 geoXml = new GGeoXml("<%= hunt_questions_url(@hunt, @questions) %>.kml");
 	        var map = new GMap2(document.getElementById("map_canvas"));
 	        map.setCenter(new GLatLng(-27.46758, 153.027892), 13);
 	        map.setUIToDefault();
