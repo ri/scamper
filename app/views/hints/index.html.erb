@@ -10,6 +10,8 @@
   <tr>
 	<td><%=h hint.id %> </td>
     <td><%=h hint.hint %></td>
+
+ <td><%= qrcode(h hint.hint) %></td>
     <td><%= link_to 'Destroy', question_hint_path(@question, hint), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 
