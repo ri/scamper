@@ -53,31 +53,21 @@ end%>
 
 <p> Hunts Participating </p>
 <table>
-<<<<<<< HEAD:app/views/hunts/index.html.erb
   <tr>
 	<th>Hunt Id</th>    
     <th>Name</th>
     <th>Description</th>
-	<th></th>
+	<th>Creator </th>
 	<th></th>
 
   </tr>
-=======
 
->>>>>>> 31c8c0a3966769974c424efb1882e0a0efbd9eba:app/views/hunts/index.html.erb
 <% for hunt in @playerhunts %>
   <tr>
 	<td class="huntid"><%=h hunt.id %> </td>
     <td class="huntname"><%=h hunt.name %></td>
     <td class="huntdescription"><%=h hunt.description %></td>
     <td class="huntcreator"><%=h hunt.created_by %></td>
-
-	<td class="huntactions"><%= link_to 'View Hunt', hunt_path(hunt) %></td>
-    <td class="huntactions"><%= link_to 'Questions', hunt_questions_path(hunt) %></td>
-    <td class="huntactions"><%= link_to 'Players', hunt_users_path(hunt) %></td>
-
-    <td class="huntactions"><%= link_to 'Edit', edit_hunt_path(hunt) %></td>
-    <td class="huntactions"><%= link_to 'Delete', hunt, :confirm => 'Are you sure?', :method => :delete %></td>
     <td class="huntactions"><%= link_to 'Play', play_hunt_path(hunt) %></td>
   </tr>
 <% end %>
