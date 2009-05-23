@@ -11,13 +11,12 @@ class HuntsController < ApplicationController
   def add_player
     
     @hunt = Hunt.find(params[:id])
-  
     (params[:user_ids] || []).each do |user_id|
       @hunt.players.create(:user_id => user_id)
     end
     flash[:notice] = "Success!"
     redirect_to :action => "show"
-  end
+end
 
   def play
       @users = User.find(:all)
