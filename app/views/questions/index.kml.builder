@@ -3,10 +3,10 @@ xml.kml(:xmlns=>'http://www.opengis.net/kml/2.2') do
   xml.Document do
     @questions.each do |question|
       xml.Placemark do
-        xml.name(question.id)
+        xml.name(question.question)
         xml.description(question.location)
         xml.Point do
-          xml.coordinates(question.x.to_s + ',' + question.y.to_s)
+        xml.coordinates(question.x.to_s + ',' + question.y.to_s + ',0')
         end
       end
     end
