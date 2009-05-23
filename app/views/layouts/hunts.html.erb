@@ -7,18 +7,22 @@
 <body onload="initialize()" onunload="GUnload()">
 
 <div id="container">
-<div id="dashboard" class="column">
-		<%= image_tag "logo.png" %>
-		
-		<div id="player">
-		<p><% if logged_in? %>
-           Hi <%= current_user.login %>!
-           <% end %>
-           <a href="edit.html">(edit your profile)</a>
-           <% if logged_in? %>
-              <a href="logout">LOG OUT</a>
-              <% end %> </p>
-	</div>
+	<div id="dashboard" class="column">
+			<div id="player">
+			<div class="userwelcome"><% if logged_in? %>
+	           Hi <%= current_user.login %>!
+	<a href="edit.html"> (edit your profile)</a>
+	           <% end %> </div>
+	           <div class="help"><a href="help.html">Help!</a></div>
+			<div class="signout">
+				<% if logged_in? %>
+	              <a href="logout">Sign Out</a>
+	<% else %>
+	<a href="/users/new">Sign up!</a>
+	              <% end %> </div>
+
+
+		</div>
 </div>
 <div id="center" class="column">
 <div id="content">
