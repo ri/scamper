@@ -29,9 +29,12 @@
 	      type="text/javascript">
 	  </script>
 	    <script type="text/javascript">
+		var map
+		var geoXml;
+		
 	    function initialize() {
 	      if (GBrowserIsCompatible()) {
-			 geoXml = new GGeoXml("<%= hunt_questions_path(@hunt, @questions, :format => :kml) %>");
+			 geoXml = new GGeoXml("http://mapgadgets.googlepages.com/cta.kml");
 	        var map = new GMap2(document.getElementById("map_canvas"));
 	        map.setCenter(new GLatLng(37.4419, -122.1419), 13);
 	        map.setUIToDefault();
