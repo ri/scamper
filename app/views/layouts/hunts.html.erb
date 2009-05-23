@@ -12,7 +12,7 @@
 			<div class="userwelcome"><% if logged_in? %>
 	           Hi <%= current_user.login %>!
 	           <% end %> <a href="edit.html"> (edit your profile)</a></div>
-	           <div class="help">Help!</div>
+	           <div class="help"><a href="help.html"Help!</a></div>
 			<div class="signout">
 				<% if logged_in? %>
 	              <a href="logout">Sign Out</a>
