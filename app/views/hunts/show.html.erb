@@ -35,12 +35,6 @@
 	        map.setCenter(new GLatLng(37.4419, -122.1419), 13);
 	        map.setUIToDefault();
 			
-			<% @questions.each do |question| %>
-				var point = new GLatLng(<%= question.x %>,
-				<%= question.y %>;
-				map.addOverlay(new GMarker(point));
-				
-			<% end %>
 	      }
 	    }
 
