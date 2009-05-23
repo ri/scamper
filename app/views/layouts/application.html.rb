@@ -11,11 +11,14 @@
 			<div id="player">
 			<div class="userwelcome"><% if logged_in? %>
 	           Hi <%= current_user.login %>!
-	           <% end %> <a href="edit.html"> (edit your profile)</a></div>
+	<a href="edit.html"> (edit your profile)</a>
+	           <% end %> </div>
 	           <div class="help"><a href="help.html">Help!</a></div>
 			<div class="signout">
 				<% if logged_in? %>
 	              <a href="logout">Sign Out</a>
+	<% else %>
+	<a href="/users/new">Sign up!</a>
 	              <% end %> </div>
 
 
