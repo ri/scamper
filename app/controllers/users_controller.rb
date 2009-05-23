@@ -11,9 +11,13 @@ class UsersController < ApplicationController
  
   def create
     logout_keeping_session!
+
     @user = User.new(params[:user])
+    @user.creator = !!params[:user][:creator]
+  
     success = @user && @user.save
     if success && @user.errors.empty?
+      logger.debug @user.creator?.inspect
             # Protects against session fixation attacks, causes request forgery
       # protection if visitor resubmits an earlier form using back
       # button. Uncomment if you understand the tradeoffs.
