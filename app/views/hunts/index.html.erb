@@ -5,6 +5,8 @@
  current_user.creator?
 end%>
 
+<% if admin? then%>
+
 <p> Hunts Created </p>
 
 <table>
@@ -13,6 +15,7 @@ end%>
     <th>Name</th>
     <th>Description</th>
   </tr>
+
 
 <% for hunt in @hunts %>
   <tr>
@@ -28,7 +31,12 @@ end%>
     <td><%= link_to 'Edit', edit_hunt_path(hunt) %></td>
     <td><%= link_to 'Destroy', hunt, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
+
+<%= link_to 'New hunt', new_hunt_path %>
+
 <% end %>
+
+<% else %>
 </table>
 
 <p> Hunts Participating </p>
@@ -49,9 +57,9 @@ end%>
     <td><%= link_to 'Play', play_hunt_path(hunt) %></td>
   </tr>
 <% end %>
+<%end%>
 </table>
 
 <br />
 
-<%= link_to 'New hunt', new_hunt_path %>
 
