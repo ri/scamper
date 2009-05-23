@@ -11,11 +11,12 @@
 	<td><%=h hint.id %> </td>
     <td><%=h hint.hint %></td>
     <td><%= link_to 'Destroy', question_hint_path(@question, hint), :confirm => 'Are you sure?', :method => :delete %></td>
-
   </tr>
-<% end %>
+
+<%end%>
 
 <p><%= link_to 'New hint', new_question_hint_path %>
 </p>
-
+<p><%= link_to 'Back to Questions', hunt_questions_path(@hunt) %>
+</p>
 </table>
