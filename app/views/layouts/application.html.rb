@@ -16,7 +16,7 @@
 	           <div class="help"><a href="help.html">Help!</a></div>
 			<div class="signout">
 				<% if logged_in? %>
-	              <a href="logout">Sign Out</a>
+	             <%= link_to 'Sign Out', logout_path %>
 	<% else %>
 	<a href="/users/new">Sign up!</a>
 	              <% end %> </div>
