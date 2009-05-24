@@ -420,19 +420,23 @@ display:none;
 background:url("/images/buttons/lockinanswer_hover.png");
 }
 
-#signmeup{
-display:inline-block;
-width:182px;
-height: 52px;
-background: url("/images/buttons/signmeup_norm.png");
-position:relative;
+#user_submit{
+	display: block;
+	width:182px;
+	background: url("/images/buttons/signmeup_norm.png");
+	height: 0px;
+	padding-top: 52px;
+	margin-top: -50px;
+	margin-left: 250px;
+	overflow: hidden;
+	border: none;
 }
 
 #signmeup span{
 display:none;
 }
 
-#signmeup:hover
+#user_submit:hover
 {
 background:url("/images/buttons/signmeup_hover.png");
 }
@@ -518,19 +522,27 @@ display:none;
 background:url("/images/buttons/makeqecode_hover.png");
 }
 
-#clear{
-display:inline-block;
-width:182px;
-height: 52px;
-background: url("/images/buttons/clearform_norm.png");
-position:relative;
+#signupbottombuttons {
+	margin-top: 80px;
+}
+a#clear{
+	display:block;
+	width:182px;
+	height: 0px;
+	background: url("/images/buttons/clearform_norm.png");
+	padding-top: 52px;
+	overflow: hidden;
+	margin-top: -50px;
+	float: right;
+	margin-right: 120px;
+	overflow: hidden;
 }
 
 #clear span{
 display:none;
 }
 
-#clear:hover
+a#clear:hover
 {
 background:url("/images/buttons/clearform_hover.png");
 }
