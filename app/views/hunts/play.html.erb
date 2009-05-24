@@ -17,7 +17,7 @@
 		<% @questions.each do |question| %>
 		 <td><td>Question:</td>
 		  <td><%=h question.question %></td>
-		    <td><%= link_to 'Show', answer_question_path(question) %></td>
+		    <td><%= link_to 'Show', question_response_path(question) %></td>
 		</tr>
 		<% end %>
 	</table>
