@@ -1,4 +1,8 @@
-<%= render :partial => 'sidebar' %>
+<% if current_user.creator? %>
+<%= render :partial => 'creatorsidebar' %>
+<% else %>
+<%= render :partial => 'playersidebar' %>
+<% end %>
 <div id="questionform">
 <p>
   <b>Answer:</b>

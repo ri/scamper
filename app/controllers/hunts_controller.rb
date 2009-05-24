@@ -84,7 +84,7 @@ class HuntsController < ApplicationController
     respond_to do |format|
       if @hunt.save
         flash[:notice] = 'Hunt was successfully created.'
-        format.html { redirect_to(@hunt) }
+        format.html { redirect_to(edit_hunt_path(@hunt)) }
         format.xml  { render :xml => @hunt, :status => :created, :location => @hunt }
       else
         format.html { render :action => "new" }
@@ -101,7 +101,7 @@ class HuntsController < ApplicationController
     respond_to do |format|
       if @hunt.update_attributes(params[:hunt])
         flash[:notice] = 'Hunt was successfully updated.'
-        format.html { redirect_to(@hunt) }
+        format.html { redirect_to(edit_hunt_path(@hunt)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

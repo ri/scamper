@@ -15,5 +15,7 @@ class Question < ActiveRecord::Base
       player_id = Player.find_by_user_id_and_hunt_id(user.id, hunt_id).id
       Response.count(:conditions => {:'responses.player_id' => player_id, :'answers.question_id' => id}, :include => :answer)
     end
+  rescue
+    false
   end
 end

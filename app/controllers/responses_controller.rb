@@ -3,6 +3,7 @@ class ResponsesController < ApplicationController
   before_filter :verify_question_is_unanswered
   
   def show
+    @hunt = Hunt.find(params[:hunt_id])
     @response = current_player.responses.build
   end
   
@@ -12,7 +13,8 @@ class ResponsesController < ApplicationController
     @response.answer_id = params[:response][:answer_id]
     
     if @response.save
-      redirect_to @question
+      flash[:notice] = 'Your answer has been saved'
+      redirect_to hunt_question_path(@hunt, @question)
     else
       flash.now[:error] = "Please select an answer"
       render :action => :show
