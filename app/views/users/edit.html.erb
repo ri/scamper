@@ -1,0 +1,23 @@
+<h1>Edit your account</h1>
+
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    Account for <%= @user.first_name %> , <%= @user.last_name %> <br />
+  </p>
+  <p>
+    Email
+    <%= @user.email %>
+    </p>
+<p>
+    <%= f.label :organisation %><br />
+    <%= f.text_field :organisation %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', hunts_path %>

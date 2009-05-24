@@ -24,9 +24,7 @@ class HintsController < ApplicationController
       format.xml  { render :xml => @hints }
     end
   end
-  
-  def edit
-  end
+
   
   def show
     @hint = Hint.find(params[:id])
