@@ -30,13 +30,18 @@
 	</div>
 </div>
 <div id="dasshboard">
-<a  id="overview" href="#" title="overview"><span>overview</span></a>
-
-<a  id="inviteplayers" href="#" title="inviteplayers"><span>inviteplayers</span></a>
-
-<a  id="huntprofile" href="#" title="huntprof"><span>huntprofile</span></a>
-
-<a  id="quizsetup" href="#" title="quiz"><span>quizsetup</span></a>
+  <% link_to(new_hunt_path, :id => "quizsetup") do %>
+   <span>quizsetup</span>
+  <% end%>
+  <% link_to(edit_hunt_path(@hunt), :id => "inviteplayers") do %>
+   <span>inviteplayers</span>
+  <% end%>
+  <% link_to(hunt_path(@hunt), :id => "overview") do %>
+    <span>overview</span>
+  <% end %>
+  <% link_to(hunt_path(@hunt), :id => "huntprofile") do %>
+   <span>huntprofile</span>
+  <% end%>
 
 </div>
 <div id="center" class="column">

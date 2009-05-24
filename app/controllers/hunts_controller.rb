@@ -74,13 +74,8 @@ end
   end
 
   # GET /hunts/1/edit
-  def edit    
-    if params[:user_id]
-      @user = User.find(params[:user_id])
-      @hunts = @hunt.users(params[:user_id])
-    else
-      @hunts = Hunt.find(:all)
-    end
+  def edit
+    @hunt = Hunt.find(params[:id])   
     render :layout => 'huntsedit'
   end
 
