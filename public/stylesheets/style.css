@@ -210,20 +210,6 @@ margin-left: 180px;
 margin-top: -125px;
 }
 
-#imagemap {
-	display: block;
-	width: 160px;
-	height: 0px;
-	margin-top: 5px;
-	margin-left: 5px;
-	background-color: #ff6475;
-	overflow: hidden;
-	padding-top: 45px;
-	padding-left: 35px;
-}
-
-
-
 #currentq {
 	display:inline-block;
 	width:155px;
