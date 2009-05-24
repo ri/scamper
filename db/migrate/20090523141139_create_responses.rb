@@ -1,9 +1,9 @@
 class CreateResponses < ActiveRecord::Migration
   def self.up
     create_table "responses", :force => true do |t|
-      t.integer "question_id"
-      t.integer "user_id"
+      t.integer "player_id"
       t.integer "answer_id"
+      t.boolean "correct"
     end
   end
 
