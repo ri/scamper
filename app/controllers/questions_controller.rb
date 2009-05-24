@@ -68,7 +68,7 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       if @question.save
         flash[:notice] = 'Question was successfully created.'
-        format.html { redirect_to(hunt_questions_path(@hunt)) }
+        format.html { redirect_to(new_hunt_question_path(@hunt)) }
         format.xml  { render :xml => @question, :status => :created, :location => @question }
       else
         format.html { render :action => "new" }
@@ -87,7 +87,7 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       if @question.update_attributes(params[:question])
         flash[:notice] = 'Question was successfully updated.'
-        format.html { redirect_to(hunt_questions_path(@hunt)) }
+        format.html { redirect_to(edit_hunt_question_path(@hunt, @question)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

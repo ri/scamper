@@ -1,10 +1,6 @@
 <div id="questions">
 <% i = 1 %>
 <% for question in @hunt.questions %>
-  <div id="filledq"><% link_to(hunt_question_path(@hunt, question)) do %>
-    Question <%= i%>
-  <% end %></div>
-  <% i += 1 %>
    <% if question == @question %>
       <div id="currentq">Question <%= i%></div>
     <% else %>
