@@ -215,7 +215,26 @@ margin-top: -120px;
 
 #questionform li {
 	list-style-type: none;
-	
+}
+
+#questionform td {
+	background-color: #FFFFFF;
+}
+
+#question_submit{
+	display: block;
+	width:182px;
+	background: url("/images/buttons/saveprogress_norm.png");
+	height: 0px;
+	padding-top: 52px;
+	overflow: hidden;
+	margin-left: 170px;
+	border: none;
+}
+
+#question_submit:hover
+{
+background:url("/images/buttons/saveprogress_hover.png");
 }
 
 .coderalert {
@@ -340,23 +359,7 @@ roundedcornerstest
 ***/
 /*Buttons*/
 
-#saveprogress{
-display:inline-block;
-width:182px;
-height: 52px;
-background: url("/images/buttons/saveprogress_norm.png");
-position:relative;
-}
 
-#saveprogress span{
-display:none;
-}
-
-
-#saveprogress:hover
-{
-background:url("/images/buttons/saveprogress_hover.png");
-}
 
 #playeraccount{
 display:inline-block;
