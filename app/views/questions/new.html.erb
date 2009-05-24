@@ -1,5 +1,7 @@
 <%= render :partial => 'sidebar' %>
 
+<div id="questionform">
+	
 <h1> New question</h1>
 
 <% form_for(@question, :url => hunt_questions_path(@hunt), :html => {:onsubmit => "return saveCoords()"}) do |question_form| %>
@@ -153,3 +155,5 @@
 <% end %>
 
 <%= link_to 'Back', hunt_questions_path(@hunt) %>
+
+</div>
