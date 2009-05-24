@@ -59,10 +59,7 @@ end
     @hunt = Hunt.find(params[:id])
     @questions = @hunt.questions(params[:hunt_id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @hunt }
-    end
+      render :layout => 'huntsedit'
   end
 
   # GET /hunts/new
@@ -84,7 +81,7 @@ end
     else
       @hunts = Hunt.find(:all)
     end
-    
+    render :layout => 'huntsedit'
   end
 
   # POST /hunts
