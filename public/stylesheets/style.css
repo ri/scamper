@@ -154,7 +154,7 @@ img {
 
 .userwelcome {
 float: left;
-margin-left: -80px;
+margin-left: -50px;
 padding-top: 22px;
 width: 515px;
 }
@@ -162,7 +162,7 @@ width: 515px;
 .help {
 	float: left;
 	padding-top: 22px;
-	margin-left: 60px;
+	margin-left: 25px;
 	width: 126px;
 }
 
@@ -185,16 +185,13 @@ padding: 20px;
 
 #questions{
 width: 100px;
-height: 200px;
-margin-left: -30px;
-padding: 20px;
-margin-top: -30px;
+margin-left: -10px;
+margin-top: -10px;
 }
 
 #questionform {
-padding-right: 280px;
-float: right;
-margin-top: -230px;
+margin-left: 180px;
+margin-top: -180px;
 }
 
 
