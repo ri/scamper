@@ -23,6 +23,7 @@ end%>
 	<th></th>
 	<th></th>
 	
+
 	<th>Creator</th>
 	<th colspan=5>Actions</th>
   </tr>
@@ -57,10 +58,11 @@ end%>
 	<th>Hunt Id</th>    
     <th>Name</th>
     <th>Description</th>
-	<th>Creator </th>
+	<th></th>
 	<th></th>
 
   </tr>
+
 
 <% for hunt in @playerhunts %>
   <tr>
@@ -68,6 +70,13 @@ end%>
     <td class="huntname"><%=h hunt.name %></td>
     <td class="huntdescription"><%=h hunt.description %></td>
     <td class="huntcreator"><%=h hunt.created_by %></td>
+
+	<td class="huntactions"><%= link_to 'View Hunt', hunt_path(hunt) %></td>
+    <td class="huntactions"><%= link_to 'Questions', hunt_questions_path(hunt) %></td>
+    <td class="huntactions"><%= link_to 'Players', hunt_users_path(hunt) %></td>
+
+    <td class="huntactions"><%= link_to 'Edit', edit_hunt_path(hunt) %></td>
+    <td class="huntactions"><%= link_to 'Delete', hunt, :confirm => 'Are you sure?', :method => :delete %></td>
     <td class="huntactions"><%= link_to 'Play', play_hunt_path(hunt) %></td>
   </tr>
 <% end %>
