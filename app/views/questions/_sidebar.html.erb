@@ -8,13 +8,13 @@
    <% if question == @question %>
       <div id="currentq">Question <%= i%></div>
     <% else %>
-      <% link_to(edit_hunt_question_path(@hunt, question)) do %>
-        <div id="filledq">Question <%= i%></div>
-        <% end %>
+      <div id="filledq"><% link_to(edit_hunt_question_path(@hunt, question)) do %>
+        Question <%= i%>
+        <% end %></div>
     <% end %>
     <% i += 1 %>
 <% end %>
-<% link_to(new_hunt_question_path(@hunt)) do %>
-  <div id="addq">Add Question</div>
-<% end %>
+  <div id="addq"><% link_to(new_hunt_question_path(@hunt)) do %>
+Add Question
+<% end %></div>
 </div>
