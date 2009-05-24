@@ -41,4 +41,6 @@ class ResponsesController < ApplicationController
         redirect_to [@question.hunt, @question]
       end
     end
+
+        
 end

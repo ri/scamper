@@ -8,6 +8,8 @@ class Question < ActiveRecord::Base
   has_many :responses, :through => :answers
   
   accepts_nested_attributes_for :answers, :allow_destroy => true
+  accepts_nested_attributes_for :hints, :allow_destroy => true
+  
   validates_presence_of :location, :question, :hunt_id, :correct_answer
   
   def answered?(user)

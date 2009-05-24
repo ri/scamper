@@ -36,6 +36,9 @@
 	  <% end %>
 	</ul>
 
+  <% question_form.fields_for :hints do |hints_form| %>
+      Hint: <%= hints_form.text_field :hint %>
+  <% end %>
 	</p>
 
 	<p>

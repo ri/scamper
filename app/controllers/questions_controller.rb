@@ -38,6 +38,7 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @question }
+      format.kml
     end
   end
 
@@ -47,6 +48,7 @@ class QuestionsController < ApplicationController
     @question = @questions.new
     @hunt = Hunt.find(params[:hunt_id])
     4.times {@question.answers.build}
+    @question.hints.build
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @question }
@@ -64,7 +66,7 @@ class QuestionsController < ApplicationController
   def create
     @hunt = Hunt.find(params[:hunt_id])
     @question = @hunt.questions.new(params[:question])
-
+    
     @question.correct_answer = @question.answers[params[:correct_answer].to_i]
     
     respond_to do |format|

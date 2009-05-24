@@ -14,7 +14,8 @@
     <%=h @question.correct_answer %>
     <% else %>
     <b>You Responded:</b>
-    <%= @player_response.answer %>
+    <%= @player_response.answer.text %>
     <% end%>
   </p>
+  <%= link_to 'Finish hunt!', completed_hunt_path(@hunt) %>
 </div>
