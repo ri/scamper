@@ -1,7 +1,7 @@
 <div id="questions">
 <% i = 1 %>
 <% for question in @hunt.questions %>
-   <% if question == @question %>
+   <% if !Response.find_by_question_id_and_player_id(question.id, current_user.id) %>
       <div id="activeq">Question <%= i%></div>
     <% else %>
       <div id="inactiveq"><% link_to(hunt_question_response_path(@hunt, question)) do %>
