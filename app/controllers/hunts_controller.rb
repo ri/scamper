@@ -2,8 +2,14 @@ class HuntsController < ApplicationController
   layout "hunts"
   
   before_filter :login_required
+
   
-  def hunts_completed
+  def completed
+    @hunt = Hunt.find(params[:id])
+    if (Response.count(:conditions => {:player_id => @hunt.players.find_by_user_id(current_user.id)}) == @hunt.questions.count)
+      redirect_back_or_default(user_hunts_path(current_user))
+    end
+    
   end
   
   def admin?
@@ -29,6 +35,7 @@ class HuntsController < ApplicationController
       @users = User.find(:all)
       @hunt = Hunt.find(params[:id])
       @questions = @hunt.questions(params[:hunt_id]) 
+
       render :layout => 'play'
   end
   

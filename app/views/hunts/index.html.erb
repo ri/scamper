@@ -1,4 +1,4 @@
-<div id="dashboardheader"><img src="/images/buttons/clipboard.png"/><h1>My Dashboard</h1> <%= link_to 'New Hunt', new_hunt_path, :id => 'createnew' %>
+<div id="dashboardheader"><img src="/images/buttons/clipboard.png"/><h1>My Dashboard</h1> 
 	<br />
 </div>
 <% def admin?
@@ -8,7 +8,7 @@ end%>
 
 
 <% if admin? then%>
-
+<%= link_to 'New Hunt', new_user_hunt_path(current_user), :id => 'createnew' %>
 <h1> Hunts Created </h1>
 
 <table>
@@ -46,7 +46,6 @@ end%>
 
 
 <% end %>
-<%= link_to 'New hunt', new_hunt_path %>
 
 
 <% else %>
@@ -70,13 +69,6 @@ end%>
     <td class="huntname"><%=h hunt.name %></td>
     <td class="huntdescription"><%=h hunt.description %></td>
     <td class="huntcreator"><%=h hunt.created_by %></td>
-
-	<td class="huntactions"><%= link_to 'View Hunt', hunt_path(hunt) %></td>
-    <td class="huntactions"><%= link_to 'Questions', hunt_questions_path(hunt) %></td>
-    <td class="huntactions"><%= link_to 'Players', hunt_users_path(hunt) %></td>
-
-    <td class="huntactions"><%= link_to 'Edit', edit_hunt_path(hunt) %></td>
-    <td class="huntactions"><%= link_to 'Delete', hunt, :confirm => 'Are you sure?', :method => :delete %></td>
     <td class="huntactions"><%= link_to 'Play', play_hunt_path(hunt) %></td>
      <td class="huntactions"><%= Response.count(:conditions => {:correct => true, :player_id => hunt.players.find_by_user_id(current_user.id)})%></td>
   </tr>
