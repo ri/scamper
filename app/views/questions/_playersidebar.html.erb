@@ -2,15 +2,12 @@
 <% i = 1 %>
 <% for question in @hunt.questions %>
    <% if question == @question %>
-      <div id="currentq">Question <%= i%></div>
+      <div id="activeq">Question <%= i%></div>
     <% else %>
-      <div id="filledq"><% link_to(hunt_question_response_path(@hunt, question)) do %>
+      <div id="inactiveq"><% link_to(hunt_question_response_path(@hunt, question)) do %>
         Question <%= i%>
         <% end %></div>
     <% end %>
     <% i += 1 %>
 <% end %>
-  <div id="addq"><% link_to(hunt_question_response_path(@hunt, question)) do %>
-Add Question
-<% end %></div>
 </div>
