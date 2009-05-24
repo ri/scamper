@@ -1,5 +1,5 @@
  <h1>Edit Question</h1>
-<% form_for(@question, :url => hunt_question_path(@hunt, @question),
+<% form_for(@question, :url => hunt_question_path(@question.hunt, @question),
 			:html => {:onsubmit => "return saveCoords()"}) do |question_form| %>
   <%= question_form.error_messages %>
   <p>
@@ -123,11 +123,7 @@
 		  document.getElementById("question_location").value = loc;
 	      return true;
 		  }
-		  else
-		  {
-		    alert('Please select a valid location');
-		    return false;
-		  }
+
 				var	thisloc =  thismarker.getLatLng();
 		}
 	  </script>
@@ -137,8 +133,8 @@
 	  </p>
 	<% end %> </form>
 
-	<%= link_to 'Show', @question %> |
-	<%= link_to 'Back', hunt_questions_path %>
+	<%= link_to 'Show', hunt_question_path(@question.hunt, @question) %> |
+	<%= link_to 'Back', hunt_questions_path(@question.hunt) %>
 
 
  </body>

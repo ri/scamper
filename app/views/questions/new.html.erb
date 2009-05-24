@@ -1,6 +1,6 @@
 <h1> New question</h1>
 
-<% form_for(@question, :url => hunt_questions_path(@hunt), :html => {:onsubmit => "saveCoords()"}) do |question_form| %>
+<% form_for(@question, :url => hunt_questions_path(@hunt), :html => {:onsubmit => "return saveCoords()"}) do |question_form| %>
   <%= question_form.error_messages %>
   <p>
     <%= question_form.label :question %><br />
