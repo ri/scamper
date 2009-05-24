@@ -1,3 +1,5 @@
+<%= render :partial => 'sidebar' %>
+ 
  <h1>Edit Question</h1>
 <% form_for(@question, :url => hunt_question_path(@question.hunt, @question),
 			:html => {:onsubmit => "return saveCoords()"}) do |question_form| %>
