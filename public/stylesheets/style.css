@@ -148,6 +148,17 @@ text-align: left;
 	text-decoration: underline;
 }
 
+#dashboardheader h1 {
+	padding-top: 25px;
+}
+
+#dashboardheader img {
+	float:left;
+	display:inline;
+	margin-right:10px;
+}
+
+
 img {
 	border: none;
 }
@@ -194,6 +205,10 @@ margin-left: 180px;
 margin-top: -180px;
 }
 
+#answerform {
+margin-left: 180px;
+margin-top: -125px;
+}
 
 #currentq {
 	display:inline-block;
@@ -223,6 +238,28 @@ margin-top: -180px;
 	width:155px;
 	height: 54px;
 	background: url("/images/buttons/question_add_notext.png") no-repeat;
+	position:relative;
+	padding-left:46px;
+	padding-top:20px;
+	margin-bottom: -19px;
+}
+
+#inactiveq {
+	display:inline-block;
+	width:155px;
+	height: 54px;
+	background: url("/images/buttons/question_play_inactive.png") no-repeat;
+	position:relative;
+	padding-left:46px;
+	padding-top:20px;
+	margin-bottom: -19px;
+}
+
+#activeq {
+	display:inline-block;
+	width:155px;
+	height: 54px;
+	background: url("/images/buttons/question_play_active.png") no-repeat;
 	position:relative;
 	padding-left:46px;
 	padding-top:20px;
@@ -346,19 +383,22 @@ display:none;
 background:url("/images/buttons/clearanswer_hover.png");
 }
 
-#createnew{
-display:inline-block;
-width:182px;
-height: 55px;
-background: url("/images/buttons/createnewhuntstandby.png");
-position:relative;
+a#createnew {
+	display: block;
+	width:182px;
+	height: 0px;
+	background: url("/images/buttons/createnewhuntstandby.png");
+	padding-top: 55px;
+	overflow: hidden;
+	float:right;
+	margin-top: -50px;
 }
 
 #createnew span{
 display:none;
 }
 
-#createnew:hover
+a#createnew:hover
 {
 background:url("/images/buttons/createnewhuntmouse.png");
 }

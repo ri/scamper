@@ -1,6 +1,6 @@
-<h1><img src="/images/buttons/clipboard.png" />My Dashboard<INPUT TYPE="image" id="createnew" align="right" onclick="this.src='/images/buttons/createnewhuntonclick.png';" onmouseover="this.src='/images/buttons/createnewhuntmouse.png';"
-   onmouseout="this.src='/images/buttons/createnewhuntstandby.png';" SRC="/images/buttons/createnewhuntstandby.png" HEIGHT="55" WIDTH="170" BORDER="0" ALT="Submit Form">
-</h1>
+<div id="dashboardheader"><img src="/images/buttons/clipboard.png"/><h1>My Dashboard</h1> <%= link_to 'New Hunt', new_hunt_path, :id => 'createnew' %>
+	<br />
+</div>
 <% def admin?
  current_user.creator?
 end%>
@@ -9,7 +9,7 @@ end%>
 
 <% if admin? then%>
 
-<p> Hunts Created </p>
+<h1> Hunts Created </h1>
 
 <table>
   <tr>
@@ -52,7 +52,7 @@ end%>
 <% else %>
 </table>
 
-<p> Hunts Participating </p>
+<h1> Hunts Participating </h1>
 <table>
   <tr>
 	<th>Hunt Id</th>    

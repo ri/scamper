@@ -1,5 +1,6 @@
 <%= render :partial => 'questions/playersidebar' %>
 
+<div id="answerform">
 <% form_for :response, @response, hunt_question_response_path(@question.hunt, @question, @response) do |response_form| %>
   <p>
     <b>Question:</b>
@@ -17,3 +18,4 @@
 
   <%= response_form.submit 'Answer' %>
 <% end %>
+</div>
