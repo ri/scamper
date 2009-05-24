@@ -57,9 +57,9 @@ ActiveRecord::Schema.define(:version => 20090523141139) do
   end
 
   create_table "responses", :force => true do |t|
-    t.integer "question_id"
-    t.integer "user_id"
+    t.integer "player_id"
     t.integer "answer_id"
+    t.boolean "correct"
   end
 
   create_table "sessions", :force => true do |t|
