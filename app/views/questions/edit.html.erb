@@ -140,7 +140,9 @@
 	  </p>
 	<% end %> </form>
 
-	<%= link_to 'Show', hunt_question_path(@question.hunt, @question) %> |
-	<%= link_to 'Back', hunt_questions_path(@question.hunt) %>
+	<%= link_to 'Show', hunt_question_path(@question.hunt, @question) %> 
+	<% link_to(hunt_questions_path(@question.hunt)) do %>
+	<%= image_tag '/images/buttons/back.png' %> <% end%>
+
 
 </div>

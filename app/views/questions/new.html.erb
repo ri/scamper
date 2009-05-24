@@ -165,6 +165,8 @@
 
 <% end %>
 
-<%= link_to 'Back', hunt_questions_path(@hunt) %>
+<% link_to(hunt_questions_path(@hunt)) do %>
+<%= image_tag '/images/buttons/back.png' %> <% end%>
+<%= image_tag '/images/buttons/forward.png' %>
 
 </div>

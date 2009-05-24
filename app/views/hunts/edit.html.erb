@@ -21,4 +21,7 @@
 <% end %>
 
 <%= link_to 'Show', @hunt %> |
-<%= link_to 'Back', hunts_path %>
+<% link_to(hunt_path) do %>
+<%= image_tag '/images/buttons/back.png' %> <% end%>
+
+<%= image_tag '/images/buttons/forward.png' %>
