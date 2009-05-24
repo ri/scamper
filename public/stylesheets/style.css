@@ -316,14 +316,14 @@ display:none;
 
 #createnew:hover
 {
-background:url("/images/createnewhuntmouse.png");
+background:url("/images/buttons/createnewhuntmouse.png");
 }
 
 #lockin{
 display:inline-block;
 width:182px;
 height: 52px;
-background: url("/images/lockinanswer_norm.png");
+background: url("/images/buttons/lockinanswer_norm.png");
 position:relative;
 }
 
@@ -333,14 +333,14 @@ display:none;
 
 #lockin:hover
 {
-background:url("/images/lockinanswer_hover.png");
+background:url("/images/buttons/lockinanswer_hover.png");
 }
 
 #signmeup{
 display:inline-block;
 width:182px;
 height: 52px;
-background: url("/images/signmeup_norm.png");
+background: url("/images/buttons/signmeup_norm.png");
 position:relative;
 }
 
@@ -350,14 +350,14 @@ display:none;
 
 #signmeup:hover
 {
-background:url("/images/signmeup_hover.png");
+background:url("/images/buttons/signmeup_hover.png");
 }
 
 #viewlist{
 display:inline-block;
 width:182px;
 height: 52px;
-background: url("/images/viewlist_norm.png");
+background: url("/images/buttons/viewlist_norm.png");
 position:relative;
 }
 
@@ -367,14 +367,14 @@ display:none;
 
 #viewlist:hover
 {
-background: url("/images/viewlist_hov.png");
+background: url("/images/buttons/viewlist_hov.png");
 }
 
 #seeresults{
 display:inline-block;
 width:182px;
 height: 52px;
-background: url("/images/viewresults_hover.png");
+background: url("/images/buttons/viewresults_hover.png");
 position:relative;
 }
 
@@ -384,14 +384,14 @@ display:none;
 
 #seeresults:hover
 {
-background: url("/images/viewresults_h.png");
+background: url("/images/buttons/viewresults_h.png");
 }
 
 #printqr{
 display:inline-block;
 width:182px;
 height: 52px;
-background: url("/images/printqr_s.png");
+background: url("/images/buttons/printqr_s.png");
 position:relative;
 }
 
@@ -401,14 +401,14 @@ display:none;
 
 #printqr:hover
 {
-background: url("/images/printQR.png");
+background: url("/images/buttons/printQR.png");
 }
 
 #makeqr{
 display:inline-block;
 width:182px;
 height: 52px;
-background: url("/images/makeqrcode_norm.png");
+background: url("/images/buttons/makeqrcode_norm.png");
 position:relative;
 }
 
@@ -416,7 +416,7 @@ position:relative;
 display:block;
 width:50px;
 height:50px;
-background: url("/images/plus.png");
+background: url("/images/buttons/plus.png");
 position:relative;
 }
 
@@ -431,14 +431,14 @@ display:none;
 
 #makeqr:hover
 {
-background:url("/images/makeqecode_hover.png");
+background:url("/images/buttons/makeqecode_hover.png");
 }
 
 #clear{
 display:inline-block;
 width:182px;
 height: 52px;
-background: url("/images/clearform_norm.png");
+background: url("/images/buttons/clearform_norm.png");
 position:relative;
 }
 
@@ -448,14 +448,14 @@ display:none;
 
 #clear:hover
 {
-background:url("/images/clearform_hover.png");
+background:url("/images/buttons/clearform_hover.png");
 }
 
 #launch{
 display:inline-block;
 width:182px;
 height: 52px;
-background: url("/images/launchhunt_norm.png");
+background: url("/images/buttons/launchhunt_norm.png");
 position:relative;
 }
 
@@ -465,14 +465,14 @@ display:none;
 
 #launch:hover
 {
-background:url("/images/launchhunt_hover.png");
+background:url("/images/buttons/launchhunt_hover.png");
 }
 
 #overview{
 display: inline-block;
 width:150px;
 height: 77px;
-background: url("/images/overview.png");
+background: url("/images/buttons/overview.png");
 position:relative;
 }
 
@@ -484,14 +484,14 @@ display:none;
 
 #overview:hover
 {
-background:url("/images/overview_hover.png");
+background:url("/images/buttons/overview_hover.png");
 }
 
 #huntprofile{
 display: inline-block;
 width:150px;
 height: 77px;
-background: url("/images/huntprofile.png");
+background: url("/images/buttons/huntprofile.png");
 position:relative;
 }
 
@@ -501,14 +501,14 @@ display:none;
 
 #huntprofile:hover
 {
-background:url("/images/huntprofile_hov.png");
+background:url("/images/buttons/huntprofile_hov.png");
 }
 
 #inviteplayers{
 display: inline-block;
 width:150px;
 height: 77px;
-background: url("/images/inviteplayers.png");
+background: url("/images/buttons/inviteplayers.png");
 position:relative;
 }
 
@@ -518,14 +518,14 @@ display:none;
 
 #inviteplayers:hover
 {
-background:url("/images/inviteplayers_hover.png");
+background:url("/images/buttons/inviteplayers_hover.png");
 }
 
 #quizsetup{
 display: inline-block;
 width:150px;
 height: 77px;
-background: url("/images/quizsetup.png");
+background: url("/images/buttons/quizsetup.png");
 position:relative;
 }
 
@@ -535,5 +535,5 @@ display:none;
 
 #quizsetup:hover
 {
-background:url("/images/quizsetup_hover.png");
+background:url("/images/buttons/quizsetup_hover.png");
 }
