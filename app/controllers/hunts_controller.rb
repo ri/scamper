@@ -3,6 +3,9 @@ class HuntsController < ApplicationController
   
   before_filter :login_required
   
+  def hunts_completed
+  end
+  
   def admin?
     current_user.creator?
   end

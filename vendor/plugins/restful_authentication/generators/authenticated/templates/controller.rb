@@ -18,7 +18,7 @@ class <%= controller_class_name %>Controller < ApplicationController
       self.current_<%= file_name %> = <%= file_name %>
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag
-      redirect_back_or_default('/')
+      redirect_back_or_default(user_hunts_path(current_user))
       flash[:notice] = "Logged in successfully"
     else
       note_failed_signin
