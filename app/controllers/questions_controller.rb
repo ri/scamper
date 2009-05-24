@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  layout "hunts"
+  layout "huntsedit"
   
   # This is needed so that google can access the KML file
   # without a username and password

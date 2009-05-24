@@ -2,7 +2,7 @@
 <div id="currentq">Question 0</div>
 <% i = 1 %>
 <% for question in @hunt.questions %>
-  <% link_to(hunt_question_path(@hunt, question)) do %>
+  <% link_to(edit_hunt_question_path(@hunt, question)) do %>
     <div id="filledq">Question <%= i%></div>
   <% end %>
   <% i += 1 %>
