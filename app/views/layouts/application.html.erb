@@ -14,7 +14,7 @@
 			<div class="userwelcome">
 				<% if logged_in? %>
 					Hi <%= current_user.login %>!
-					<%= link_to '(edit your profile)', edit_user_path %>
+					<%= link_to '(Profile)', edit_user_path(current_user) %>   <%= link_to '(Dashboard)', user_hunts_path(@current_user) %> 
 					<% end %> 
 			</div>
 			<div class="help">

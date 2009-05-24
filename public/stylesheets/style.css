@@ -154,7 +154,7 @@ img {
 
 .userwelcome {
 float: left;
-margin-left: -80px;
+margin-left: -50px;
 padding-top: 22px;
 width: 515px;
 }
@@ -162,7 +162,7 @@ width: 515px;
 .help {
 	float: left;
 	padding-top: 22px;
-	margin-left: 60px;
+	margin-left: 25px;
 	width: 126px;
 }
 
