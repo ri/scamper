@@ -1,0 +1,614 @@
+body {
+  min-width: 550px;      /* 2x LC width + RC width */
+  background-color: #ffffff;
+  font-family: Helvetica;
+text-align: center;
+font-size: 12pt;
+}
+
+
+#photos{
+margin-left: auto;
+margin-right: auto;
+position: relative;
+
+
+}
+
+#meet{
+padding: 20px;
+margin-left: 40px;
+}
+
+/*Buttons*/
+
+#saveprogress{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/front/saveprogress_norm.png");
+position:relative;
+}
+
+
+
+#saveprogress span{
+display:none;
+}
+
+#saveprogress:hover
+{
+background:url("/images/front/saveprogress_hover.png");
+}
+
+#player{
+display:inline-block;
+width:303px;
+height: 82px;
+background: url("/images/front/getplayeraccount.png");
+position:relative;
+}
+
+#player span{
+display:none;
+}
+
+#player:hover
+{
+}
+
+#creator{
+display:inline-block;
+width:303px;
+height: 82px;
+background: url("/images/front/getcreatoraccount.png");
+position:relative;
+}
+
+#creator span{
+display:none;
+}
+
+#creator:hover
+{
+}
+
+#clearanswer{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/front/clearanswer_norm.png");
+position:relative;
+}
+
+#clearanswer span{
+display:none;
+}
+
+#clearanswer:hover
+{
+background:url("/images/front/clearanswer_hover.png");
+}
+
+#createnew{
+display:inline-block;
+width:182px;
+height: 55px;
+background: url("/images/front/createnewhuntstandby.png");
+position:relative;
+}
+
+#createnew span{
+display:none;
+}
+
+#createnew:hover
+{
+background:url("/images/front/createnewhuntmouse.png");
+}
+
+#lockin{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/front/lockinanswer_norm.png");
+position:relative;
+}
+
+#lockin span{
+display:none;
+}
+
+#lockin:hover
+{
+background:url("/images/front/lockinanswer_hover.png");
+}
+
+#signmeup{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/front/signmeup_norm.png");
+position:relative;
+}
+
+#signmeup span{
+display:none;
+}
+
+#signmeup:hover
+{
+background:url("/images/front/signmeup_hover.png");
+}
+
+#viewlist{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/front/viewlist_norm.png");
+position:relative;
+}
+
+#viewlist span{
+display:none;
+}
+
+#viewlist:hover
+{
+background: url("/images/front/viewlist_hov.png");
+}
+
+
+
+#printqr{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/front/printqr_s.png");
+position:relative;
+}
+
+#printqr span{
+display:none;
+}
+
+#printqr:hover
+{
+background: url("/images/front/printQR.png");
+}
+
+#makeqr{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/front/makeqrcode_norm.png");
+position:relative;
+}
+
+#newquestion{
+display:block;
+width:50px;
+height:50px;
+background: url("/images/front/plus.png");
+position:relative;
+}
+
+
+#newquestion span{
+display:none;
+}
+
+#makeqr span{
+display:none;
+}
+
+#makeqr:hover
+{
+background:url("/images/front/makeqecode_hover.png");
+}
+
+#clear{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/front/clearform_norm.png");
+position:relative;
+}
+
+#clear span{
+display:none;
+}
+
+#clear:hover
+{
+background:url("/images/front/clearform_hover.png");
+}
+
+#launch{
+display:inline-block;
+width:182px;
+height: 52px;
+background: url("/images/front/launchhunt_norm.png");
+position:relative;
+}
+
+#launch span{
+display:none;
+}
+
+#launch:hover
+{
+background:url("/images/front/launchhunt_hover.png");
+}
+
+#home{
+display: inline-block;
+width:56px;
+height: 89px;
+background: url("/images/front/home.png");
+position:relative;
+}
+
+#home span{
+display:none;
+}
+
+#home:hover
+{
+background:url("/images/front/home_hover.png");
+}
+
+#about{
+display: inline-block;
+width:56px;
+height: 89px;
+background: url("/images/front/about.png");
+position:relative;
+}
+
+#about span{
+display:none;
+}
+
+#about:hover
+{
+background:url("/images/front/about_hover.png");
+}
+
+#project{
+display: inline-block;
+width:56px;
+height: 89px;
+background: url("/images/front/project.png");
+position:relative;
+}
+
+#project span{
+display:none;
+}
+
+#project:hover
+{
+background:url("/images/front/project_hover.png");
+}
+
+#team{
+display: inline-block;
+width:56px;
+height: 89px;
+background: url("/images/front/team.png");
+position:relative;
+}
+
+#team span{
+display:none;
+}
+
+#team:hover
+{
+background:url("/images/front/team_hover.png");
+}
+
+/*other*/
+
+#mainnav{
+margin-left: 650px;
+margin-top: -140px;
+}
+
+.green{
+color: #7de368;
+}
+
+.cream{
+color: #fff6ba;
+}
+
+table.center {
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+h1 {
+	font-size: 16pt;
+}
+
+h2 {
+	font-size: 14pt;
+}
+
+h3 {
+	font-size: 12pt;
+}
+
+	
+th {
+	font: bold, 14pt;
+	color: #000000;
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	text-align: center;
+	padding: 15px 15px 15px 15px;
+	background: #a3cc56 url(/images/front/bg_header.jpg) no-repeat;
+}
+td {
+	border-right: 1px solid #C1DAD7;
+	border-left: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	background: #d8e6e7;
+	padding: 15px 15px 15px 15px;
+	color: #000000;
+}
+
+
+td.alt {
+	background: #e5eeef;
+	color: #000000;
+}
+#container {
+margin-left: auto;
+margin-right: auto;
+position: relative;
+text-align: left;
+
+}
+
+
+#logo{
+padding: 40px;
+margin-left: 100px;
+}
+
+#/images/front/{
+width: 200px;
+}
+
+.imagecolumn{
+display: block;
+padding: 20px;
+margin-left: 40px;
+}
+
+.textcolumn{
+display: block;
+padding-bottom: 20px;
+margin-left: 60px;
+}
+
+.textcolumn p{
+font-size: 8pt;
+}
+
+.textcolumn li{
+font-size: 7pt;
+}
+
+#text{
+width: 500px;
+margin-left: 250px;
+margin-top: -920px;
+}
+
+#footer{
+background-color: #dee2e2;
+margin-bottom:-10px;
+width: 100%;
+position:relative;
+}
+#footercontent{
+width:690;
+position:relative;
+margin-left: auto;
+margin-right:auto;
+padding: 20px;
+
+}
+
+#footercontent p{
+font-size: 10pt;
+}
+
+#center {
+    position: relative;
+	background: #FFFFFF none repeat scroll 0 0;
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+	padding: 30px;
+	width: 820px;
+}
+#dashboard {
+    height: auto;
+	min-height: 100px;
+	background: url("/images/front/banner.jpg");
+	
+	margin-top: -10px;
+	width: 1024px;
+	color: #FFFFFF;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#blue{
+color:#6494b2;
+}
+
+#grid{
+padding:20px;
+}
+
+#column h1{
+color: #ff3716;
+}
+
+#column{
+width: 220px;
+padding: 20px;
+}
+
+#column p{
+font-size: 10pt;
+}
+
+
+
+#column2 h1{
+color: #ff3716;
+}
+
+#column2{
+width: 220px;
+margin-left: 260px;
+margin-top: -188px;
+padding:20px;
+}
+
+#column2 p{
+font-size: 10pt;
+}
+
+#column3 h1{
+color: #ff3716;
+}
+
+#column3{
+width: 230px;
+margin-left: 520px;
+margin-top: -170px;
+padding: 20px;
+}
+
+#column3 p{
+font-size: 10pt;
+}
+
+#column4{
+width: 225px;
+margin-left: 240px;
+margin-top: -183px;
+}
+
+#column4 p{
+font-size: 10pt;
+}
+
+#column5{
+width: 230px;
+margin-left: 480px;
+margin-top: -150px;
+}
+
+#column5 p{
+font-size: 10pt;
+}
+
+#columnleft{
+width: 320px;
+font-size: 8pt;
+position:relative;
+padding: 20px;
+margin-left: 20px;
+}
+
+#download{
+background: url("/images/front/download.png");
+height:53;
+width:276;
+display: inline-block;
+}
+
+
+#download span{
+display:none;
+}
+
+#columnright{
+margin-left: 390px;
+margin-top: -610px;
+
+padding: 20px;
+}
+
+#c1{
+width: 160px;
+padding: 15px;
+font-size: 8pt;
+
+}
+
+#c2{
+width: 160px;
+padding: 15px;
+font-size: 8pt;
+
+margin-left:180px;
+margin-top: -662px;
+}
+
+#blurb{
+width: 300px;
+padding-top: 20px;
+padding-left: 20px;
+padding-right: 20px;
+padding-bottom: 10px;
+margin-left: 120px;
+margin-top: 10px;
+}
+
+
+#form{
+padding: 20px;
+}
+
+#questions{
+width: 100px;
+position: absolute;
+height: 200px;
+margin-left: 50px;
+padding: 20px;}
+
+#map{
+padding: 20px;
+margin-left: 350px;
+position:absolute;
+margin-top: -300px;
+}
+#forma{
+position: relative;
+margin-left: 200px;
+padding:20px;
+margin-bottom:-10px;
+
+}
+
+#footer {
+  clear: both;
+}
+/*** IE6 Fix ***/
+* html #left {
+  left: 150px;           /* RC width */
+}
+
