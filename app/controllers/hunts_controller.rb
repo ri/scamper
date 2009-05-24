@@ -66,11 +66,7 @@ end
   # GET /hunts/new.xml
   def new
     @hunt = Hunt.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @hunt }
-    end
+    render :layout => 'huntsedit'
   end
 
   # GET /hunts/1/edit
