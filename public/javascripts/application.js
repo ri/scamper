@@ -1,23 +1,33 @@
-function qrcode(message, width, height, image_id)
+/*
+  Change a QRCode image on the page
+
+  e.g.
+    
+    qrcode("message to encode", {'id': 'qrcode_img', 'width': 300, 'height': 300})
+*/
+function qrcode(message, options)
 {
-  if (image_id == null) image_id = "qrcode";    
+  image_id = (options.id || "qrcode").toString();
+  width    = (options.width  || 200).toString();
+  height   = (options.height || 200).toString(); 
+
   var qrcode = document.getElementById(image_id);
 
-  if(qrcode != null) {
-    if (width  == null) width  = 200;
-    if (height == null) height = 200;
+  if (qrcode != null) {
+    var base_url        = "http://chart.apis.google.com/chart?cht=qr";
+    var size            = "&chs=" + width + "x" + height;
+    var escaped_message = "&chl=" + escape(message);
   
-    var base            = "http://chart.apis.google.com/chart?cht=qr";
-    var escaped_message = escape(message);
-  
-    qrcode.alt         = message;
-    qrcode.src         = base    + 
-                          "&chl=" + escaped_message  +
-                          "&chs=" + width.toString() + 
-                          "x"     + height.toString();
-
-    return true;
+    // set it empty first while the size changes so
+    // it doesn't get skewed for a second
+    qrcode.src          = "";
+    qrcode.alt          = message;
+    qrcode.width        = width;
+    qrcode.height       = height;
+    qrcode.src          = base_url + escaped_message + size;
+    
+    return qrcode;
   } 
 
-  return false;
+  return null;
 }
