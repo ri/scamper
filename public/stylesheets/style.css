@@ -200,10 +200,28 @@ margin-left: -10px;
 margin-top: -10px;
 }
 
+.questionlabel {
+	vertical-align: top;
+	padding-right: 40px;
+}
+
 #questionform {
 margin-left: 180px;
-margin-top: -180px;
+margin-top: -120px;
 }
+#questionform ul {
+	list-style-type: none;
+}
+
+#questionform li {
+	list-style-type: none;
+	
+}
+
+.coderalert {
+	color: #FF0000;
+}
+
 
 #answerform {
 margin-left: 180px;
@@ -216,9 +234,10 @@ margin-top: -125px;
 	height: 54px;
 	background: url("/images/buttons/question_current_edit.png") no-repeat;
 	position:relative;
-	padding-left:46px;
+	padding-left:55px;
 	padding-top:20px;
 	margin-bottom: -19px;
+	font-size: 14px;
 }
 
 #filledq
@@ -228,9 +247,11 @@ margin-top: -125px;
 	height: 54px;
 	background: url("/images/buttons/question_filled.png") no-repeat;
 	position:relative;
-	padding-left:46px;
+	padding-left:55px;
 	padding-top:20px;
 	margin-bottom: -19px;
+	font-size: 14px;
+	
 }
 #addq
 {
@@ -242,6 +263,7 @@ margin-top: -125px;
 	padding-left:46px;
 	padding-top:20px;
 	margin-bottom: -19px;
+	font-size: 14px;
 }
 
 #inactiveq {
@@ -253,6 +275,7 @@ margin-top: -125px;
 	padding-left:46px;
 	padding-top:20px;
 	margin-bottom: -19px;
+		font-size: 14px;
 }
 
 #activeq {
@@ -264,6 +287,7 @@ margin-top: -125px;
 	padding-left:46px;
 	padding-top:20px;
 	margin-bottom: -19px;
+		font-size: 14px;
 }
 #map{
 padding: 20px;
