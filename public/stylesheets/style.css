@@ -200,10 +200,28 @@ margin-left: -10px;
 margin-top: -10px;
 }
 
+.questionlabel {
+	vertical-align: top;
+	padding-right: 40px;
+}
+
 #questionform {
 margin-left: 180px;
 margin-top: -120px;
 }
+#questionform ul {
+	list-style-type: none;
+}
+
+#questionform li {
+	list-style-type: none;
+	
+}
+
+.coderalert {
+	color: #FF0000;
+}
+
 
 #answerform {
 margin-left: 180px;
