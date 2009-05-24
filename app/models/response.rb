@@ -6,7 +6,7 @@ class Response < ActiveRecord::Base
   validates_presence_of :question_id, :answer_id, :player_id
 
   validate :validates_only_one_answer_per_question_per_player
-  before_save :cache_answer_details
+  before_validation :cache_answer_details
   
   def question
     self[:question] ||= answer.question

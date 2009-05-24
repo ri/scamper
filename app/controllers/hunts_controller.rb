@@ -10,7 +10,7 @@ class HuntsController < ApplicationController
   def invite_players
     @users = User.find(:all, :conditions => {:creator => false})
     @hunt = Hunt.find(params[:id])   
-    render :layout => 'huntsedit' 
+    render :layout => :choose_layout
   end
   
   def add_players
@@ -39,7 +39,6 @@ class HuntsController < ApplicationController
   
   def index
     @user = current_user
-    
     #@player = Player.find :all, :conditions => { :user_id => current_user.id }
     
     @playerhunts = @user.hunts
@@ -58,7 +57,7 @@ class HuntsController < ApplicationController
     @hunt = Hunt.find(params[:id])
     @questions = @hunt.questions(params[:hunt_id])
 
-      render :layout => 'huntsedit'
+      render :layout => :choose_layout
   end
 
   # GET /hunts/new
@@ -66,13 +65,13 @@ class HuntsController < ApplicationController
   def new
     @hideprofilebutton = true
     @hunt = Hunt.new
-    render :layout => 'huntsedit'
+    render :layout => :choose_layout
   end
 
   # GET /hunts/1/edit
   def edit
     @hunt = Hunt.find(params[:id])   
-    render :layout => 'huntsedit'
+    render :layout => :choose_layout
   end
 
   # POST /hunts
@@ -121,4 +120,14 @@ class HuntsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  protected
+  
+    def choose_layout
+      if current_user.creator?
+        'huntsedit'
+      else
+        'hunts'
+      end
+    end
 end
