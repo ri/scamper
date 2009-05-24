@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :session
   map.resources :users, :has_many => [:hunts]
   
-  map.resources :hunts, :member => {:add_player => :put, :play => :get} do |hunts|
+  map.resources :hunts, :member => {:invite_players => :get, :add_players => :put, :play => :get} do |hunts|
     hunts.resources :users
     hunts.resources :questions, :member => {:printview => :get, :new_answer => :put} do |questions|
       questions.resources :hints

@@ -44,25 +44,6 @@
 	
 	</br>
 </br>
-		Add User to Hunt (use checkboxes to add the users to this hunt)
-		
-		<table>
-		<% form_tag(add_player_hunt_path, :method => :put) do %>
-			<% @users.each do |user| %>
-			<tr>
-			<th><b>Name</b></th>
-			<th><b>user ID</b></th>
-			<th><b>Add user <b></th>
-			</tr>
-			<tr>
-			<td><%= user.login%></td>
-			<td>  <%= user.id %></td>
-			<td><%= check_box_tag :user_ids, user.id %> </td>
-			</tr>
-			<% end %>
-			<tr><td></td><td></td><td><%= submit_tag 'add users'%></td></tr>
-			</table>
-		<% end %>
 		
 		<INPUT TYPE="image" SRC="/images/buttons/seeresults.png" HEIGHT="45" WIDTH="170" BORDER="0" ALT="Submit Form"><br /><br />
 		<INPUT TYPE="image" SRC="/images/buttons/viewlistofplayers.png" HEIGHT="45" WIDTH="170" BORDER="0" ALT="Submit Form"><br /><br />

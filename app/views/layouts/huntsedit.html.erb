@@ -33,16 +33,21 @@
 </div>
 
 <div id="dasshboard">
+  <% if !@hideprofilebutton %>
+  <% link_to(edit_hunt_path(@hunt), :id => "huntprofile") do %>
+   <span>huntprofile</span>
+  <% end%>
+  <% else %>
   <% link_to(new_hunt_path, :id => "huntprofile") do %>
    <span>huntprofile</span>
   <% end%>
-  
+  <% end %>
 
   <% if !@hideprofilebutton %>
   <% link_to(new_hunt_question_path(@hunt), :id => "quizsetup") do %>
    <span>quizsetup</span>
   <% end%>
-    <% link_to(edit_hunt_path(@hunt), :id => "inviteplayers") do %>
+    <% link_to(invite_players_hunt_path(@hunt), :id => "inviteplayers") do %>
      <span>inviteplayers</span>
     <% end%>
     <% link_to(hunt_path(@hunt), :id => "overview") do %>
