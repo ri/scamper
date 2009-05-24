@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
-  layout "huntsedit"
+
+  layout :choose_layout
   
   # This is needed so that google can access the KML file
   # without a username and password
@@ -32,6 +33,7 @@ class QuestionsController < ApplicationController
     @question = @questions.find(params[:id])
     @hunt = @question.hunt
     @questions = @hunt.questions
+    @player_response = Response.find_by_question_id_and_player_id(@question.id, current_user.id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -119,4 +121,13 @@ class QuestionsController < ApplicationController
       @hunt = Hunt.find(params[:hunt_id])
       @questions = @hunt.questions
     end
+    
+    def choose_layout
+      if current_user.creator?
+        'huntsedit'
+      else
+        'application'
+      end
+    end
+      
 end

@@ -1,15 +1,21 @@
 class Response < ActiveRecord::Base
+  belongs_to :question
   belongs_to :answer
   belongs_to :player
 
-  validate :validates_only_one_answer_per_question_per_player
-  before_create :cache_correctness
+  validates_presence_of :question_id, :answer_id, :player_id
 
-  delegate :question, :to => :answer
+  validate :validates_only_one_answer_per_question_per_player
+  before_save :cache_answer_details
+  
+  def question
+    self[:question] ||= answer.question
+  end
   
   private  
-    def cache_correctness
-      self.correct = answer.correct?
+    def cache_answer_details
+      self.correct     = answer.correct?
+      self.question_id = question.id
  
       # need to return true so that it doesn't halt the save
       true

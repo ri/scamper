@@ -4,12 +4,17 @@
 <%= render :partial => 'playersidebar' %>
 <% end %>
 <div id="questionform">
-<p>
-  <b>Answer:</b>
-  <%=h @question.correct_answer %>
-</p>
-<p>
-  <b>Question:</b>
-  <%=h @question.question %>
-</p>
+  <p>
+    <b>Question:</b>
+    <%=h @question.question %>
+  </p>
+  <p>
+    <% if current_user.creator? %>
+    <b>Answer:</b>
+    <%=h @question.correct_answer %>
+    <% else %>
+    <b>You Responded:</b>
+    <%= @player_response.answer %>
+    <% end%>
+  </p>
 </div>

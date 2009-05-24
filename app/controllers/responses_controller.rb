@@ -14,7 +14,7 @@ class ResponsesController < ApplicationController
     
     if @response.save
       flash[:notice] = 'Your answer has been saved'
-      redirect_to hunt_question_path(@hunt, @question)
+      redirect_to hunt_question_path(@question.hunt, @question)
     else
       flash.now[:error] = "Please select an answer"
       render :action => :show
@@ -36,7 +36,7 @@ class ResponsesController < ApplicationController
     
     def verify_question_is_unanswered
       if get_current_question.answered?(current_user)
-        flash[:error] = "You have already answered that question."
+        flash[:error] = "You have already answered this question."
         redirect_to [@question.hunt, @question]
       end
     end
