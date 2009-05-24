@@ -1,2 +1,7 @@
-sadfsd
-<%= question.%>
+<% i = 1 %>
+<% for question in @hunt.questions %>
+  <% link_to(hunt_question_path(@hunt, question)) do %>
+    Question <%= i%>
+  <% end %>
+  <% i += 1 %>
+<% end %>
