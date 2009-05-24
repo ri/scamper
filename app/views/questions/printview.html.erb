@@ -2,18 +2,17 @@
 
 <table>
   <tr>
-	<th>Hunt Id</th>    
+	  <th>Hunt Id</th>    
     <th>Hint</th>
-	<th>QR Code </th>
-	<th>Destroy</th>
+	  <th>QR Code </th>
+	  <th>Destroy</th>
   </tr>
 
 <% for hint in @hint%>
   <tr>
-	<td><%=h hint.id %> </td>
+	  <td><%=h hint.id %> </td>
     <td><%=h hint.hint %></td>
-
- 	<td><%= qrcode(h hint.hint) %></td>
+    <td><%= qrcode(hint.hint) %></td>
   </tr>
 
 <%end%>

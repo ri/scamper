@@ -15,8 +15,7 @@ class HintsController < ApplicationController
     
   end
   
-  
-    def new
+  def new
     @hint = Hint.new
     @question = Question.find(params[:question_id])
 
@@ -40,7 +39,6 @@ class HintsController < ApplicationController
   end
   
   def create
-          
     @hint = Question.find(params[:question_id]).hints.new(params[:hint])
     @question = Question.find(params[:question_id])
     
@@ -67,5 +65,4 @@ class HintsController < ApplicationController
     end
   end
 end
-
   

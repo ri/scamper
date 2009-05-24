@@ -24,17 +24,17 @@ class QuestionsController < ApplicationController
     @hunt = Hunt.find(:all)
   end
   
-def answer
-    @question = Question.find(params[:id])
-end
+  def answer
+      @question = Question.find(params[:id])
+  end
 
-def answersubmit
+  def answersubmit
   
-end
+  end
 
-def printview
+  def printview
 
-end
+  end
   
   # GET /questions/1
   # GET /questions/1.xml
