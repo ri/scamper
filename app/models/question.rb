@@ -8,4 +8,11 @@ class Question < ActiveRecord::Base
   has_many :responses, :through => :answers
   
   accepts_nested_attributes_for :answers, :allow_destroy => true
+  
+  def answered?(user)
+    player_id = Player.find_by_user_id_and_hunt_id(user.id, hunt_id).id
+    Response.count(:conditions => {:player_id => player_id, :'answers.question_id' => id}, :include => :answer)
+  rescue
+    false
+  end
 end

@@ -1,0 +1,17 @@
+<% form_for :response, @response, question_response_path(@question, @response) do |response_form| %>
+  <p>
+    <b>Question:</b>
+    <%=h @question.question %>
+  </p>
+  
+  <ul>
+    <% @question.answers.each do |answer| %>
+      <li>
+        <%= response_form.radio_button :answer_id, answer.id %>
+        <%= response_form.label "answer_id_#{answer.id}", answer.text %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= response_form.submit 'Answer' %>
+<% end %>

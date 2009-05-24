@@ -23,14 +23,6 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @hunt = Hunt.find(:all)
   end
-  
-  def answer
-      @question = Question.find(params[:id])
-  end
-
-  def answersubmit
-  
-  end
 
   def printview
 
@@ -40,7 +32,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1.xml
   def show
     @question = Question.find(params[:id])
-    @hunt = Hunt.find(params[:hunt_id])
+    @hunt = @question.hunt
     @questions = @hunt.questions
 
     respond_to do |format|

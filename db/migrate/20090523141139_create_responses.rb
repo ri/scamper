@@ -9,6 +9,5 @@ class CreateResponses < ActiveRecord::Migration
 
   def self.down
     drop_table "responses"
-    
   end
 end
