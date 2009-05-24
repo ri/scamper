@@ -1,0 +1,63 @@
+<h1>Start by signing up with us!</h1>
+<p>You may choose from two different types of accounts: Player or Creator account. You are allowed to have more than one 
+Scamper account, but you must make sure your username and password is unique. You must agree to our rules of play (<a href="termsconditions.html">Terms and Conditions</a>) in order to set up your account with us. Donít worry, your privacy is important to us and we promise,
+we will not reveal your details to any other party.</p>
+
+<div id="form">	
+  <% link_to(new_player_users_path) do %>
+    <img src="/images/buttons/getplayeraccount.png" />
+    <% end %>
+    <% link_to(new_creator_users_path) do %>
+      <img src="/images/buttons/getcreatoraccount.png" />
+      <% end %>
+<% @user.password = @user.password_confirmation = nil %>
+<%= error_messages_for :user %>
+<% form_for :user, :url => users_path do |f| -%>
+<table class="signup">
+	<tr>
+		<td>First name: </td>
+		<td><%= f.text_field :first_name %></td>
+	</tr>
+<tr>
+	<td>Last name: </td>
+	<td><%= f.text_field :last_name %></td>
+</tr>
+<tr>
+	<td>Username: </td>
+	<td><%= f.text_field :login %></td>
+</tr>
+<tr>
+	<td>Email:</td>
+	<td><%= f.text_field :email %></td>
+</tr>
+<tr>
+	<td>Password: </td>
+	<td><%= f.password_field :password %></td>
+</tr>
+<tr>
+	<td>Confirm Password: </td>
+	<td><%= f.password_field :password_confirmation %></td>
+</tr>
+<tr>
+	<td>School/organisation: </td>
+	<td><%= f.text_field :organisation %></td>
+</tr>
+
+<%= f.hidden_field (:creator) %>
+
+
+</table>
+
+<h3> * = denotes mandatory fields </h3>
+<br /> <br />
+<input type="checkbox" name="termsconditions" value="termsconditions"> I agree to the <a href"termsconditions.html">terms and conditions.</a>
+
+	<br /> 
+	<p><INPUT TYPE="image" id="createnew" onclick="this.src='/images/buttons/clearform_norm.png';" onmouseover="this.src='/images/buttons/clearform_hover.png';"
+   onmouseout="this.src='/images/buttons/clearform_norm.png';" SRC="/images/buttons/clearform_norm.png" HEIGHT="55" WIDTH="170" BORDER="0" ALT="Submit Form">
+<INPUT TYPE="image" id="reset" onclick="this.src='/images/buttons/signmeup_norm.png';" onmouseover="this.src='/images/buttons/signmeup_hover.png';"
+   onmouseout="this.src='/images/buttons/signmeup_norm.png';" SRC="/images/buttons/signmeup_norm.png" HEIGHT="55" WIDTH="170" BORDER="0" ALT="Submit Form"></p>
+
+	<% end -%></p>
+	
+	</form>

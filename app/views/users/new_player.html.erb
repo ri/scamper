@@ -3,9 +3,13 @@
 Scamper account, but you must make sure your username and password is unique. You must agree to our rules of play (<a href="termsconditions.html">Terms and Conditions</a>) in order to set up your account with us. Donít worry, your privacy is important to us and we promise,
 we will not reveal your details to any other party.</p>
 
-<div id="form">	
-	<a href="registerplayer.html"><img src="/images/buttons/getplayeraccount.png" /></a> 
-	<a href="registercreator.html"><img src="/images/buttons/getcreatoraccount.png" /></a>
+<div id="form">
+  <% link_to(new_player_users_path) do %>
+    <img src="/images/buttons/getplayeraccount.png" />
+    <% end %>
+    <% link_to(new_creator_users_path) do %>
+      <img src="/images/buttons/getcreatoraccount.png" />
+      <% end %>
 <% @user.password = @user.password_confirmation = nil %>
 <%= error_messages_for :user %>
 <% form_for :user, :url => users_path do |f| -%>
@@ -38,10 +42,9 @@ we will not reveal your details to any other party.</p>
 	<td>School/organisation: </td>
 	<td><%= f.text_field :organisation %></td>
 </tr>
-<tr>
-	<td>Creator account:</td>
-	<td><%= f.check_box :creator %></td>
-</tr>
+
+<%= f.hidden_field(:creator) %>
+
 
 </table>
 

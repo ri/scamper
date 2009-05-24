@@ -8,6 +8,7 @@ class ResponsesController < ApplicationController
   end
   
   def create
+    @hunt = @question.hunt
     @response = current_player.responses.build
     @response.player = current_player
     @response.answer_id = params[:response][:answer_id]
