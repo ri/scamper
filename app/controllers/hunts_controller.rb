@@ -65,6 +65,7 @@ end
   # GET /hunts/new
   # GET /hunts/new.xml
   def new
+    @hideprofilebutton = true
     @hunt = Hunt.new
     render :layout => 'huntsedit'
   end

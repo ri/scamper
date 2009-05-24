@@ -15,8 +15,8 @@
 			<div class="userwelcome">
 				<% if logged_in? %>
 					Hi <%= current_user.login %>!
-					<a href="">(edit your profile)</a>
-					<% end %> 
+					<%= link_to '(edit your profile)', edit_user_path(current_user) %>
+					<% end %>
 			</div>
 			<div class="help">
 				<a href="help.html">Help!</a>
@@ -37,8 +37,8 @@
    <span>huntprofile</span>
   <% end%>
   
-  <% if controller.action_name.to_s != 'new' %>
-  
+
+  <% if !@hideprofilebutton %>
   <% link_to(new_hunt_question_path(@hunt), :id => "quizsetup") do %>
    <span>quizsetup</span>
   <% end%>
