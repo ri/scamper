@@ -5,15 +5,22 @@ class UsersController < ApplicationController
   
 
   # render new.rhtml
-  def new
+  def new_creator
     @user = User.new
+    @user.creator = true
   end
+ 
+ def new_player
+   @user = User.new
+   @user.creator = false
+   
+ end
  
   def create
     logout_keeping_session!
 
     @user = User.new(params[:user])
-    @user.creator = (params[:user][:creator] == "1")
+    @user.creator = (params[:user][:creator] == "true")
   
     success = @user && @user.save
     if success && @user.errors.empty?
@@ -23,11 +30,12 @@ class UsersController < ApplicationController
       # button. Uncomment if you understand the tradeoffs.
       # reset session
       self.current_user = @user # !! now logged in
-      redirect_back_or_default('/')
+      redirect_back_or_default(user_hunts_path(current_user))
       flash[:notice] = "Thanks for signing up!"
     else
       flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
-      render :action => 'new'
+      @action = @user.creator ? 'new_creator' : 'new_player'
+      render :action => @action
     end
   end
   def show 
