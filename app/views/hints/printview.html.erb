@@ -13,7 +13,7 @@
     <td><%=h hint.id %> </td>
     <td><%=h hint.hint %></td>
     <td><%= qrcode(hint.hint) %></td>
-    <td><%= link_to 'Destroy', question_hint_path(@question, hint), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', hunt_quesiton_hint_path(@question, hint), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 
 <%end%>

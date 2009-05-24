@@ -24,7 +24,7 @@
     <td><%= link_to 'Show', hunt_question_path(@hunt, question) %></td>
     <td><%= link_to 'Edit', edit_hunt_question_path(@hunt, question) %></td>
     <td><%= link_to 'Destroy', hunt_question_path(@hunt, question), :confirm => 'Are you sure?', :method => :delete %></td>
-  <td><%= link_to 'Create/View Hint', question_hints_path( question)%> </td>
+  <td><%= link_to 'Create/View Hint', hunt_question_hints_path(@hunt, question)%> </td>
 
   </tr>
 <% end %>

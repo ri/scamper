@@ -35,7 +35,7 @@ class ResponsesController < ApplicationController
     def verify_question_is_unanswered
       if get_current_question.answered?(current_user)
         flash[:error] = "You have already answered that question."
-        redirect_to @question
+        redirect_to [@question.hunt, @question]
       end
     end
 end

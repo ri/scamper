@@ -46,7 +46,7 @@ class HintsController < ApplicationController
     respond_to do |format|
       if @hint.save
         flash[:notice] = 'Hint was successfully created.'
-        format.html { redirect_to(question_hints_path(@question)) }
+        format.html { redirect_to(hunt_question_hints_path(@question.hunt, @question)) }
         format.xml  { render :xml => @hint, :status => :created, :location => @hint }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class HintsController < ApplicationController
     @hint.destroy
 
     respond_to do |format|
-      format.html { redirect_to(question_hints_url) }
+      format.html { redirect_to(hunt_question_hints_url) }
       format.xml  { head :ok }
     end
   end

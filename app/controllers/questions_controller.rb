@@ -5,13 +5,11 @@ class QuestionsController < ApplicationController
   # without a username and password
   before_filter :login_required_except_kml, :only   => :index
   before_filter :login_required,            :except => :index
+  before_filter :get_questions
   
   # GET /questions
   # GET /questions.xml
   def index
-    @hunt = Hunt.find(params[:hunt_id])
-    @questions = @hunt.questions
-    
     respond_to do |format|
       format.html
       format.xml  { render :xml => @questions }
@@ -20,7 +18,7 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @question = Question.find(params[:id])
+    @question = @questions.find(params[:id])
     @hunt = Hunt.find(:all)
   end
 
@@ -31,7 +29,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.xml
   def show
-    @question = Question.find(params[:id])
+    @question = @questions.find(params[:id])
     @hunt = @question.hunt
     @questions = @hunt.questions
 
@@ -44,7 +42,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   # GET /questions/new.xml
     def new
-    @question = Question.new
+    @question = @questions.new
     @hunt = Hunt.find(params[:hunt_id])
     4.times {@question.answers.build}
     respond_to do |format|
@@ -55,7 +53,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
-    @question = Question.find(params[:id])
+    @question = @questions.find(params[:id])
     @hunt = Hunt.find(params[:hunt_id])
   end
 
@@ -82,7 +80,7 @@ class QuestionsController < ApplicationController
   # PUT /questions/1
   # PUT /questions/1.xml
   def update
-    @question = Question.find(params[:id])
+    @question = @questions.find(params[:id])
     @hunt = Hunt.find(params[:hunt_id])
     @question.correct_answer = @question.answers[params[:correct_answer].to_i]
 
@@ -101,7 +99,7 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1
   # DELETE /questions/1.xml
   def destroy
-    @question = Question.find(params[:id])
+    @question = @questions.find(params[:id])
     @question.destroy
 
     respond_to do |format|
@@ -115,5 +113,10 @@ class QuestionsController < ApplicationController
     # If request is for a KML file then, don't require the request to be authenticated
     def login_required_except_kml
       login_required unless params['format'].to_s == 'kml'
+    end
+    
+    def get_questions
+      @hunt = Hunt.find(params[:hunt_id])
+      @questions = @hunt.questions
     end
 end
