@@ -197,7 +197,7 @@ width: 515px;
 }
 
 #dasshboard{
-padding-left: 310px;
+padding-left: 237px;
 margin-bottom: -35px;
 padding-top: 20px;
 }
@@ -647,6 +647,24 @@ display:none;
 background:url("/images/buttons/overview_hover.png");
 }
 
+#results{
+display: inline-block;
+width:150px;
+height: 77px;
+background: url("/images/buttons/view_results_tab.png");
+position:relative;
+}
+
+
+
+#results span{
+display:none;
+}
+
+#results:hover
+{
+background:url("/images/buttons/view_results_tab_h.png");
+}
 #huntprofile{
 display: inline-block;
 width:150px;
