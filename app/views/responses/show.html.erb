@@ -18,10 +18,6 @@
   <% if @question.hints.count > 0 %>
   <%= @question.hints.first.hint %>
   <% end %>
-  
-
-	    <div id="map_canvas" style="width: 500px; height: 300px"></div>
-	
   <%= response_form.submit 'Answer' %>
 <% end %>
 </div>

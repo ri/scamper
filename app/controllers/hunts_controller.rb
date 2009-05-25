@@ -7,7 +7,7 @@ class HuntsController < ApplicationController
   def completed
     @hunt = Hunt.find(params[:id])
     @current_player = @hunt.players.find_by_user_id(current_user.id)
-    if (!Response.count(:conditions => {:player_id => @hunt.players.find_by_user_id(@current_player.id)}) == @hunt.questions.count)
+    if (!(Response.count(:conditions => {:player_id => @hunt.players.find_by_user_id(@current_player.id)}) == @hunt.questions.count))
       redirect_back_or_default(user_hunts_path(current_user))
     end
     
