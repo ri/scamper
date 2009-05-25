@@ -13,35 +13,26 @@ end%>
 
 <table>
   <tr>
-	<th>Hunt Id</th>    
     <th>Name</th>
     <th>Description</th>
-	<th></th>
-	<th></th>
-	<th></th>
-	<th></th>
-	<th></th>
-	<th></th>
-	
-
 	<th>Creator</th>
-	<th colspan=5>Actions</th>
+	<th colspan=4>Actions</th>
+
+
   </tr>
 
 
 <% for hunt in @hunts %>
   <tr>
-	<td class="huntid"><%=h hunt.id %> </td>
     <td class="huntname"><%=h hunt.name %></td>
     <td class="huntdescription"><%=h hunt.description %></td>
     <td class="huntcreator"><%=h hunt.created_by %></td>
 
-	<td class="huntactions"><%= link_to 'View Hunt', hunt_path(hunt) %></td>
-    <td class="huntactions"><%= link_to 'Questions', hunt_questions_path(hunt) %></td>
-    <td class="huntactions"><%= link_to 'Players', hunt_users_path(hunt) %></td>
+	<td class="huntactions"><%= link_to 'Hunt Overview', hunt_path(hunt) %></td>
+    <td class="huntactions"><%= link_to 'Questions', new_hunt_question_path(hunt) %></td>
+    <td class="huntactions"><%= link_to 'Players', invite_players_hunt_path(hunt) %></td>
 
-    <td class="huntactions"><%= link_to 'Edit', edit_hunt_path(hunt) %></td>
-    <td class="huntactions"><%= link_to 'Delete', hunt, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="huntactions"><%= link_to 'Delete', hunt, :confirm => 'Are you sure you want to delete this hunt?', :method => :delete %></td>
   </tr>
 
 
@@ -57,15 +48,14 @@ end%>
 	<th>Hunt Id</th>    
     <th>Name</th>
     <th>Description</th>
-	<th></th>
-	<th></th>
+	<th>Actions</th>
+	<th>Score</th>
 
   </tr>
 
 
 <% for hunt in @playerhunts %>
-  <tr>
-	<td class="huntid"><%=h hunt.id %> </td>
+<tr>
     <td class="huntname"><%=h hunt.name %></td>
     <td class="huntdescription"><%=h hunt.description %></td>
     <td class="huntcreator"><%=h hunt.created_by %></td>

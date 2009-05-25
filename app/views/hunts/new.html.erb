@@ -7,34 +7,28 @@
 <table>
 
 	<tr>
-		<td>The name of this hunt:</td><td> <%= f.text_field :name %></td>
+		<td><h3>The name of this hunt:</h3></td><td> <%= f.text_field :name, {:size => 47} %></td>
 	</tr>
 	<tr>
-		<td>Description of hunt:</td><td><%= f.text_area :description %></td>
+		<td><h3>Description of hunt:</h3></td><td><%= f.text_area :description %></td>
 	</tr>
 	<tr>
-		<td>Location(s):</td><td><%= f.text_field :location %></td>
+		<td><h3>Location(s):</h3></td><td><%= f.text_field :location, {:size => 47} %></td>
 	</tr>
 	<tr>
-		<td>Subject/Topics:</td><td><%= f.text_area :subject %></td>
+		<td><h3>Subject/Topics:</h3></td><td><%= f.text_area :subject %></td>
 	</tr>
 	<tr>
-		<td>School/Organization:</td><td><%= f.text_field :schoolname %></td>
+		<td><h3>School/Organization:</h3></td><td><%= f.text_field :schoolname, {:size => 47} %></td>
 	</tr>
 
 
 	</table>
 
 	
+	
+	<br />
 <%= f.submit "Create" %>
 
 <% end %>
 
-
-<a href="saveprogress.html"><INPUT TYPE="image" id="save" onclick="this.src='/images/buttons/saveprogress_norm.png';" onmouseover="this.src='/images/buttons/saveprogress_hover.png';"
-onmouseout="this.src='/images/buttons/saveprogress_norm.png';" SRC="/images/buttons/saveprogress_norm.png"  ALT="Save Progress"></a>
-<a href="reset.html"><INPUT TYPE="image" id="reset" onclick="this.src='/images/buttons/clearform_norm.png';" onmouseover="this.src='/images/buttons/clearform_hover.png';"
-onmouseout="this.src='/images/buttons/clearform_norm.png';" SRC="/images/buttons/clearform_norm.png"  ALT="Reset Form"></a>
-<a href="launch.html"><INPUT TYPE="image" id="launchhunt" onclick="this.src='/images/buttons/launchhunt_norm.png';" onmouseover="this.src='/images/buttons/launchhunt_hover.png';"
-onmouseout="this.src='/images/buttons/launchhunt_norm.png';" SRC="/images/buttons/launchhunt_norm.png"  ALT="Launch Hunt"></a>
- </P>
