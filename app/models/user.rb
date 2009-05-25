@@ -21,10 +21,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :email
   validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
 
-  # validates_presence_of :creator
-
-  
-
+  named_scope :not_in_hunt, lambda {|hunt| {:conditions => ['id NOT IN (SELECT DISTINCT user_id FROM players WHERE hunt_id <> ?)', hunt.id] }}
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
@@ -51,6 +48,7 @@ class User < ActiveRecord::Base
   def email=(value)
     write_attribute :email, (value ? value.downcase : nil)
   end
+
 
   protected
     

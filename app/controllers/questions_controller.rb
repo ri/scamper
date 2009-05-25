@@ -32,8 +32,9 @@ class QuestionsController < ApplicationController
   def show
     @question = @questions.find(params[:id])
     @hunt = @question.hunt
+    @current_player = @hunt.players.find_by_user_id(current_user.id)
     @questions = @hunt.questions
-    @player_response = Response.find_by_question_id_and_player_id(@question.id, current_user.id)
+    @player_response = Response.find_by_question_id_and_player_id(@question.id, @current_player.id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -46,7 +47,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new.xml
     def new
     @question = @questions.new
-    @hunt = Hunt.find(params[:hunt_id])
+      @hunt = Hunt.find(params[:hunt_id])
     4.times {@question.answers.build}
     @question.hints.build
     respond_to do |format|

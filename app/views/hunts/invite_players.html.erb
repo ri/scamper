@@ -1,15 +1,37 @@
-<table>
-<% if @users %>
-<% form_tag(add_players_hunt_path, :method => :put) do %>
-	<% @users.each do |user| %>
+
+<% if @current_players %>
+  Players already in the game
+	<table>
+	<% for player in @current_players %>
+
 	<tr>
 	<th><b>Name</b></th>
-	<th><b>user ID</b></th>
+	<th><b>Organisation</b></th>
+	</tr>
+	<tr>
+	<td><%= player.login%></td>
+	<td>  <%= player.organisation %></td>
+	<td><%= link_to 'Remove player from hunt', hunt_user_path(@hunt, player), :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+	<% end %>
+  </table>
+<% end %>
+<br />
+
+
+<% if @player_users %>
+Add your players
+<table>
+<% form_tag(add_players_hunt_path, :method => :put) do %>
+	<% @player_users.each do |user| %>
+	<tr>
+	<th><b>Name</b></th>
+	<th><b>Organisation</b></th>
 	<th><b>Add user <b></th>
 	</tr>
 	<tr>
 	<td><%= user.login%></td>
-	<td>  <%= user.id %></td>
+	<td>  <%= user.organisation %></td>
 	<td><%= check_box_tag :user_ids, user.id %> </td>
 	</tr>
 	<% end %>
@@ -17,8 +39,9 @@
 <% end %>
 <% else %>
   You have no users to add! =(
-<% end %>
 </table>
+<% end %>
+
 <%= image_tag '/images/buttons/back.png' %>
 
 <%= image_tag '/images/buttons/forward.png' %>

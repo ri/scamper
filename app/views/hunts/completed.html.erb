@@ -1,6 +1,5 @@
 Congradulations! You have completed this hunt!
 
-You answered <%= Response.count(:conditions => {:correct => true, :player_id => @hunt.players.find_by_user_id(current_user.id)})%> out of
+You answered <%= Response.count(:conditions => {:correct => true, :player_id => @current_player.id})%> out of
 <%= @hunt.questions.count %> correctly!
 
-<%= Response.count(:conditions => { :player_id => @hunt.players.find_by_user_id(current_user.id)})%>

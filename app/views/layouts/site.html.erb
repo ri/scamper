@@ -17,10 +17,10 @@
 <div id="logo"><img src="images/front/logo.png"></div>
 
 <div id="mainnav">
-  <% link_to('index') do %><span>home</span><% end %>
-  <% link_to(about_site_path) do %><span>about</span><% end %>
-  <% link_to(project_site_path) do %><span>project</span><% end %>
-  <% link_to(team_site_path) do %><span>theteam</span><% end %>
+  <% link_to(root_path, {:id => 'home'}) do %><span>home</span><% end %>
+  <% link_to(about_site_path, {:id => 'about'}) do %><span>about</span><% end %>
+  <% link_to(project_site_path, {:id => 'project'}) do %><span>project</span><% end %>
+  <% link_to(team_site_path, {:id => 'team'}) do %><span>theteam</span><% end %>
 
 </div>
 <div id="blurb">
@@ -37,37 +37,32 @@ using your <span class="green">mobile</span> and <span class="cream">Quick Respo
 
 <span id="grid">
 <img src="images/front/index1.jpg">
-</span>
-<span id="grid">
-<img src="images/front/index2.jpg">
-</span>
-<span id="grid">
-<img src="images/front/index3.jpg">
-</span>
-<br />
-
-<div id="column">
 <h1>Mobile Compatible</h1>
 <p>Scamper can be accessed from the comfort of your desktop computer while others play your game outside using Smartphones, 3G Phones and iPhone.
 </p>
-</div>
-
-<div id="column2">
+</span>
+<span id="grid">
+<img src="images/front/index2.jpg">
 <h1>Easy to use</h1>
 <p>Designed for classroom students of all ages, Scamper is very easy to use with clear interface designs, useful tutorials. 
 </p>
-</div>
+</span>
 
-<div id="column3">
+<span id="grid">
+<img src="images/front/index3.jpg">
 <h1>Interactive Classroom</h1>
 <p>Designed for classroom students of all ages, Scamper is very easy to use with clear interface designs, useful tutorials. 
 </p>
-</div>
+</span>
+
+
+
 
 </div>
 		
 
 </div>
+
 <div id="footer">
 <div id="footercontent">
 <h1 id="blue">Who's Scamper?</h1>

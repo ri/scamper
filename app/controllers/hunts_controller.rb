@@ -6,7 +6,8 @@ class HuntsController < ApplicationController
   
   def completed
     @hunt = Hunt.find(params[:id])
-    if (Response.count(:conditions => {:player_id => @hunt.players.find_by_user_id(current_user.id)}) == @hunt.questions.count)
+    @current_player = @hunt.players.find_by_user_id(current_user.id)
+    if (!Response.count(:conditions => {:player_id => @hunt.players.find_by_user_id(@current_player.id)}) == @hunt.questions.count)
       redirect_back_or_default(user_hunts_path(current_user))
     end
     
@@ -17,8 +18,10 @@ class HuntsController < ApplicationController
   end
 
   def invite_players
-    @users = User.find(:all, :conditions => {:creator => false})
+    @player_users = User.find(:all, :conditions => {:creator => false})
     @hunt = Hunt.find(params[:id])   
+    @current_players = @hunt.users
+    
     render :layout => :choose_layout
   end
   
@@ -28,7 +31,7 @@ class HuntsController < ApplicationController
       @hunt.players.create(:user_id => user_id)
     end
     flash[:notice] = "Success!"
-    redirect_to :action => "show"
+    redirect_to :action => invite_players_hunt_path(@hunt)
   end
 
   def play

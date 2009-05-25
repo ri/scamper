@@ -5,6 +5,8 @@ class ResponsesController < ApplicationController
   def show
     @hunt = Hunt.find(params[:hunt_id])
     @response = current_player.responses.build
+    @current_player = @hunt.players.find_by_user_id(current_user.id)
+    
   end
   
   def create

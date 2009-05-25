@@ -16,10 +16,11 @@
 <div id="dashboard" class="column"> 
 <div id="logo"><img src="/images/front/logo.png"></div>
 <div id="mainnav">
-  <% link_to('index', id=>'home') do %><span>home</span><% end %>
-  <% link_to(about_site_path) do %><span>about</span><% end %>
-  <% link_to(project_site_path) do %><span>project</span><% end %>
-  <% link_to(team_site_path) do %><span>theteam</span><% end %>
+  <% link_to(root_path, {:id => 'home'}) do %><span>home</span><% end %>
+  <% link_to(about_site_path, {:id => 'about'}) do %><span>about</span><% end %>
+  <% link_to(project_site_path, {:id => 'project'}) do %><span>project</span><% end %>
+  <% link_to(team_site_path, {:id => 'team'}) do %><span>theteam</span><% end %>
+
 
 </div>
 <div id="blurb"></div>

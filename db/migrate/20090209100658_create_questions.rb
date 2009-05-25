@@ -3,7 +3,7 @@ class CreateQuestions < ActiveRecord::Migration
     create_table :questions do |t|
       t.integer :index
       t.integer :hunt_id
-      t.integer :answer
+      t.integer :correct_answer_id
       t.text :question
 
       t.timestamps

@@ -7,6 +7,24 @@
     <%=h @question.question %>
   </p>
   
+  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true
+	      &amp;key=ABQIAAAA-pq4VxzqyCDcngyj-qffCxTgs3_ECyR-XC2YXZ8zP-pb8wDoRRQLMYL2qCZ8U68OrZmJb3J5TvJjLg"
+	      type="text/javascript">
+	  </script>
+	    <script type="text/javascript">
+	    function initialize() {
+	      if (GBrowserIsCompatible()) {
+          geoXml = new GGeoXml("http://scamper.heroku.com<%= hunt_question_path(@hunt, @question, :format => 'kml') %>");
+
+          var map = new GMap2(document.getElementById("map_canvas"));
+          map.setCenter(new GLatLng(-27.46758, 153.027892), 13);
+          map.setUIToDefault();
+          map.addOverlay(geoXml);	
+	      }
+	    }
+
+		</script>
+		
   <ul>
     <% @question.answers.each do |answer| %>
       <li>
@@ -18,6 +36,10 @@
   <% if @question.hints.count > 0 %>
   <%= @question.hints.first.hint %>
   <% end %>
+  
+
+	    <div id="map_canvas" style="width: 500px; height: 300px"></div>
+	
   <%= response_form.submit 'Answer' %>
 <% end %>
 </div>
