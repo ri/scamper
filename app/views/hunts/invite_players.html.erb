@@ -1,12 +1,13 @@
-
+<h1>Invite Players to your Hunt!</h1>
 <% if @current_players %>
-  Players already in the game
+  <h3>Players already in the game</h3>
 	<table>
 	<% for player in @current_players %>
 
 	<tr>
-	<th><b>Name</b></th>
-	<th><b>Organisation</b></th>
+	<th>Name</th>
+	<th>Organisation</th>
+	<th>Actions</th>
 	</tr>
 	<tr>
 	<td><%= player.login%></td>
@@ -32,7 +33,7 @@ Add your players
 	<tr>
 	<td><%= user.login%></td>
 	<td>  <%= user.organisation %></td>
-	<td><%= check_box_tag :user_ids, user.id %> </td>
+	<td><%= check_box_tag :user_ids, user.id %> Add this one! </td>
 	</tr>
 	<% end %>
 	<tr><td></td><td></td><td><%= submit_tag 'add users'%></td></tr>
@@ -41,6 +42,7 @@ Add your players
   You have no users to add! =(
 </table>
 <% end %>
+
 
 <%= image_tag '/images/buttons/back.png' %>
 

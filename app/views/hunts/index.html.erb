@@ -13,25 +13,17 @@ end%>
 
 <table>
   <tr>
-	<th>Hunt Id</th>    
     <th>Name</th>
     <th>Description</th>
-	<th></th>
-	<th></th>
-	<th></th>
-	<th></th>
-	<th></th>
-	<th></th>
-	
-
 	<th>Creator</th>
 	<th colspan=5>Actions</th>
+
+
   </tr>
 
 
 <% for hunt in @hunts %>
   <tr>
-	<td class="huntid"><%=h hunt.id %> </td>
     <td class="huntname"><%=h hunt.name %></td>
     <td class="huntdescription"><%=h hunt.description %></td>
     <td class="huntcreator"><%=h hunt.created_by %></td>
@@ -57,15 +49,14 @@ end%>
 	<th>Hunt Id</th>    
     <th>Name</th>
     <th>Description</th>
-	<th></th>
-	<th></th>
+	<th colspan=2>Actions</th>
 
   </tr>
 
 
 <% for hunt in @playerhunts %>
-  <tr>
-	<td class="huntid"><%=h hunt.id %> </td>
+  <% row_class = i%2 == 0 ? "even" : "odd" %>
+<tr class="<%= row_class %>">
     <td class="huntname"><%=h hunt.name %></td>
     <td class="huntdescription"><%=h hunt.description %></td>
     <td class="huntcreator"><%=h hunt.created_by %></td>

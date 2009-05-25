@@ -1,28 +1,24 @@
-<h1>Hunt Details</h1>
+<h1>Hunt Overview</h1>
 
-<p>
-  <b>Name:</b>
-  <%=h @hunt.name %>
-</p>
 
-<p>
-  <b>Description:</b>
+  <h3>Name:</h3> <%=h @hunt.name %>
+
+
+
+  <h3>Description:</h3>
   <%=h @hunt.description %>
-</p>
 
-
-<%= link_to 'Back', hunts_path %>
-<p>
-	QUESTIONS<br />
-	<table>
+<h3>List of Questions:</h3>
+<div id="huntoverview_questions">	<table>
 		<% @questions.each do |question| %>
-		
-		  <tr><td><b>Question:</b></td></tr>
-		  <tr><td><%=h question.question %></td></tr>
-			 <tr><td><b>Answer: </b></td></tr>
-			  <tr><td><%=h question.correct_answer %></td></tr>
+		<th>Number</th>
+		<th>Question</th>
+		  <tr><td><%=h question.question %></td><td><%=h question.correct_answer %></td></tr>
 		<% end %>
 	</table>
+</div>
+
+<h3>Question Locations:</h3>
 	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true
 	      &amp;key=ABQIAAAA-pq4VxzqyCDcngyj-qffCxTgs3_ECyR-XC2YXZ8zP-pb8wDoRRQLMYL2qCZ8U68OrZmJb3J5TvJjLg"
 	      type="text/javascript">
@@ -44,9 +40,7 @@
 	
 	</br>
 </br>
-		
-		<INPUT TYPE="image" SRC="/images/buttons/seeresults.png" HEIGHT="45" WIDTH="170" BORDER="0" ALT="Submit Form"><br /><br />
-		<INPUT TYPE="image" SRC="/images/buttons/viewlistofplayers.png" HEIGHT="45" WIDTH="170" BORDER="0" ALT="Submit Form"><br /><br />
-		<INPUT TYPE="image" SRC="/images/buttons/printQR.png" HEIGHT="45" WIDTH="170" BORDER="0" ALT="Submit Form"><br /><br />
 			
-<%= image_tag '/images/buttons/back.png' %>
+<br />
+<% link_to(hunts_path) do %>
+<%= image_tag '/images/buttons/back.png' %> <% end%>

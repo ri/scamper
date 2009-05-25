@@ -56,6 +56,14 @@ td {
 font-size: 10pt;
 }
 
+tr.even {
+	background-color: #eef3db;
+}
+
+tr.odd {
+	background-color: #e5edc8;
+}
+
 td.huntactions {
 	font-size: 8pt;
 	text-align: center;
@@ -77,6 +85,10 @@ td.huntcreator {
 }
 td.huntid {
 	width: 30px;
+}
+
+#huntoverview_questions {
+	padding-bottom: 20px;
 }
 
 
@@ -192,6 +204,12 @@ padding-top: 20px;
 
 #form{
 padding: 20px;
+
+}
+
+#form td {
+	background-color: #FFFFFF;
+	border: none;
 }
 
 #questions{
@@ -207,8 +225,10 @@ margin-top: -10px;
 
 #questionform {
 margin-left: 180px;
-margin-top: -120px;
+margin-top: -80px;
 }
+
+
 #questionform ul {
 	list-style-type: none;
 }
@@ -230,6 +250,23 @@ margin-top: -120px;
 	overflow: hidden;
 	margin-left: 170px;
 	border: none;
+}
+
+#hunt_submit {
+	
+	display: block;
+	width:182px;
+	background: url("/images/buttons/saveprogress_norm.png");
+	height: 0px;
+	padding-top: 52px;
+	overflow: hidden;
+	margin-left: 240px;
+	border: none;
+}
+
+#hunt_submit:hover
+{
+background:url("/images/buttons/saveprogress_hover.png");
 }
 
 #question_submit:hover
