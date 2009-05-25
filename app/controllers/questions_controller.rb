@@ -126,10 +126,13 @@ class QuestionsController < ApplicationController
     end
     
     def choose_layout
-      if current_user.creator?
-        'huntsedit'
-      else
-        'application'
+      if current_user
+        
+        if current_user.creator?
+          'huntsedit'
+        else
+          'application'
+        end
       end
     end
       
