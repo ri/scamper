@@ -10,10 +10,14 @@
 
 <h3>List of Questions:</h3>
 <div id="huntoverview_questions">	<table>
-		<% @questions.each do |question| %>
-		<th>Number</th>
+		<th>Question Number</th>
 		<th>Question</th>
-		  <tr><td><%=h question.question %></td><td><%=h question.correct_answer %></td></tr>
+		
+		<th>Answer</th> 
+		<% i = 1%>
+		<% @questions.each do |question| %>
+	
+		  <tr><td><%= i %> <% i += 1 %></td><td><%=h question.question %></td><td><%=h question.correct_answer %></td></tr>
 		<% end %>
 	</table>
 </div>

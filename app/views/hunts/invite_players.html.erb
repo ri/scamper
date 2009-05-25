@@ -2,13 +2,14 @@
 <% if @current_players %>
   <h3>Players already in the game</h3>
 	<table>
+		<tr>
+		<th>Name</th>
+		<th>Organisation</th>
+		<th>Actions</th>
+		</tr>
 	<% for player in @current_players %>
 
-	<tr>
-	<th>Name</th>
-	<th>Organisation</th>
-	<th>Actions</th>
-	</tr>
+
 	<tr>
 	<td><%= player.login%></td>
 	<td>  <%= player.organisation %></td>
@@ -23,13 +24,15 @@
 <% if @player_users %>
 Add your players
 <table>
-<% form_tag(add_players_hunt_path, :method => :put) do %>
-	<% @player_users.each do |user| %>
+	
 	<tr>
 	<th><b>Name</b></th>
 	<th><b>Organisation</b></th>
 	<th><b>Add user <b></th>
 	</tr>
+<% form_tag(add_players_hunt_path, :method => :put) do %>
+	<% @player_users.each do |user| %>
+
 	<tr>
 	<td><%= user.login%></td>
 	<td>  <%= user.organisation %></td>
