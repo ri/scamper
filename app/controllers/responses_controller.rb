@@ -1,8 +1,8 @@
 class ResponsesController < ApplicationController
   before_filter :get_current_question
   before_filter :verify_question_is_unanswered
-  before_filter :login_required_except_kml, :only   => :index
-  before_filter :login_required,            :except => :index
+  before_filter :login_required_except_kml, :only   => :show
+  before_filter :login_required,            :except => :show
   
   def show
     @hunt = Hunt.find(params[:hunt_id])
