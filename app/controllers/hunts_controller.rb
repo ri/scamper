@@ -6,7 +6,12 @@ class HuntsController < ApplicationController
   def results
     @hunt = Hunt.find(params[:id])   
     @current_players = @hunt.players
+    if @current_players.count == 0
+      flash[:notice] = "You have to add some users before you can view results!"
+      redirect_to(hunt_path(@hunt))
+    else
     render :layout => :choose_layout
+    end
     
   end
   

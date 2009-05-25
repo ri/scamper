@@ -13,7 +13,7 @@
 	<tr>
 	<td><%= player.login%></td>
 	<td>  <%= player.organisation %></td>
-	<td><%= link_to 'Remove player from hunt', hunt_user_path(@hunt, player), :confirm => 'Are you sure?', :method => :delete %></td>
+	<td><%= link_to 'Remove player from hunt', hunt_path(@hunt), :confirm => 'Are you sure?', :method => :delete %></td>
 	</tr>
 	<% end %>
   </table>
