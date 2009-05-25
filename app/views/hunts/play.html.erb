@@ -1,5 +1,5 @@
+<%= render :partial => 'questions/playersidebar' %>
 <h1>Participating: Hunt Details</h1>
-
 <p>
   <b>Name:</b>
   <%=h @hunt.name %>
@@ -29,17 +29,3 @@
 
 	</script>
 	<div id="map_canvas" style="width: 500px; height: 300px"></div>
-  
-<p>
-	
-	QUESTION<br />
-	<table>
-	  <% i = 1 %>
-		<% @questions.each do |question| %>
-		 <td><td>Question: <%= i %></td>
-		  <td><%=h question.question %></td>
-		    <td><%= link_to 'Show', hunt_question_response_path(question.hunt, question) %></td>
-		</tr>
-		<% i += 1%>
-		<% end %>
-	</table>
