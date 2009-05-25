@@ -31,7 +31,7 @@ class HuntsController < ApplicationController
       @hunt.players.create(:user_id => user_id)
     end
     flash[:notice] = "Success!"
-    redirect_to :action => invite_players_hunt_path(@hunt)
+    redirect_to invite_players_hunt_path(@hunt)
   end
 
   def play
@@ -96,7 +96,7 @@ class HuntsController < ApplicationController
     respond_to do |format|
       if @hunt.save
         flash[:notice] = 'Hunt was successfully created.'
-        format.html { redirect_to(new_hunt_question_path(@hunt)) }
+        format.html { redirect_to(edit_hunt_path(@hunt)) }
         format.xml  { render :xml => @hunt, :status => :created, :location => @hunt }
       else
         format.html { render :action => "new" }
