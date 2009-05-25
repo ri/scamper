@@ -3,8 +3,6 @@
 
   <h3>Name:</h3> <%=h @hunt.name %>
 
-
-
   <h3>Description:</h3>
   <%=h @hunt.description %>
 
@@ -20,6 +18,7 @@
 		  <tr><td><%= i %> <% i += 1 %></td><td><%=h question.question %></td><td><%=h question.correct_answer %></td></tr>
 		<% end %>
 	</table>
+	<%= link_to 'View Player stats', (results_hunt_path(@hunt)) %>
 </div>
 
 <h3>Question Locations:</h3>

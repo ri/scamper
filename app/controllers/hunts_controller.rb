@@ -3,12 +3,19 @@ class HuntsController < ApplicationController
   
   before_filter :login_required
 
+  def results
+    @hunt = Hunt.find(params[:id])   
+    @current_players = @hunt.players
+    render :layout => :choose_layout
+    
+  end
   
   def completed
     @hunt = Hunt.find(params[:id])
     @current_player = @hunt.players.find_by_user_id(current_user.id)
-    if (!(Response.count(:conditions => {:player_id => @hunt.players.find_by_user_id(@current_player.id)}) == @hunt.questions.count))
-      redirect_back_or_default(user_hunts_path(current_user))
+    if (!(Response.count(:conditions => {:player_id => @hunt.players.find_by_user_id(@current_user.id)}) == @hunt.questions.count))
+      flash[:notice] = "Please complete all of the answers first!"
+      redirect_back_or_default(play_hunt_path(@hunt))
     end
     
   end
