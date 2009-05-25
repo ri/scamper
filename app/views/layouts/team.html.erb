@@ -13,7 +13,8 @@
 
 <div id="container">
 <div id="dashboard" class="column"> 
-<div id="logo"><img src="/images/front/logo.png"></div>
+
+<div id="logo"><% link_to(root_path) do %><img src="/images/front/logo.png"><% end %></div>
 <div id="mainnav">
   <% link_to(root_path, {:id => 'home'}) do %><span>home</span><% end %>
   <% link_to(about_site_path, {:id => 'about'}) do %><span>about</span><% end %>
@@ -33,28 +34,28 @@
 </div>
 <div id="photos">
 
-<span id="grid">
+<span class="image">
 <img src="/images/front/team1.jpg">
 </span>
-<span id="grid">
+<span class="image">
 <img src="/images/front/team2.jpg">
 </span>
-<span id="grid">
+<span class="image">
 <img src="/images/front/team3.jpg">
 </span>
 <br />
 
-<span id="grid">
+<div class="grid">
 <h2 id="blue">Ri Liu</h2>
 <p>Ruby code-monkey, Rijia was responsible for leading the development team towards greatness. Student Ambassador for the Faculty of Science & Technology and In her penultimate year of Bachelor of Creative Industries (Comm. Design) / Bachelor of Information Technology. </p>
 </div>
 
-<span id="grid">
+<div class="grid">
 <h2 id="blue">Suzanne Conkas</h2>
 <p>Project manager for the team and client liaison to Education Queensland. Enjoys baking, interaction design and in her final year of Bachelor of Creative Industries / Bachelor of Information Technology. </p>
 </div>
 
-<div id="column5">
+<div class="grid">
 <h2 id="blue">Ryan Pascoe</h2>
 <p>Our networking and database guru in the development team. Final year of Bachelor of Creative Industries / Bachelor of Information Technology,.</p>
 </div>
@@ -64,28 +65,28 @@
 <br />
 <br />
 <br />
-<span id="grid">
+<span class="image">
 <img src="/images/front/team4.jpg">
 </span>
-<span id="grid">
+<span class="image">
 <img src="/images/front/team5.jpg">
 </span>
-<span id="grid">
+<span class="image">
 <img src="/images/front/team6.jpg">
 </span>
 <br />
 
-<div id="column">
+<div class="grid">
 <h2 id="blue">Liz Wyatt</h2>
 <p>Responsible for the front-end coding in the design team. Likes Daft Punk, bacon and making coffee. In her final year of Bachelor of Creative Industries / Bachelor of Information Technology.</p>
 </div>
 
-<div id="column2">
+<div class="grid">
 <h2 id="blue">Rachel Wong</h2>
 <p>Storyboard person and designed the front end and interface of Scamper. Long overdue final year student in Bachelor of Creatie Industries / Bachelor of Information Technology. </p>
 </div>
 
-<div id="column3">
+<div class="grid">
 <h2 id="blue">Matt Hammerton</h2>
 <p>Quick Response coder under the development team. Final year student majoring in Networking in Bachelor of Information Technology. </p>
 </div>

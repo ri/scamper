@@ -14,7 +14,7 @@
 
 <div id="container">
 <div id="dashboard" class="column"> 
-<div id="logo"><img src="/images/front/logo.png"></div>
+<div id="logo"><% link_to(root_path) do %><img src="/images/front/logo.png"><% end %></div>
 <div id="mainnav">
   <% link_to(root_path, {:id => 'home'}) do %><span>home</span><% end %>
   <% link_to(about_site_path, {:id => 'about'}) do %><span>about</span><% end %>
@@ -28,7 +28,44 @@
 
 <div id="center" class="column">
 
-		
+		<div id="columnright">
+    <img src="/images/front/stake.jpg">
+    
+    <div id="c2">
+    <img src="/images/front/edu.jpg">
+    <h4 id="blue">
+    Teachers & Students
+    </h4>
+    <p>We expect our target users are teachers, and students ranging between the ages of 9 to 17. Scavenger hunts have traditionally been well-received in the classroom. Teachers have observed higher memory retention and enjoyment in the learning process compared to traditional chalkboard methods. </p>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <img src="/images/front/book1.jpg">
+    <h4 id="blue">
+    Curriculum Developers
+    </h4>
+    <p>Curriculum developers and publishers of academic teaching materials may also be interested in producing accompanying material with Scamper. As our project is only within the scope of delivering the necessary technology, publishers may produce education templates and source material that classroom teachers can use.  </p>
+   </div>
+    <div id="c1">
+    <img src="/images/front/queens.jpg">
+    <h4 id="blue">
+    ICT Pedagogical License
+    </h4>
+    <p>
+    Education Queensland for the Department of Education, Training and the Arts has expressed much interest in the project concept as there is a collective trend towards transforming the learning process into a more interactive experience for primary and secondary school students. Scamper objectives closely aligned to the departmentís ICT Pedagogy Licensing scheme.
+    </p>
+    <br />
+    <img src="/images/front/truck.jpg">
+    <h4 id="blue">
+    Middle Tier Businesses
+    </h4>
+    <p>
+    We have identified corporate businesses as part of our secondary target group for this project as research have shown that scavenger hunts have been successfully used to train and encourage team building skills, leadership skills, lifting moral amongst employees.</p>
+  
+</div>
+    </div>
 
 <div id="columnleft">
 <img src="/images/front/story.jpg">
@@ -48,48 +85,12 @@ Although the application is initially designed to facilitate educational program
 
 </div>
 
-<div id="columnright">
-<img src="/images/front/stake.jpg">
-<div id="c1">
-<img src="/images/front/queens.jpg">
-<h4 id="blue">
-ICT Pedagogical License
-</h4>
-<p>
-Education Queensland for the Department of Education, Training and the Arts has expressed much interest in the project concept as there is a collective trend towards transforming the learning process into a more interactive experience for primary and secondary school students. Scamper objectives closely aligned to the departmentís ICT Pedagogy Licensing scheme.
-</p>
-<br />
-<img src="/images/front/truck.jpg">
-<h4 id="blue">
-Middle Tier Businesses
-</h4>
-<p>
-We have identified corporate businesses as part of our secondary target group for this project as research have shown that scavenger hunts have been successfully used to train and encourage team building skills, leadership skills, lifting moral amongst employees.</p>
-</div>
-<div id="c2">
-<img src="/images/front/edu.jpg">
-<h4 id="blue">
-Teachers & Students
-</h4>
-<p>We expect our target users are teachers, and students ranging between the ages of 9 to 17. Scavenger hunts have traditionally been well-received in the classroom. Teachers have observed higher memory retention and enjoyment in the learning process compared to traditional chalkboard methods. </p>
-
-<br />
-<br />
-<br />
-<br />
-<img src="/images/front/book1.jpg">
-<h4 id="blue">
-Curriculum Developers
-</h4>
-<p>Curriculum developers and publishers of academic teaching materials may also be interested in producing accompanying material with Scamper. As our project is only within the scope of delivering the necessary technology, publishers may produce education templates and source material that classroom teachers can use.  </p>
-
-
-</div>
 
 
 
 
-</div>
+
+
 </div>
 
 <div id="footer">
