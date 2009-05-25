@@ -17,7 +17,7 @@ position: relative;
 
 #meet{
 padding: 20px;
-margin-left: 40px;
+margin-left: 20px;
 }
 
 /*Buttons*/
@@ -176,6 +176,52 @@ display:none;
 background:url("/images/front/clearform_hover.png");
 }
 
+#join{
+display:inline-block;
+height:55px;
+width:173px;
+background: url("/images/front/joinup_norm.png");
+vertical-align: middle;
+	
+}
+
+#joinsignin{
+	width: 400px;
+	margin-left: 550px;
+	margin-top: -100px;
+	padding-bottom: 40px;
+
+}
+
+
+
+#join span{
+display:none;
+}
+
+#join:hover
+{
+background:url("/images/front/joinup_hover.png");
+}
+
+#signup{
+display:inline-block;
+height:55px;
+width:173px;
+background: url("/images/front/signin_norm.png");
+vertical-align: middle;
+margin-left: 20px;
+}
+
+#signup span{
+display:none;
+}
+
+#signup:hover
+{
+background:url("/images/front/signin_hover.png");
+}
+
 #launch{
 display:inline-block;
 width:182px;
@@ -332,6 +378,10 @@ padding: 40px;
 margin-left: 100px;
 }
 
+a img{
+border-style: none;	
+}
+
 #/images/front/{
 width: 200px;
 }
@@ -339,6 +389,12 @@ width: 200px;
 .image {
 	padding: 20px;
 	
+}
+
+.heading2{
+	font-size: 14pt;
+	font-style: bold;
+	padding: 20px;
 }
 
 .grid{
@@ -413,6 +469,7 @@ position:relative;
 margin-left: auto;
 margin-right:auto;
 padding: 20px;
+text-align: left;
 
 }
 
@@ -518,9 +575,7 @@ font-size: 10pt;
 #columnleft{
 width: 320px;
 font-size: 8pt;
-position:relative;
 padding: 20px;
-margin-left: 20px;
 }
 
 #download{
@@ -536,26 +591,28 @@ display:none;
 }
 
 #columnright{
-margin-left: 390px;
-margin-top: -610px;
+	width: 380px;
+	font-size: 8pt;
 
+float:right;
 padding: 20px;
+
 }
 
 #c1{
 width: 160px;
-padding: 15px;
+padding: 20px;
 font-size: 8pt;
 
 }
 
 #c2{
 width: 160px;
-padding: 15px;
+padding: 20px;
 font-size: 8pt;
 
-margin-left:180px;
-margin-top: -662px;
+float:right;
+
 }
 
 #blurb{
