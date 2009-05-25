@@ -60,6 +60,7 @@ class QuestionsController < ApplicationController
   def edit
     @question = @questions.find(params[:id])
     @hunt = Hunt.find(params[:hunt_id])
+    @hint = @question.hints
   end
 
   # POST /questions
