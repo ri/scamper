@@ -32,7 +32,8 @@ class HuntsController < ApplicationController
   def invite_players
     @player_users = User.find(:all, :conditions => {:creator => false})
     @hunt = Hunt.find(params[:id])   
-    @current_players = @hunt.users
+    @player_users = User.not_in_hunt(@hunt)
+    @current_players = @hunt.players
     
     render :layout => :choose_layout
   end

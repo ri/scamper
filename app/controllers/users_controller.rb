@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       redirect_back_or_default(user_hunts_path(current_user))
       flash[:notice] = "Thanks for signing up!"
     else
-      flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
+      flash[:error]  = "We couldn't set up that account, sorry.  Please check below for errors."
       @action = @user.creator ? 'new_creator' : 'new_player'
       render :action => @action
     end

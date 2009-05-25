@@ -11,9 +11,9 @@
 
 
 	<tr>
-	<td><%= player.login%></td>
-	<td>  <%= player.organisation %></td>
-	<td><%= link_to 'Remove player from hunt', hunt_path(@hunt), :confirm => 'Are you sure?', :method => :delete %></td>
+	<td><%= player.user.login%></td>
+	<td>  <%= player.user.organisation %></td>
+	<td><%= link_to 'Remove player from hunt', player_path(player.id), :confirm => 'Are you sure?', :method => :delete %></td>
 	</tr>
 	<% end %>
   </table>
@@ -36,10 +36,10 @@ Add your players
 	<tr>
 	<td><%= user.login%></td>
 	<td>  <%= user.organisation %></td>
-	<td><%= check_box_tag :user_ids, user.id %> Add this one! </td>
+	<td><%= radio_button_tag :user_ids, user.id %> Add this one! </td>
 	</tr>
 	<% end %>
-	<tr><td></td><td></td><td><%= submit_tag 'add users'%></td></tr>
+	<tr><td></td><td></td><td><%= submit_tag 'add users' %></td></tr>
 <% end %>
 <% else %>
   You have no users to add! =(
