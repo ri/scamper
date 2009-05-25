@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
 
   named_scope :not_in_hunt, lambda {|hunt| {:conditions =>['id NOT IN (SELECT DISTINCT user_id FROM players WHERE hunt_id = ?) AND
     creator = \'f\'', hunt.id] }}
+  named_scope :players, :conditions => {:creator => false}
+    
     
   #named_scope :players, :conditions  {:creator = false}
   # HACK HACK HACK -- how to do attr_accessible from here?

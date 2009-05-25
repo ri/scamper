@@ -8,7 +8,7 @@ class HuntsController < ApplicationController
     @current_players = @hunt.players
     if @current_players.count == 0
       flash[:notice] = "You have to add some users before you can view results!"
-      redirect_to(hunt_path(@hunt))
+      redirect_to(user_hunts_path(current_user))
     else
     render :layout => :choose_layout
     end
@@ -32,7 +32,7 @@ class HuntsController < ApplicationController
   def invite_players
     @player_users = User.find(:all, :conditions => {:creator => false})
     @hunt = Hunt.find(params[:id])   
-    @player_users = User.not_in_hunt(@hunt)
+    @player_users = User.players.not_in_hunt(@hunt)
     @current_players = @hunt.players
     
     render :layout => :choose_layout
