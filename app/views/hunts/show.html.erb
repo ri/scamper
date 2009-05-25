@@ -30,7 +30,7 @@
 	    <script type="text/javascript">
 	    function initialize() {
 	      if (GBrowserIsCompatible()) {
-          geoXml = new GGeoXml("http://scamper.heroku.com<%= hunt_questions_path(@hunt, :format => 'kml') + Time.now.to_s %>");
+          geoXml = new GGeoXml("http://scamper.heroku.com<%= hunt_questions_path(@hunt, :format => 'kml') + "?" + Time.now.to_s %>");
 
           var map = new GMap2(document.getElementById("map_canvas"));
           map.setCenter(new GLatLng(-27.46758, 153.027892), 13);
