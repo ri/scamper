@@ -256,7 +256,7 @@ margin-top: -80px;
 	
 	display: block;
 	width:182px;
-	background: url("/images/buttons/saveprogress_norm.png");
+	background: url("/images/buttons/create_hunt.png");
 	height: 0px;
 	padding-top: 52px;
 	overflow: hidden;
@@ -266,7 +266,7 @@ margin-top: -80px;
 
 #hunt_submit:hover
 {
-background:url("/images/buttons/saveprogress_hover.png");
+background:url("/images/buttons/create_hunt_hover.png");
 }
 
 #question_submit:hover
