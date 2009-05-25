@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   # This is needed so that google can access the KML file
   # without a username and password
   before_filter :login_required_except_kml
-  before_filter :login_required,            :except => :index
+  # before_filter :login_required,            :except => :index
   before_filter :get_questions
   
   # GET /questions
