@@ -39,14 +39,15 @@
    		<% i += 1 %>
 	  <% end %>
 	</ul>
-  <% question_form.fields_for :hints do |hints_form| %>
-      Hint: <%= hints_form.text_field :hint %>
-  <% end %>
+
 
 	</p>
 <h3>Add a Hint</h3>
 <p>Add a hint for this question, which will assist the players with progressing through the hunt. The text entered into this box will generate a QR Code <a href="http://en.wikipedia.org/wiki/QR_Code">[what's this?]</a> which you can then print out for use with your scavenger hunt. </p>
 
+<% question_form.fields_for :hints do |hints_form| %>
+    Hint: <%= hints_form.text_field :hint %>
+<% end %>
 
 <h3>Add a location</h3>
 <p>Now, add a location for this particular question. Use the search box below the map to find a location (e.g. 15 George Street, Brisbane). The arrows below the search field will allow you to sort through the search results until you find the correct location. These locations will be used to place the QR codes for the players to find and utilise to complete the hunt </p>
