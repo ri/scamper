@@ -11,6 +11,9 @@
 
 <div id="container">
 	<div id="dashboard" class="column">
+		<div id="logolink">
+			<% link_to(site_index_path) do %><%= image_tag '/images/scamperlogolink.png' %> <% end%>
+			</div>
 		<div id="player">
 			<div class="userwelcome">
 				<% if logged_in? %>
