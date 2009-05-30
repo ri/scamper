@@ -159,6 +159,11 @@ text-align: left;
 	color: #FFFFFF;
 	text-decoration: underline;
 }
+#logolink {
+float: left;
+position: absolute;
+margin-left: 30px;
+}
 
 #dashboardheader h1 {
 	padding-top: 25px;
