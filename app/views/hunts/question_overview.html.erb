@@ -9,6 +9,6 @@
   <%= qrcode(question.hints.first.hint) %>
   <% end %>
   <% i += 1 %>
-<% end %></div>
-
-<% link_to('Back to Dashboard', hunts_path(@hunt)) %>
+<% end %>
+<%= link_to_function("Print this Page", "javascript:print()") %>
+<%= link_to('Back to Dashboard', hunts_path(@hunt)) %>
