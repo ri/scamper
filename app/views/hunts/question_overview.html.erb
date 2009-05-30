@@ -1,14 +1,17 @@
+<%= link_to_function("Print this Page", "javascript:print()") %>
+<%= link_to('Back to Dashboard', user_hunts_path(current_user)) %>
 <% i = 1 %>
 <% for question in @hunt.questions %>
   Question <%= i%>
   <br />
-  <%= question.question %>
+  Question: <%= question.question %>
   <br />
-  <%= question.correct_answer %>
+  Answer: <%= question.correct_answer %>
   <% if question.hints.first %>
+  Hint: <%= question.hints.first.hint %>
   <%= qrcode(question.hints.first.hint) %>
   <% end %>
   <% i += 1 %>
 <% end %>
 <%= link_to_function("Print this Page", "javascript:print()") %>
-<%= link_to('Back to Dashboard', hunts_path(@hunt)) %>
+<%= link_to('Back to Dashboard', user_hunts_path(current_user)) %>

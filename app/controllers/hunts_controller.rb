@@ -5,6 +5,10 @@ class HuntsController < ApplicationController
 
   def question_overview
     @hunt = Hunt.find(params[:id])
+    if @hunt.questions.count == 0
+      flash[:notice] = "You have to no questions to print"
+      redirect_to(user_hunts_path(current_user))
+    end
   end
     
   def results
