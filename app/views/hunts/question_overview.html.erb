@@ -1,0 +1,14 @@
+<% i = 1 %>
+<% for question in @hunt.questions %>
+  Question <%= i%>
+  <br />
+  <%= question.question %>
+  <br />
+  <%= question.correct_answer %>
+  <% if question.hints.first %>
+  <%= qrcode(question.hints.first.hint) %>
+  <% end %>
+  <% i += 1 %>
+<% end %></div>
+
+<% link_to('Back to Dashboard', hunts_path(@hunt)) %>

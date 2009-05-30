@@ -3,6 +3,10 @@ class HuntsController < ApplicationController
   
   before_filter :login_required
 
+  def question_overview
+    @hunt = Hunt.find(params[:id])
+  end
+    
   def results
     @hunt = Hunt.find(params[:id])   
     @current_players = @hunt.players
