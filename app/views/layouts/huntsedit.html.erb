@@ -34,6 +34,8 @@
 	</div>
 </div>
 
+	<div id="errorbox"><%= flash[:notice] %><%= flash[:error] %></div>
+	
 <div id="dasshboard">
   <% if !@hideprofilebutton %>
   <% link_to(edit_hunt_path(@hunt), :id => "huntprofile") do %>
@@ -68,7 +70,7 @@
 
 <div id="content">
 
-<p style="color: green"><%= flash[:notice] %><%= flash[:error] %></p>
+
 
 <%= yield  %>
 </div>

@@ -12,7 +12,8 @@
 <%= check_box_tag 'remember_me', '1', @remember_me %></p>
 -->
 
-<p><%= submit_tag 'Log in' %></p>
+<p><%= submit_tag 'Log in', :id => "loginbtn" %>
+</p>
 <% end -%>
 <br />
 <h1>Don't have an account? <%= link_to 'Sign up for one', signup_path %>!</h1>

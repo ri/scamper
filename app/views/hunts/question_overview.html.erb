@@ -1,17 +1,37 @@
-<%= link_to_function("Print this Page", "javascript:print()") %>
+<%= image_tag '/images/buttons/printer.png',  :title => 'Print'%> <%= link_to_function("Print this Page", "javascript:print()") %>
 <%= link_to('Back to Dashboard', user_hunts_path(current_user)) %>
+<br />
+<br />
+<br />
+<table>
+<th>Question</th>
+<th>Answer</th>
+<th>QR Code Text</th>
+<th>QR Code Image</th>
+<tr>
 <% i = 1 %>
+
 <% for question in @hunt.questions %>
-  Question <%= i%>
-  <br />
-  Question: <%= question.question %>
-  <br />
-  Answer: <%= question.correct_answer %>
-  <% if question.hints.first %>
-  Hint: <%= question.hints.first.hint %>
-  <%= qrcode(question.hints.first.hint) %>
-  <% end %>
-  <% i += 1 %>
+<td>
+  Q<%= i%>.
+  <%= question.question %>
+</td>
+
+<td><%= question.correct_answer %>
+  <% if question.hints.first %></td>
+
+<td><%= question.hints.first.hint %></td>
+<td><%= qrcode(question.hints.first.hint) %></td>
+
 <% end %>
+
+<% i += 1 %>
+</tr>
+
+
+<% end %>
+
+</table>
+
 <%= link_to_function("Print this Page", "javascript:print()") %>
 <%= link_to('Back to Dashboard', user_hunts_path(current_user)) %>

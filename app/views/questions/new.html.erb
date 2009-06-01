@@ -23,7 +23,7 @@
 <h3>Possible Answers:</h3>
 <p>Please enter the correct answer to this question, as well as 3 other incorrect answers for the quiz. The correct answer can be nominated by selecting the radio button next to the answer.</p>	
 	<p>
-	<ul>
+	<ol>
 	  <% i = 0 %>
 	  <% question_form.fields_for :answers do |answer_form| %>
 	    <li>
@@ -38,7 +38,7 @@
 	    
    		<% i += 1 %>
 	  <% end %>
-	</ul>
+	</ol>
 
 
 	</p>

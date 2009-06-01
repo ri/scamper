@@ -3,7 +3,7 @@ body {
   background-color: #d8d7d7;
   font-family: Helvetica;
 text-align: center;
-font-size: 12pt;
+font-size: 11pt;
 }
 
 /*table.center {
@@ -50,8 +50,7 @@ td {
 	border-left: 1px solid #C1DAD7;
 	border-bottom: 1px solid #C1DAD7;
 	background: #d8e6e7;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding: 5px;
 	color: #000000;
 font-size: 10pt;
 }
@@ -117,7 +116,22 @@ text-align: left;
 	margin-left: auto;
 	margin-right: auto;
 	/*margin-top: 115px;*/
-	margin-top: 30px;
+	margin-top: 10px;
+	padding: 40px;
+	max-width: 705px;
+}
+
+#errorbox {
+	-moz-border-radius-bottomleft: 8px;
+	-moz-border-radius-bottomright: 8px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	background: #fff5cc none repeat scroll 0 0;
+	border: 1px solid silver;
+	margin-left: auto;
+	margin-right: auto;
+	/*margin-top: 115px;*/
+	margin-top: 10px;
 	padding: 40px;
 	max-width: 705px;
 }
@@ -202,8 +216,8 @@ width: 515px;
 }
 
 #dasshboard{
-padding-left: 237px;
-margin-bottom: -35px;
+padding-left: 240px;
+margin-bottom: -15px;
 padding-top: 20px;
 }
 
@@ -221,6 +235,7 @@ padding: 20px;
 width: 100px;
 margin-left: -10px;
 margin-top: -10px;
+float: left;
 }
 
 .questionlabel {
@@ -229,17 +244,31 @@ margin-top: -10px;
 }
 
 #questionform {
-margin-left: 180px;
-margin-top: -120px;
+margin-left: 170px;
+margin-top: -20px;
+}
+
+#signupoptions {
+	text-align: center;
+}
+
+#signupoptions img {
+	padding: 5px;
+}
+
+.note {
+	font-style: italic;
+	font-size: 12px;
+	
 }
 
 
 #questionform ul {
-	list-style-type: none;
+	list-style-type: lower-alpha;
 }
 
 #questionform li {
-	list-style-type: none;
+	list-style-type: lower-alpha;
 }
 
 #questionform td {
@@ -333,10 +362,10 @@ margin-top: -125px;
 	height: 54px;
 	background: url("/images/buttons/question_play_inactive.png") no-repeat;
 	position:relative;
-	padding-left:46px;
+	padding-left:50px;
 	padding-top:20px;
 	margin-bottom: -19px;
-		font-size: 14px;
+	font-size: 14px;
 }
 
 #activeq {
@@ -345,10 +374,10 @@ margin-top: -125px;
 	height: 54px;
 	background: url("/images/buttons/question_play_active.png") no-repeat;
 	position:relative;
-	padding-left:46px;
+	padding-left:50px;
 	padding-top:20px;
 	margin-bottom: -19px;
-		font-size: 14px;
+	font-size: 14px;
 }
 #map{
 padding: 20px;
@@ -471,6 +500,27 @@ a#createnew:hover
 {
 background:url("/images/buttons/createnewhuntmouse.png");
 }
+
+a#playhuntbtn {
+	display: block;
+	width:182px;
+	height: 0px;
+	background: url("/images/buttons/PLAYIT_bttn.png");
+	padding-top: 52px;
+	overflow: hidden;
+	margin-top: -50px;
+	margin-left: 170px;
+}
+
+#playhuntbtn span{
+display:none;
+}
+
+a#playhuntbtn:hover
+{
+background:url("/images/buttons/PLAYIT_bttn_hov.png");
+}
+
 
 #lockin{
 display:inline-block;
@@ -687,9 +737,29 @@ display:none;
 background:url("/images/buttons/huntprofile_hov.png");
 }
 
+#loginbtn{
+	background: url("/images/buttons/sign_in_norm.png");
+	display: block;
+	width:182px;
+	height: 0px;
+	padding-top: 52px;
+	overflow: hidden;
+	margin-left: 0px;
+	border: none;
+}
+
+#loginbtn span{
+display:none;
+}
+
+#loginbtn:hover
+{
+background:url("/images/buttons/sign_in_hover.png");
+}
+
 #inviteplayers{
 display: inline-block;
-width:150px;
+width: 150px;
 height: 77px;
 background: url("/images/buttons/inviteplayers.png");
 position:relative;
