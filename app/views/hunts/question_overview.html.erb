@@ -1,7 +1,6 @@
 <%= image_tag '/images/buttons/printer.png',  :title => 'Print'%> <%= link_to_function("Print this Page", "javascript:print()") %>
 <%= link_to('Back to Dashboard', user_hunts_path(current_user)) %>
-<br />
-<br />
+<h1>Questions Overview</h1>
 <br />
 <table>
 <th>Question</th>
@@ -33,5 +32,5 @@
 
 </table>
 
-<%= link_to_function("Print this Page", "javascript:print()") %>
+<%= image_tag '/images/buttons/printer.png',  :title => 'Print'%><%= link_to_function("Print this Page", "javascript:print()") %>
 <%= link_to('Back to Dashboard', user_hunts_path(current_user)) %>

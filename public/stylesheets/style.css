@@ -119,6 +119,7 @@ text-align: left;
 	margin-top: 10px;
 	padding: 40px;
 	max-width: 705px;
+	overflow: auto;
 }
 
 #errorbox {
