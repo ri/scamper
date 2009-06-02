@@ -64,6 +64,8 @@ class HuntsController < ApplicationController
       @users = User.find(:all)
       @hunt = Hunt.find(params[:id])
       @questions = @hunt.questions(params[:hunt_id]) 
+      @current_player = @hunt.players.find_by_user_id(current_user.id)
+      
 
       respond_to do |format|
         format.html { render :layout => @play}
