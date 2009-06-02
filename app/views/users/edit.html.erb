@@ -3,17 +3,16 @@
 
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
-  <p>
-    Account for <%= @user.first_name %> <%= @user.last_name %> <br />
-  </p>
-  <p>
-    Email
+
+   <h3>Name:</h3><%= @user.first_name %> <%= @user.last_name %>
+
+<h3>Email Address:
+</h3>
     <%= @user.email %>
-    </p>
-<p>
-    <%= f.label :organisation %><br />
+
+<h3><%= f.label :organisation %>:</h3>
     <%= f.text_field :organisation %>
-  </p>
+
   <p>
     <%= f.submit "Update Details", :id => "updatedetails" %>
   </p>
