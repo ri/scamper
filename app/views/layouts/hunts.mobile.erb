@@ -3,17 +3,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>Scamper: <%= controller.action_name %></title>
-	<%= stylesheet_link_tag 'style' %>
+	<%= stylesheet_link_tag 'mobile' %>
+	<%= javascript_include_tag 'application' %>
 </head>
 
 <body onload="initialize()" onunload="GUnload()">
 
 <div id="container">
 	<div id="dashboard" class="column">
-		<div id="logolink">
-			<% link_to(site_index_path) do %><%= image_tag '/images/scamperlogolink.png' %> <% end%>
-			</div>
+			<div id="logolink">
+				<% link_to(site_index_path) do %><%= image_tag '/images/scamperlogolink.png' %> <% end%>
+				</div>
 		<div id="player">
+
 			<div class="userwelcome">
 				<% if logged_in? %>
 					Hi <%= current_user.login %>!
@@ -33,11 +35,10 @@
 
 	</div>
 </div>
-<% if flash[:notice] or flash[:error] %>
-	<div id="errorbox"><%= flash[:notice] %><%= flash[:error] %></div>
-<% end%>
 <div id="center" class="column">
 <div id="content">
+
+<p style="color: green"><%= flash[:notice] %><%= flash[:error] %></p>
 
 <%= yield  %>
 </div>

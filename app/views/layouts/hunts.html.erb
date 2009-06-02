@@ -36,7 +36,9 @@
 
 	</div>
 </div>
+<% if flash[:notice] or flash[:error] %>
 	<div id="errorbox"><%= flash[:notice] %><%= flash[:error] %></div>
+<% end%>
 <div id="center" class="column">
 
 <div id="content">

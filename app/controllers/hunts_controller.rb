@@ -29,6 +29,11 @@ class HuntsController < ApplicationController
     if (!(Response.count(:conditions => {:player_id => @hunt.players.find_by_user_id(@current_user.id)}) == @hunt.questions.count))
       flash[:notice] = "Please complete all of the answers first!"
       redirect_back_or_default(play_hunt_path(@hunt))
+      
+      respond_to do |format|
+        format.html { render :layout => @play}
+        format.mobile { render :layout => @play}
+      end
     end
     
   end
@@ -60,7 +65,10 @@ class HuntsController < ApplicationController
       @hunt = Hunt.find(params[:id])
       @questions = @hunt.questions(params[:hunt_id]) 
 
-      render :layout => 'play'
+      respond_to do |format|
+        format.html { render :layout => @play}
+        format.mobile { render :layout => @play}
+      end
   end
   
   def answer
@@ -80,7 +88,8 @@ class HuntsController < ApplicationController
       
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @hunts }
+      format.xml  { render :xml => @hunts}
+      format.mobile
     end
   end
 

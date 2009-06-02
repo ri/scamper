@@ -34,7 +34,9 @@
 	</div>
 </div>
 
-	<div id="errorbox"><%= flash[:notice] %><%= flash[:error] %></div>
+	<% if flash[:notice] or flash[:error] %>
+  	<div id="errorbox"><%= flash[:notice] %><%= flash[:error] %></div>
+  <% end%>
 	
 <div id="dasshboard">
   <% if !@hideprofilebutton %>
