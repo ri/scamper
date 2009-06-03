@@ -6,17 +6,19 @@
 <div id="questionform">
  
  <h1>Edit Question</h1>
+
 <% form_for(@question, :url => hunt_question_path(@question.hunt, @question),
 			:html => {:onsubmit => "return saveCoords()"}) do |question_form| %>
   <%= question_form.error_messages %>
   <p>
-    <%= question_form.label :question %><br />
+    <h3><%= question_form.label :question %>:</h3>
     <%= question_form.text_field :question %>
   	<%= question_form.hidden_field :x %>
   	<%= question_form.hidden_field :y %>
   	<%= question_form.hidden_field :location %>
   </p>
-  
+  <h3>Possible Answers</h3>
+<p>The correct answer is chosen by selecting the radio button to the left of the text box</p>
   <ul>
 	  <% i = 0 %>
 	  <% question_form.fields_for :answers do |answer_form| %>
@@ -34,7 +36,8 @@
 	<br>
 	<% question_form.fields_for :hints do |hints_form| %>
     
- Hint: <%= hints_form.text_field :hint %>
+ <h3>Generated QR Code Hints</h3>
+Hint Text: <%= hints_form.text_field :hint %>
 
   <% end %>
 <% for hint in @hint%>
@@ -43,6 +46,8 @@
 <% else  print "there is no QR code"end%>
 <%end%>
   	<hr/>
+
+<h3>Question Location: </h3>
 
 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true
       &amp;key=ABQIAAAA-pq4VxzqyCDcngyj-qffCxTgs3_ECyR-XC2YXZ8zP-pb8wDoRRQLMYL2qCZ8U68OrZmJb3J5TvJjLg"

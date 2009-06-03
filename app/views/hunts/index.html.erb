@@ -16,8 +16,8 @@ end%>
     <th>Name</th>
     <th>Description</th>
 	<th>Creator</th>
+	<th>View Results</th>
 	<th colspan=4>Actions</th>
-
 
   </tr>
 
@@ -27,12 +27,21 @@ end%>
     <td class="huntname"><%=h hunt.name %></td>
     <td class="huntdescription"><%=h hunt.description %></td>
     <td class="huntcreator"><%=h hunt.created_by %></td>
+    <td>
+    <% link_to (results_hunt_path(hunt)) do %>
+	<%= image_tag '/images/buttons/resultstrophy.png',  :title => 'View Results'%>       <%= hunt.users.count %> Playing <% end%>
+    </td>
+    <td class="huntactions"><% link_to new_hunt_question_path(hunt) do %>
+	<%= image_tag '/images/buttons/viewquestionsicon.png',  :title => 'View Questions' %> <% end%></td>
+    <td class="huntactions"><% link_to invite_players_hunt_path(hunt) do %>
+	<%= image_tag '/images/buttons/viewusersicon.png',  :title => 'View Players'%> <% end%></td>
+    <td class="huntactions"><% link_to question_overview_hunt_path(hunt) do %>
+	<%= image_tag '/images/buttons/printer.png',  :title => 'View Printable Hunt'%> <% end%></td>
+    
 
-	<td class="huntactions"><%= link_to 'Hunt Overview', hunt_path(hunt) %></td>
-    <td class="huntactions"><%= link_to 'Questions', new_hunt_question_path(hunt) %></td>
-    <td class="huntactions"><%= link_to 'Players', invite_players_hunt_path(hunt) %></td>
-
-    <td class="huntactions"><%= link_to 'Delete', hunt, :confirm => 'Are you sure you want to delete this hunt?', :method => :delete %></td>
+    <td class="huntactions"><% link_to hunt, :confirm => 'Are you sure you want to delete this hunt?', :method => :delete do %>
+	<%= image_tag '/images/buttons/baleeted.png',  :title => 'Delete Hunt'%> <% end%>
+</td>
   </tr>
 
 
@@ -59,7 +68,7 @@ end%>
     <td class="huntname"><%=h hunt.name %></td>
     <td class="huntdescription"><%=h hunt.description %></td>
     <td class="huntcreator"><%=h hunt.created_by %></td>
-    <td class="huntactions"><%= link_to 'Play', play_hunt_path(hunt) %></td>
+    <td class="huntactions"><%= link_to 'View Info', play_hunt_path(hunt) %></td>
      <td class="huntactions"><%= Response.count(:conditions => {:correct => true, :player_id => hunt.players.find_by_user_id(current_user.id)})%></td>
   </tr>
 <% end %>

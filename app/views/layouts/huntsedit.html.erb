@@ -11,6 +11,9 @@
 
 <div id="container">
 	<div id="dashboard" class="column">
+		<div id="logolink">
+			<% link_to(site_index_path) do %><%= image_tag '/images/scamperlogolink.png' %> <% end%>
+			</div>
 		<div id="player">
 			<div class="userwelcome">
 				<% if logged_in? %>
@@ -31,6 +34,10 @@
 	</div>
 </div>
 
+	<% if flash[:notice] or flash[:error] %>
+  	<div id="errorbox"><%= flash[:notice] %><%= flash[:error] %></div>
+  <% end%>
+	
 <div id="dasshboard">
   <% if !@hideprofilebutton %>
   <% link_to(edit_hunt_path(@hunt), :id => "huntprofile") do %>
@@ -52,6 +59,10 @@
     <% link_to(hunt_path(@hunt), :id => "overview") do %>
       <span>overview</span>
     <% end %>
+    <% link_to(results_hunt_path(@hunt), :id => "results") do %>
+      <span>results</span>
+    <% end %>
+
 
   <% end %>
 
@@ -61,7 +72,7 @@
 
 <div id="content">
 
-<p style="color: green"><%= flash[:notice] %><%= flash[:error] %></p>
+
 
 <%= yield  %>
 </div>

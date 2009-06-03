@@ -51,5 +51,15 @@ class PlayersController < ApplicationController
     end
   end
   
+  def destroy
+    @player = Player.find(params[:id])
+    @hunt = @player.hunt
+    @player.destroy
 
+    respond_to do |format|
+      format.html { redirect_to(invite_players_hunt_url(@hunt)) }
+      format.xml  { head :ok }
+    end
+  end
+  
 end   

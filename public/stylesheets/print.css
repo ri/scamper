@@ -1,0 +1,20 @@
+table{
+width: 710px;
+}
+
+th {
+	font: bold, 12pt;
+	font-size: 10pt;
+	color: #000000;
+	border: 1px solid #000000;
+	text-align: center;
+	padding: 15px 5px 15px 5px;
+	background: #cccccc;
+}
+td {
+	border: 1px solid #000000;
+	background: #FFFFFF;
+	padding: 5px;
+	color: #000000;
+font-size: 10pt;
+}

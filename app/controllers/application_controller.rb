@@ -2,8 +2,10 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  has_mobile_fu
   include AuthenticatedSystem
   helper :all
   protect_from_forgery
   filter_parameter_logging :password
+
 end

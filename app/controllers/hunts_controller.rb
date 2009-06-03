@@ -3,12 +3,37 @@ class HuntsController < ApplicationController
   
   before_filter :login_required
 
+  def question_overview
+    @hunt = Hunt.find(params[:id])
+    if @hunt.questions.count == 0
+      flash[:notice] = "You have to no questions to print"
+      redirect_to(user_hunts_path(current_user))
+    end
+  end
+    
+  def results
+    @hunt = Hunt.find(params[:id])   
+    @current_players = @hunt.players
+    if @current_players.count == 0
+      flash[:notice] = "You have to add some users before you can view results!"
+      redirect_to(user_hunts_path(current_user))
+    else
+    render :layout => :choose_layout
+    end
+    
+  end
   
   def completed
     @hunt = Hunt.find(params[:id])
     @current_player = @hunt.players.find_by_user_id(current_user.id)
-    if (!(Response.count(:conditions => {:player_id => @hunt.players.find_by_user_id(@current_player.id)}) == @hunt.questions.count))
-      redirect_back_or_default(user_hunts_path(current_user))
+    if (!(Response.count(:conditions => {:player_id => @hunt.players.find_by_user_id(@current_user.id)}) == @hunt.questions.count))
+      flash[:notice] = "Please complete all of the answers first!"
+      redirect_back_or_default(play_hunt_path(@hunt))
+      
+      respond_to do |format|
+        format.html { render :layout => @play}
+        format.mobile { render :layout => @play}
+      end
     end
     
   end
@@ -20,7 +45,8 @@ class HuntsController < ApplicationController
   def invite_players
     @player_users = User.find(:all, :conditions => {:creator => false})
     @hunt = Hunt.find(params[:id])   
-    @current_players = @hunt.users
+    @player_users = User.players.not_in_hunt(@hunt)
+    @current_players = @hunt.players
     
     render :layout => :choose_layout
   end
@@ -38,8 +64,13 @@ class HuntsController < ApplicationController
       @users = User.find(:all)
       @hunt = Hunt.find(params[:id])
       @questions = @hunt.questions(params[:hunt_id]) 
+      @current_player = @hunt.players.find_by_user_id(current_user.id)
+      
 
-      render :layout => 'play'
+      respond_to do |format|
+        format.html { render :layout => @play}
+        format.mobile { render :layout => @play}
+      end
   end
   
   def answer
@@ -59,7 +90,8 @@ class HuntsController < ApplicationController
       
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @hunts }
+      format.xml  { render :xml => @hunts}
+      format.mobile
     end
   end
 

@@ -6,15 +6,20 @@ we will not reveal your details to any other party.</p>
 <p>Please note that your username and email address must be unique</p>
 
 <div id="form">	
-  <% link_to(new_player_users_path) do %>
+<div id="signupoptions">
+	  <% link_to(new_player_users_path) do %>
     <img src="/images/buttons/getplayeraccount.png" />
     <% end %>
     <% link_to(new_creator_users_path) do %>
       <img src="/images/buttons/getcreatoraccount.png" />
       <% end %>
+</div>
 
+<h3>Scamper Creator Account Registration</h3>
 <p>A scamper creator account allows you to create scavenger hunts for players to complete.</p>
 
+<div class="note"> * = denotes mandatory fields </div>
+<br />
 <% @user.password = @user.password_confirmation = nil %>
 <%= error_messages_for :user %>
 <% form_for :user, :url => users_path do |f| -%>
@@ -29,19 +34,19 @@ we will not reveal your details to any other party.</p>
 	<td><%= f.text_field :last_name %></td>
 </tr>
 <tr>
-	<td>Username: </td>
+	<td>Username: *</td>
 	<td><%= f.text_field :login %></td>
 </tr>
 <tr>
-	<td>Email:</td>
+	<td>Email: *</td>
 	<td><%= f.text_field :email %></td>
 </tr>
 <tr>
-	<td>Password: </td>
+	<td>Password: *</td>
 	<td><%= f.password_field :password %></td>
 </tr>
 <tr>
-	<td>Confirm Password: </td>
+	<td>Confirm Password: *</td>
 	<td><%= f.password_field :password_confirmation %></td>
 </tr>
 <tr>
@@ -54,15 +59,13 @@ we will not reveal your details to any other party.</p>
 
 </table>
 
-<h3> * = denotes mandatory fields </h3>
-<br /> <br />
+<br />
 <input type="checkbox" name="termsconditions" value="termsconditions"> I agree to the <a href"termsconditions.html">terms and conditions.</a>
 
-	<br /> 
-	<p><INPUT TYPE="image" id="createnew" onclick="this.src='/images/buttons/clearform_norm.png';" onmouseover="this.src='/images/buttons/clearform_hover.png';"
-   onmouseout="this.src='/images/buttons/clearform_norm.png';" SRC="/images/buttons/clearform_norm.png" HEIGHT="55" WIDTH="170" BORDER="0" ALT="Submit Form">
-<INPUT TYPE="image" id="reset" onclick="this.src='/images/buttons/signmeup_norm.png';" onmouseover="this.src='/images/buttons/signmeup_hover.png';"
-   onmouseout="this.src='/images/buttons/signmeup_norm.png';" SRC="/images/buttons/signmeup_norm.png" HEIGHT="55" WIDTH="170" BORDER="0" ALT="Submit Form"></p>
+<div id="signupbottombuttons">
+<%= f.submit 'Sign Up' %> 
+
+</div>
 
 	<% end -%></p>
 	

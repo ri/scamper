@@ -5,9 +5,10 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new_player'
 
   map.resource :session
+  map.resources :players
   map.resources :users, :collection => {:new_creator => :get, :new_player => :get}, :has_many => [:hunts]
   
-  map.resources :hunts, :member => {:completed => :get, :invite_players => :get, :add_players => :put, :play => :get} do |hunts|
+  map.resources :hunts, :member => {:question_overview => :get, :results => :get, :completed => :get, :invite_players => :get, :add_players => :put, :play => :get} do |hunts|
     hunts.resources :users
     hunts.resources :questions, :member => {:printview => :get, :new_answer => :put} do |questions|
       questions.resources :hints

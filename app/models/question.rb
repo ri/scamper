@@ -12,6 +12,8 @@ class Question < ActiveRecord::Base
   
   validates_presence_of :location, :question, :hunt_id, :correct_answer
   
+  named_scope :not_answered, lambda {|player| {:conditions =>['id NOT IN (SELECT DISTINCT question_id FROM responses WHERE player_id = ?)', player.id] }}
+  
   def answered?(user)
     0 != begin
       player_id = Player.find_by_user_id_and_hunt_id(user.id, hunt_id).id
@@ -20,4 +22,5 @@ class Question < ActiveRecord::Base
   rescue
     false
   end
+  
 end

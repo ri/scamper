@@ -1,5 +1,6 @@
-<h1>Participating: Hunt Details</h1>
-
+<%= render :partial => 'questions/playersidebar' %>
+<div id="questionform">
+	<h1>Participating: Hunt Details</h1>
 <p>
   <b>Name:</b>
   <%=h @hunt.name %>
@@ -29,17 +30,14 @@
 
 	</script>
 	<div id="map_canvas" style="width: 500px; height: 300px"></div>
-  
-<p>
-	
-	QUESTION<br />
-	<table>
-	  <% i = 1 %>
-		<% @questions.each do |question| %>
-		 <td><td>Question: <%= i %></td>
-		  <td><%=h question.question %></td>
-		    <td><%= link_to 'Show', hunt_question_response_path(question.hunt, question) %></td>
-		</tr>
-		<% i += 1%>
-		<% end %>
-	</table>
+	<br />
+		<br />
+			<br />
+				<br />
+
+<% if @questions.not_answered(@current_player).count > 0 %>
+<p>	<%= link_to 'Play Hunt', hunt_question_response_path(@hunt, @questions.not_answered(@current_player).rand), :id => 'playhuntbtn' %></p>
+<% else %>
+You have already answered all of the questions in the this hunt. Click <%= link_to 'here', completed_hunt_path(@hunt) %> to view your results.
+<% end %>
+</div>
