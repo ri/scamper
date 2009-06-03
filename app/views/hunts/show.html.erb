@@ -44,5 +44,7 @@
 </br>
 			
 <br />
-<% link_to(hunts_path) do %>
+<% link_to(invite_players_hunt_path(@hunt)) do %>
 <%= image_tag '/images/buttons/back.png' %> <% end%>
+<% link_to(results_hunt_path(@hunt)) do %>
+<%= image_tag '/images/buttons/forward.png' %><% end %>
