@@ -2,7 +2,7 @@
 <p>
   <%=h @hunt.name %>
 </p>
-<div id="dashboardlink"><%= link_to '< Go Back', user_hunts_path(current_user) %></div>
+
 </div>
 
 <div id="huntdetails">
@@ -22,4 +22,5 @@
   <% else %>
   You have already answered all of the questions in the this hunt. Click <%= link_to 'here', completed_hunt_path(@hunt) %> to view your results.
   <% end %>
+<div id="dashboardlink"><%= link_to '< Go Back', user_hunts_path(current_user) %></div>
 </div>
