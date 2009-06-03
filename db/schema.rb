@@ -48,10 +48,10 @@ ActiveRecord::Schema.define(:version => 20090603043743) do
   create_table "questions", :force => true do |t|
     t.integer  "index"
     t.integer  "hunt_id"
+    t.integer  "correct_answer_id"
     t.text     "question"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "correct_answer_id", :limit => 255
     t.decimal  "x"
     t.decimal  "y"
     t.string   "location"

@@ -22,7 +22,7 @@
 
 
 <% if @player_users %>
-Add your players
+<h3>Players that can be added</h3>
 <table>
 	
 	<tr>
@@ -46,9 +46,13 @@ Add your players
 <% else %>
   You have no users to add! =(
 <% end %>
-
-<% link_to(new_hunt_question_path(@hunt)) do %>
-<%= image_tag '/images/buttons/back.png' %><% end %>
-
+<br />
+<br />
+<div id="arrowlinks">
+<div id="leftarrow"><% link_to(new_hunt_question_path(@hunt)) do %>
+<%= image_tag '/images/buttons/back.png' %><% end %></div>
+<div id="rightarrow">
 <% link_to(hunt_path(@hunt)) do %>
 <%= image_tag '/images/buttons/forward.png' %><% end %>
+</div>
+</div>

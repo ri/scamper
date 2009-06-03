@@ -19,6 +19,7 @@
   </table>
   <br />
 <% link_to(hunt_path(@hunt)) do %>
-<%= image_tag '/images/buttons/back.png' %> <% end%>
-  <%= link_to 'Back to Dashboard', user_hunts_path(current_user) %>
+<div id="arrowlinks">
+<div id="leftarrow"><%= image_tag '/images/buttons/back.png' %> <% end%></div>
+ <div id="rightarrow"> <%= link_to 'Back to Dashboard', user_hunts_path(current_user) %></div></div>
 <br />

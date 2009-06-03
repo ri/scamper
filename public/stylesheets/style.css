@@ -220,7 +220,7 @@ width: 515px;
 }
 
 #dasshboard{
-padding-left: 185px;
+text-align: center;
 margin-bottom: -15px;
 padding-top: 20px;
 }
@@ -306,10 +306,15 @@ margin-top: -20px;
 	height: 0px;
 	padding-top: 52px;
 	overflow: hidden;
-	margin-left: 240px;
 	border: none;
 }
+#leftarrow{
+	float: left;
+}
 
+#rightarrow{
+	float: right;
+}
 #hunt_submit:hover
 {
 background:url("/images/buttons/create_hunt_hover.png");
