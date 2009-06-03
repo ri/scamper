@@ -1,15 +1,15 @@
-	<h1>Participating: Hunt Details</h1>
+<div id="welcomebanner"><h1>Hunt Overview</h1>
 <p>
-  <b>Name:</b>
   <%=h @hunt.name %>
 </p>
+</div>
 
-<p>
+<div id="huntdetails">
   <b>Description:</b>
   <%=h @hunt.description %>
 </p>
 	<% if @questions.not_answered(@current_player).count > 0 %>
-  <p>	<%= link_to 'Play Hunt', hunt_question_response_path(@hunt, @questions.not_answered(@current_player).rand), :id => 'playhuntbtn' %></p>
+  <p>	<%= link_to 'Play', hunt_question_response_path(@hunt, @questions.not_answered(@current_player).rand), :id => 'playhuntbtn' %></p>
   <% else %>
   You have already answered all of the questions in the this hunt. Click <%= link_to 'here', completed_hunt_path(@hunt) %> to view your results.
   <% end %>
