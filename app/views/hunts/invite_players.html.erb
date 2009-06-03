@@ -41,9 +41,10 @@ Add your players
 	<% end %>
 	<tr><td></td><td></td><td><%= submit_tag 'add users' %></td></tr>
 <% end %>
+</table>
+
 <% else %>
   You have no users to add! =(
-</table>
 <% end %>
 
 <% link_to(new_hunt_question_path(@hunt)) do %>
