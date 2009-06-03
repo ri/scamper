@@ -1,5 +1,5 @@
 <div id="welcomebanner"><h1>Welcome to Scamper.</h1>
-<h1>Choose a Scavenger Hunt to play.</h1></div>
+<h3>Choose a Scavenger Hunt to play.</h3></div>
 <% for hunt in @playerhunts %>
 
 <div id="huntitem"><% link_to play_hunt_path(hunt) do %><%=h hunt.name %><% end %><%= image_tag '/images/arrow.gif' %> </div>
