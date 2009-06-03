@@ -1,0 +1,5 @@
+<% if @questions.not_answered(@current_player).count > 0 %>
+<p>	<%= link_to 'Next Question', hunt_question_response_path(@hunt, @questions.not_answered(@current_player).rand), :id => 'playhuntbtn' %></p>
+<% else %>
+You have now answered all of the questions in the this hunt. Click <%= link_to 'here', completed_hunt_path(@hunt) %> to view your results.
+<% end %>

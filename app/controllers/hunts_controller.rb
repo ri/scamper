@@ -2,7 +2,16 @@ class HuntsController < ApplicationController
   layout "hunts"
   
   before_filter :login_required
-
+  
+  def answered
+    @hunt = Hunt.find(params[:id])
+    @questions = @hunt.questions
+    @current_player = @hunt.players.find_by_user_id(current_user.id)
+    respond_to do |format|
+      format.mobile
+    end
+  end
+  
   def question_overview
     @hunt = Hunt.find(params[:id])
     if @hunt.questions.count == 0
