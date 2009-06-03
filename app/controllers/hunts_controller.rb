@@ -9,6 +9,7 @@ class HuntsController < ApplicationController
     @current_player = @hunt.players.find_by_user_id(current_user.id)
     respond_to do |format|
       format.mobile
+      format.html
     end
   end
   
