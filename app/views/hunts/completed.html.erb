@@ -2,3 +2,5 @@ Congratulations! You have completed this hunt!
 
 You answered <%= Response.count(:conditions => {:correct => true, :player_id => @current_player.id})%> out of
 <%= @hunt.questions.count %> correctly!
+
+<h3>Go back to the <%= link_to 'Dashboard', user_hunts_path(current_user) %></h1>
