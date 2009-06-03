@@ -31,9 +31,6 @@
       </li>
     <% end %>
   </ul>
-  <% if @question.hints.count > 0 %>
-  <%= @question.hints.first.hint %>
-  <% end %>
   <%= response_form.submit 'Answer' %>
 <% end %>
 </div>

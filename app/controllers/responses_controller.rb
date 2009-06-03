@@ -22,7 +22,7 @@ class ResponsesController < ApplicationController
     if @response.save
       if @questions.not_answered(@current_player).count > 0 
         redirect_to hunt_question_response_path(@hunt, @questions.not_answered(@current_player).rand)
-        flash[:notice] = 'Your answer has been saved'
+        flash[:notice] = 'Your answer has been saved. Here is the next question:'
         return
       else
         redirect_to completed_hunt_path(@hunt)
