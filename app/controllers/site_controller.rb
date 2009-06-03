@@ -6,7 +6,14 @@ class SiteController < ApplicationController
         redirect_to(login_path)
     end
   end
-
+  
+  def help
+    respond_to do |format|
+      format.html { render :layout => 'application'}
+      format.mobile
+    end
+  end
+  
   def project
     render :layout => 'project'
   end
