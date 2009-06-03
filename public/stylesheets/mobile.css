@@ -38,7 +38,7 @@ h2 {
 	border-bottom: 1px solid #7d532b;
 	padding-top: 15px;
 	padding-bottom: 15px;
-	width: 350px;
+	width: 100%x;
 	color: #7d532b;
 	padding-left: 15px;
 }
@@ -55,7 +55,7 @@ h2 {
 
 #welcomebanner {
 	background-color: #FFFFFF;
-	width: 350px;
+	width: 100%;
 	padding-left: 15px;
 	padding-top: 10px;
 	padding-bottom: 10px;

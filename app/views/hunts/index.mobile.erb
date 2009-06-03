@@ -2,7 +2,7 @@
 <h1>Choose a Scavenger Hunt to play.</h1></div>
 <% for hunt in @playerhunts %>
 
-<div id="huntitem"><% link_to play_hunt_path(hunt) do %><%=h hunt.name %><% end %><%= image_tag '/images/arrow.gif' %> </div>
+<div id="huntitem"><% link_to play_hunt_path(hunt) do %><%=h hunt.name %><% end %><%= image_tag '/images/arrow.png' %> </div>
 
 <% end %>
 
