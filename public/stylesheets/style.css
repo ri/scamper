@@ -70,7 +70,7 @@ td.huntactions {
 
 td.huntname {
 	max-width: 100px;
-	overflow: scroll;
+	overflow: hidden;
 }
 td.huntquestions {
 	max-width: 100px;
@@ -81,6 +81,7 @@ td.description {
 	}
 td.huntcreator {
 	width: 30px;
+	overflow: hidden;
 }
 td.huntid {
 	width: 30px;
@@ -102,6 +103,8 @@ position: relative;
 text-align: left;
 
 }
+
+
 #container .column {
   position: relative;
   
@@ -324,7 +327,7 @@ background:url("/images/buttons/saveprogress_hover.png");
 
 #answerform {
 margin-left: 180px;
-margin-top: -125px;
+
 }
 
 #currentq {
@@ -534,9 +537,11 @@ background:url("/images/buttons/PLAYIT_bttn_hov.png");
 #lockin{
 display:inline-block;
 width:182px;
-height: 52px;
 background: url("/images/buttons/lockinanswer_norm.png");
-position:relative;
+height: 0px;
+padding-top: 52px;
+overflow: hidden;
+border: none;
 }
 
 #lockin span{
@@ -764,6 +769,7 @@ display:none;
 #loginbtn:hover
 {
 background:url("/images/buttons/sign_in_hover.png");
+overflow: hidden;
 }
 
 #inviteplayers{
