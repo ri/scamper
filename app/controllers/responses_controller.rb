@@ -3,6 +3,7 @@ class ResponsesController < ApplicationController
   before_filter :verify_question_is_unanswered
   before_filter :login_required_except_kml, :only   => :show
   before_filter :login_required,            :except => :show
+    layout "hunts"
   
   def show
     @hunt = Hunt.find(params[:hunt_id])
@@ -22,14 +23,16 @@ class ResponsesController < ApplicationController
       if @questions.not_answered(@current_player).count > 0 
         redirect_to hunt_question_response_path(@hunt, @questions.not_answered(@current_player).rand)
         flash[:notice] = 'Your answer has been saved'
+        return
       else
         redirect_to completed_hunt_path(@hunt)
+        return
       end
     else
       flash[:error] = "Please select an answer"
       render :action => :show
     end
-  end
+    end
   
   protected
     def login_required_except_kml
