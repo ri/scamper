@@ -24,7 +24,7 @@ end%>
 
 <% for hunt in @hunts %>
   <tr>
-    <td class="huntname"><%=h hunt.name %></td>
+    <td class="huntname"><% link_to hunt_path(hunt) do %><%=h hunt.name %><% end %></td>
     <td class="huntdescription"><%=h hunt.description %></td>
     <td class="huntcreator"><%=h hunt.created_by %></td>
     <td>
