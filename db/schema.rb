@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090524122043) do
+ActiveRecord::Schema.define(:version => 20090603043743) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20090524122043) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "text"
+    t.integer  "player_id"
   end
 
   create_table "hints", :force => true do |t|
@@ -47,10 +48,10 @@ ActiveRecord::Schema.define(:version => 20090524122043) do
   create_table "questions", :force => true do |t|
     t.integer  "index"
     t.integer  "hunt_id"
-    t.integer  "correct_answer_id"
     t.text     "question"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "correct_answer_id", :limit => 255
     t.decimal  "x"
     t.decimal  "y"
     t.string   "location"

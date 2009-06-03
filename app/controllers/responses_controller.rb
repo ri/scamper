@@ -13,15 +13,20 @@ class ResponsesController < ApplicationController
   
   def create
     @hunt = @question.hunt
+    @questions = @hunt.questions
     @response = current_player.responses.build
     @response.player = current_player
     @response.answer_id = params[:response][:answer_id]
     
     if @response.save
-      flash[:notice] = 'Your answer has been saved'
-      redirect_to hunt_question_path(@question.hunt, @question)
+      if @questions.not_answered(@current_player).count > 0 
+        redirect_to hunt_question_response_path(@hunt, @questions.not_answered(@current_player).rand)
+        flash[:notice] = 'Your answer has been saved'
+      else
+        redirect_to completed_hunt_path(@hunt)
+      end
     else
-      flash.now[:error] = "Please select an answer"
+      flash[:error] = "Please select an answer"
       render :action => :show
     end
   end
