@@ -118,6 +118,24 @@ h3 {
 	width: 25px;
 }
 
+#playhuntbtn {
+	display: block;
+	background-color: #83cf2a;
+	color: #FFFFFF;
+	font-family: Helvetica;
+	font-size: 14px;
+	border: 1px solid;
+	text-decoration: underline;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 80px;
+}
+
 #submitanswer {
 	display: block;
 	background-color: #83cf2a;
@@ -217,4 +235,8 @@ h3 {
 	line-height: 18pt;
 	color: #512908;
 	padding-left: 5px;
+}
+
+#huntdetails a{
+	color: #512908;
 }
