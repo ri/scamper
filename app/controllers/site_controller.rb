@@ -10,7 +10,7 @@ class SiteController < ApplicationController
   def help
     respond_to do |format|
       format.html { render :layout => 'application'}
-      format.mobile
+      format.mobile { render :layout => 'application'}
     end
   end
   

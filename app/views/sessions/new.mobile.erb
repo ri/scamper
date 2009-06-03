@@ -1,13 +1,13 @@
-<h1>Log In</h1>
+<%= image_tag '/images/weblogo1.gif' %>
+
+<h1>Log In to Start Playing!</h1>
 
 <% form_tag session_path do -%>
-<p><%= label_tag 'login' %><br />
-<%= text_field_tag 'login', @login %></p>
+<h2><%= label_tag 'username' %></h2>
+<%= text_field_tag 'login', @login %>
 
-<p><%= label_tag 'password' %><br/>
-<%= password_field_tag 'password', nil %></p>
+<h2><%= label_tag 'password' %></h2>
+<%= password_field_tag 'password', nil %>
 
-<p><%= submit_tag 'Log in' %></p>
+<p><%= submit_tag 'Log in', :id => "mobloginbtn" %></p>
 <% end -%>
-<br />
-<h1>Don't have an account? <%= link_to 'Sign up for one', signup_path %>!</h1>
