@@ -8,6 +8,14 @@
   <b>Description:</b>
   <%=h @hunt.description %>
 </p>
+<p>
+  <b>Location:</b>
+  <%=h @hunt.location %>
+</p>
+<p>
+  <b>Subject:</b>
+  <%=h @hunt.subject %>
+</p>
 	<% if @questions.not_answered(@current_player).count > 0 %>
   <p>	<%= link_to 'Play', hunt_question_response_path(@hunt, @questions.not_answered(@current_player).rand), :id => 'playhuntbtn' %></p>
   <% else %>
