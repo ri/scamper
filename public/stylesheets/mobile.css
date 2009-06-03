@@ -1,20 +1,72 @@
 * {margin:0; padding:0; border:0}
 
 body {
-	background-color: #000000;
+	background-color: #f7f4e5;
+	font-family: helvetica;
 }
 
 #loginbox {
 	background-color: #f9c847;
 	height: 100%;
+	display: block;
 	width: 100%;
 	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #512908;
 }
 
 h1 {
 	color: #000000;
 	font-family: helvetica;
 	font-size: 18px;
+}
+
+#answerform h1 {
+	color: #512908;
+	font-family: helvetica;
+	font-size: 16px;
+}
+
+#answerform {
+	padding-left: 5px;
+}
+
+ol {
+	list-style-type: lower-alpha;
+	color: #512908;
+	margin-left: 25px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+li {
+	list-style-type: lower-alpha;
+	padding-bottom: 5px;
+}
+
+p {
+	color: #512908;
+}
+
+#completedq {
+	color: #512908;
+	padding-left: 5px;
+	padding-top: 5px;
+}
+
+#completedq a{
+	color: #512908;
+
+}
+
+#completedq h1{
+	color: #512908;
+}
+
+#completedq h3{
+	color: #512908;
+
 }
 
 h2 {
@@ -62,8 +114,65 @@ h3 {
 	padding-left: 15px;
 	padding-right: 15px;
 	padding-top: 5px;
-	padding-bottom: 7px;
-	width: 30px;
+	padding-bottom: 5px;
+	width: 25px;
+}
+
+#playhuntbtn {
+	display: block;
+	background-color: #83cf2a;
+	color: #FFFFFF;
+	font-family: Helvetica;
+	font-size: 14px;
+	border: 1px solid;
+	text-decoration: underline;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 80px;
+}
+
+#submitanswer {
+	display: block;
+	background-color: #83cf2a;
+	color: #FFFFFF;
+	font-family: Helvetica;
+	font-size: 14px;
+	border: 1px solid;
+	text-decoration: underline;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 80px;
+}
+
+#dashboardlink {
+	display: block;
+	background-color: #fa7b11;
+	color: #FFFFFF;
+	font-family: Helvetica;
+	font-size: 14px;
+	border: 1px solid;
+	text-decoration: underline;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 70px;
+}
+#dashboardlink a{
+	color: #FFFFFF;
 }
 
 #huntitem {
@@ -126,4 +235,9 @@ h3 {
 	line-height: 18pt;
 	color: #512908;
 	padding-left: 5px;
+}
+
+#huntdetails a{
+	color: #512908;
+	text-decoration: underline;
 }

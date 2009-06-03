@@ -1,4 +1,8 @@
-Congratulations! You have completed this hunt!
+<div id="completedq">
+<h1>Congratulations! </h1><br />
+<h3>You have completed this hunt!</h3><br />
 
-You answered <%= Response.count(:conditions => {:correct => true, :player_id => @current_player.id})%> out of
-<%= @hunt.questions.count %> correctly!
+You answered <b><%= Response.count(:conditions => {:correct => true, :player_id => @current_player.id})%></b> out of
+<b><%= @hunt.questions.count %></b> correctly!
+</div>
+<div id="dashboardlink"><%= link_to 'Dashboard', user_hunts_path(current_user) %></div>
