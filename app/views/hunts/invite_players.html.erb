@@ -46,7 +46,8 @@ Add your players
 </table>
 <% end %>
 
+<% link_to(new_hunt_question_path(@hunt)) do %>
+<%= image_tag '/images/buttons/back.png' %><% end %>
 
-<%= image_tag '/images/buttons/back.png' %>
-
-<%= image_tag '/images/buttons/forward.png' %>
+<% link_to(hunt_path(@hunt)) do %>
+<%= image_tag '/images/buttons/forward.png' %><% end %>

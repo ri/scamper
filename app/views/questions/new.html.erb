@@ -172,8 +172,10 @@
 
 <% end %>
 
-<% link_to(hunt_questions_path(@hunt)) do %>
+<% link_to(edit_hunt_path(@hunt)) do %>
 <%= image_tag '/images/buttons/back.png' %> <% end%>
-<%= image_tag '/images/buttons/forward.png' %>
+
+<% link_to(invite_players_hunt_path(@hunt)) do %>
+<%= image_tag '/images/buttons/forward.png' %><% end%>
 
 </div>
