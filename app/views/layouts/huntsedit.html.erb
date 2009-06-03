@@ -21,7 +21,7 @@
 					<%= link_to '(Profile)', edit_user_path(current_user) %>   <%= link_to '(Dashboard)', user_hunts_path(current_user) %> 					<% end %>
 			</div>
 			<div class="help">
-				<a href="help.html">Help!</a>
+			  <%= link_to 'Help', help_site_path %>
 			</div>
 			<div class="signout">
 				<% if logged_in? %>

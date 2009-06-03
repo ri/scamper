@@ -17,6 +17,6 @@ ActionController::Routing::Routes.draw do |map|
     end
   end
   
-  map.resources :site, :collection => {:project => :get, :team => :get, :about => :get}
+  map.resources :site, :collection => {:project => :get, :team => :get, :about => :get, :help => :get}
   map.root :controller => "site", :view => "index"
 end

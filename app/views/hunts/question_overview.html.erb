@@ -19,8 +19,10 @@
 <td><%= question.correct_answer %>
   <% if question.hints.first %></td>
 
+<% if question.hints.count > 0 %>
 <td><%= question.hints.first.hint %></td>
 <td><%= qrcode(question.hints.first.hint) %></td>
+<% end %>
 
 <% end %>
 

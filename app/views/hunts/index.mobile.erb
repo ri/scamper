@@ -1,51 +1,4 @@
-<div id="dashboardheader"><img src="/images/buttons/clipboard.png"/><h1>My Dashboard</h1> 
-	<br />
-</div>
-<% def admin?
- current_user.creator?
-end%>
-<br />
 
-
-<% if admin? then%>
-<%= link_to 'New Hunt', new_user_hunt_path(current_user), :id => 'createnew' %>
-<h1> Hunts Created </h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-	<th>Creator</th>
-	<th>Check player results</th>
-	<th colspan=4>Actions</th>
-
-  </tr>
-
-
-<% for hunt in @hunts %>
-  <tr>
-    <td class="huntname"><%=h hunt.name %></td>
-    <td class="huntdescription"><%=h hunt.description %></td>
-    <td class="huntcreator"><%=h hunt.created_by %></td>
-    <td>
-    <% link_to(results_hunt_path(hunt)) do %>
-      <%= hunt.users.count %> Playing 
-    <% end %>
-    </td>
-  	<td class="huntactions"><%= link_to 'Hunt Overview', hunt_path(hunt) %></td>
-    <td class="huntactions"><%= link_to 'Add/View Questions', new_hunt_question_path(hunt) %></td>
-    <td class="huntactions"><%= link_to 'Add/View Players', invite_players_hunt_path(hunt) %></td>
-    <td class="huntactions"><%= link_to 'Print Overview', question_overview_hunt_path(hunt) %></td>
-    
-
-    <td class="huntactions"><%= link_to 'Delete', hunt, :confirm => 'Are you sure you want to delete this hunt?', :method => :delete %></td>
-  </tr>
-
-
-<% end %>
-
-
-<% else %>
 </table>
 
 <h1> Hunts Participating </h1>
@@ -63,13 +16,8 @@ end%>
 <% for hunt in @playerhunts %>
 <tr>
     <td class="huntname"><%=h hunt.name %></td>
-    <td class="huntdescription"><%=h hunt.description %></td>
-    <td class="huntcreator"><%=h hunt.created_by %></td>
-    <td class="huntactions"><%= link_to 'Play', play_hunt_path(hunt) %></td>
-     <td class="huntactions"><%= Response.count(:conditions => {:correct => true, :player_id => hunt.players.find_by_user_id(current_user.id)})%></td>
   </tr>
 <% end %>
-<%end%>
 </table>
 
 <br />
