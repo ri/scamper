@@ -10,29 +10,14 @@
 <body onload="initialize()" onunload="GUnload()">
 
 <div id="container">
-	<div id="dashboard" class="column">
-			<div id="logolink">
-				<% link_to(site_index_path) do %><%= image_tag '/images/scamperlogolink.png' %> <% end%>
-				</div>
-		<div id="player">
-
-			<div class="userwelcome">
-				<% if logged_in? %>
-					Hi <%= current_user.login %>!
-					<%= link_to '(Profile)', edit_user_path(current_user) %>   <%= link_to '(Dashboard)', user_hunts_path(current_user) %> 
-					<% end %> 
-			</div>
-			<div class="help">
-			  <%= link_to 'Help', help_site_path %>
-			</div>
+	<div id="mobbanner" class="column">
+				<%= image_tag '/images/moblogo.gif' %>
 			<div class="signout">
 				<% if logged_in? %>
 					<%= link_to 'Sign Out', logout_path %>	<% else %> 
 					<%= link_to 'Sign In', login_path %>
 				<% end %> 
 			</div>
-
-
 	</div>
 </div>
 <div id="center" class="column">
@@ -41,6 +26,7 @@
 <p style="color: black"><%= flash[:notice] %><%= flash[:error] %></p>
 
 <%= yield  %>
+
 </div>
 </div>
 </div>

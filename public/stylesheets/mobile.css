@@ -1,3 +1,5 @@
+* {margin:0; padding:0; border:0}
+
 body {
 	background-color: #f9c847;
 }
@@ -29,3 +31,36 @@ h2 {
 	padding-top: 5px;
 	padding-bottom: 7px;
 }
+
+#huntitem {
+	display: block;
+	background-color: #f7f4e5;
+	border-bottom: 1px solid #7d532b;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	width: 350px;
+	color: #7d532b;
+	padding-left: 15px;
+}
+
+#huntitem img{
+	float: right;
+	padding-right: 20px;
+}
+
+#huntitem a{
+	color: #7d532b;
+}
+
+
+#welcomebanner {
+	background-color: #FFFFFF;
+	width: 350px;
+	padding-left: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#mobbanner {
+	background-color: #f8c974;
+	display: block;
