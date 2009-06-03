@@ -2,6 +2,7 @@
 
 body {
 	background-color: #f7f4e5;
+	font-family: helvetica;
 }
 
 #loginbox {
@@ -19,6 +20,53 @@ h1 {
 	color: #000000;
 	font-family: helvetica;
 	font-size: 18px;
+}
+
+#answerform h1 {
+	color: #512908;
+	font-family: helvetica;
+	font-size: 16px;
+}
+
+#answerform {
+	padding-left: 5px;
+}
+
+ol {
+	list-style-type: lower-alpha;
+	color: #512908;
+	margin-left: 25px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+li {
+	list-style-type: lower-alpha;
+	padding-bottom: 5px;
+}
+
+p {
+	color: #512908;
+}
+
+#completedq {
+	color: #512908;
+	padding-left: 5px;
+	padding-top: 5px;
+}
+
+#completedq a{
+	color: #512908;
+
+}
+
+#completedq h1{
+	color: #512908;
+}
+
+#completedq h3{
+	color: #512908;
+
 }
 
 h2 {
@@ -68,6 +116,24 @@ h3 {
 	padding-top: 5px;
 	padding-bottom: 5px;
 	width: 25px;
+}
+
+#submitanswer {
+	display: block;
+	background-color: #83cf2a;
+	color: #FFFFFF;
+	font-family: Helvetica;
+	font-size: 14px;
+	border: 1px solid;
+	text-decoration: underline;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 80px;
 }
 
 #dashboardlink {

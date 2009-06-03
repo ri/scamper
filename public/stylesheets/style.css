@@ -264,11 +264,19 @@ margin-top: -20px;
 }
 
 
-#questionform ul {
+#questionform ol {
 	list-style-type: lower-alpha;
 }
 
 #questionform li {
+	list-style-type: lower-alpha;
+}
+
+#answerform ol {
+	list-style-type: lower-alpha;
+}
+
+#answerform li {
 	list-style-type: lower-alpha;
 }
 

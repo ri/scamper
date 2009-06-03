@@ -1,6 +1,19 @@
+<div id="welcomebanner"><h1>You are playing:</h1>
+<p>
+  <%=h @hunt.name %>
+</p>
+</div>
 <div id="answerform">
+	
 <% form_for :response, @response, hunt_question_response_path(@question.hunt, @question, @response) do |response_form| %>
-  Where to go:
+<h1>
+	<br />
+  <b>Question:</b>
+  <%=h @question.question %>
+</h1>
+<br />
+  <p>Where to go to find your hint:</p>
+<br />
 		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true
           &amp;key=ABQIAAAA-pq4VxzqyCDcngyj-qffCxTgs3_ECyR-XC2YXZ8zP-pb8wDoRRQLMYL2qCZ8U68OrZmJb3J5TvJjLg"
           type="text/javascript">
@@ -19,18 +32,16 @@
 
     	</script>
     	<div id="map_canvas" style="width: 300px; height: 300px"></div>
-  <p>
-    <b>Question:</b>
-    <%=h @question.question %>
-  </p>
-  <ul>
-    <% @question.answers.each do |answer| %>
-      <li>
-        <%= response_form.radio_button :answer_id, answer.id %>
-        <%= response_form.label "answer_id_#{answer.id}", answer.text %>
-      </li>
-    <% end %>
-  </ul>
-  <%= response_form.submit 'Answer' %>
+<br />
+<h1>Select your answer!</h1>
+		<ol>
+		  <% @question.answers.each do |answer| %>
+		    <li>
+		      <%= response_form.radio_button :answer_id, answer.id %>
+		      <%= response_form.label "answer_id_#{answer.id}", answer.text %>
+		    </li>
+		  <% end %>
+		</ol>
+		<%= response_form.submit 'Answer', :id => "submitanswer" %>
 <% end %>
 </div>
