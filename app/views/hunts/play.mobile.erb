@@ -1,19 +1,3 @@
-
-
-<div id="questionform">
-  <% i = 1 %>
-  <% for question in @hunt.questions %>
-    <% if question == @question %>
-      <div id="activeq">
-        Question <%= i%></div>
-      <% else %>
-        <div id="inactiveq"><% link_to(hunt_question_response_path(@hunt, question)) do %>
-          Question <%= i%>
-          <% end %></div>
-
-      <% end %>
-  <% i += 1 %>
-  <% end %>
 	<h1>Participating: Hunt Details</h1>
 <p>
   <b>Name:</b>
@@ -24,25 +8,9 @@
   <b>Description:</b>
   <%=h @hunt.description %>
 </p>
-
-<b>Map:</b>
-<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true
-      &amp;key=ABQIAAAA-pq4VxzqyCDcngyj-qffCxTgs3_ECyR-XC2YXZ8zP-pb8wDoRRQLMYL2qCZ8U68OrZmJb3J5TvJjLg"
-      type="text/javascript">
-  </script>
-    <script type="text/javascript">
-    function initialize() {
-      if (GBrowserIsCompatible()) {
-        geoXml = new GGeoXml("http://scamper.heroku.com<%= hunt_questions_path(@hunt, :format => 'kml') + "?" + Time.now.strftime("%H%M%S").to_s %>");
-
-        var map = new GMap2(document.getElementById("map_canvas"));
-        map.setCenter(new GLatLng(-27.46758, 153.027892), 13);
-        map.setUIToDefault();
-        map.addOverlay(geoXml);	
-      }
-    }
-
-	</script>
-	<div id="map_canvas" style="width: 500px; height: 300px"></div>
-	
+	<% if @questions.not_answered(@current_player).count > 0 %>
+  <p>	<%= link_to 'Play Hunt', hunt_question_response_path(@hunt, @questions.not_answered(@current_player).rand), :id => 'playhuntbtn' %></p>
+  <% else %>
+  You have already answered all of the questions in the this hunt. Click <%= link_to 'here', completed_hunt_path(@hunt) %> to view your results.
+  <% end %>
 </div>

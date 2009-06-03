@@ -1,26 +1,10 @@
 
-</table>
-
-<h1> Hunts Participating </h1>
-<table>
-  <tr>
-	<th>Hunt Id</th>    
-    <th>Name</th>
-    <th>Description</th>
-	<th>Actions</th>
-	<th>Score</th>
-
-  </tr>
-
-<% i = 0 %>
 <% for hunt in @playerhunts %>
-<tr>
-    <td class="huntname"><%=h hunt.name %></td>
-  </tr>
-<% end %>
-</table>
+
+<% link_to play_hunt_path(hunt) do %><%=h hunt.name %><% end %>
+
 
 <br />
-
+<% end %>
 
 
