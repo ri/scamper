@@ -1,6 +1,6 @@
 <%= render :partial => 'questions/playersidebar' %>
 <div id="answerform">
-<% if @questions.not_answered(@current_player).count > 0 %>
+i<% if @questions.not_answered(@current_player).count > 0 %>
 <p>	<%= link_to 'Next Question', hunt_question_response_path(@hunt, @questions.not_answered(@current_player).rand), :id => 'nextquestion' %></p>
 <% else %>
 You have now answered all of the questions in the this hunt. 
