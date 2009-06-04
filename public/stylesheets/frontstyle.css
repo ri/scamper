@@ -213,6 +213,22 @@ vertical-align: middle;
 margin-left: 20px;
 }
 
+#contactus{
+	padding:10px;
+	
+	margin-left: 140px;
+	margin-top:20px;
+	font-size:13pt;
+background-color: #ff3300;
+width:300px;
+height: 50px;
+}
+
+#contactus a{
+	text-decoration: none;
+	
+}
+
 #signup span{
 display:none;
 }
@@ -463,6 +479,12 @@ margin-bottom:-10px;
 width: 100%;
 position:relative;
 }
+
+#footer a{
+	text-decoration: none;
+	
+}
+
 #footercontent{
 width:750px;
 position:relative;
@@ -617,12 +639,13 @@ float:right;
 
 #blurb{
 width: 300px;
-padding-top: 20px;
+
 padding-left: 20px;
 padding-right: 20px;
 padding-bottom: 10px;
 margin-left: 120px;
-margin-top: 10px;
+margin-top: 5px;
+font-size: 10pt;
 }
 
 
